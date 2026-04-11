@@ -1,0 +1,176 @@
+<!-- accounts/templates/accounts/profile_edit.html -->
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Редактирование профиля{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="mb-0">
+                        <i class="fas fa-user-edit"></i> Редактирование профиля
+                    </h4>
+                </div>
+                <div class="card-body">
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+
+                        {% if form.errors or profile_form.errors %}
+                            <div class="alert alert-danger">
+                                <strong>Ошибка!</strong> Пожалуйста, исправьте следующие ошибки:
+                                <ul class="mb-0 mt-2">
+                                    {% for field in form %}
+                                        {% for error in field.errors %}
+                                            <li>{{ field.label }}: {{ error }}</li>
+                                        {% endfor %}
+                                    {% endfor %}
+                                    {% for field in profile_form %}
+                                        {% for error in field.errors %}
+                                            <li>{{ field.label }}: {{ error }}</li>
+                                        {% endfor %}
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        {% endif %}
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="id_first_name" class="form-label">
+                                    <i class="fas fa-user"></i> Имя
+                                </label>
+                                <input type="text" class="form-control" id="id_first_name"
+                                       name="first_name" value="{{ form.first_name.value|default:user.first_name }}">
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label for="id_last_name" class="form-label">
+                                    <i class="fas fa-user"></i> Фамилия
+                                </label>
+                                <input type="text" class="form-control" id="id_last_name"
+                                       name="last_name" value="{{ form.last_name.value|default:user.last_name }}">
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="id_email" class="form-label">
+                                <i class="fas fa-envelope"></i> Email
+                            </label>
+                            <input type="email" class="form-control" id="id_email"
+                                   name="email" value="{{ form.email.value|default:user.email }}" required>
+                            <small class="form-text text-muted">Email будет использоваться для входа и уведомлений</small>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="id_phone" class="form-label">
+                                <i class="fas fa-phone"></i> Телефон
+                            </label>
+                            <input type="text" class="form-control" id="id_phone"
+                                   name="phone" value="{{ form.phone.value|default:user.phone }}">
+                            <small class="form-text text-muted">В формате +7 (XXX) XXX-XX-XX</small>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="id_avatar" class="form-label">
+                                <i class="fas fa-image"></i> Аватар
+                            </label>
+                            {% if user.avatar %}
+                                <div class="mb-2">
+                                    <img src="{{ user.avatar.url }}" class="img-thumbnail" style="width: 100px; height: 100px; object-fit: cover;">
+                                </div>
+                            {% endif %}
+                            <input type="file" class="form-control" id="id_avatar"
+                                   name="avatar" accept="image/*">
+                            <small class="form-text text-muted">Поддерживаются форматы: JPG, PNG, GIF. Максимальный размер: 5MB</small>
+                        </div>
+
+                        <hr>
+                        <h5 class="mb-3">
+                            <i class="fas fa-info-circle"></i> Дополнительная информация
+                        </h5>
+
+                        <div class="mb-3">
+                            <label for="id_birth_date" class="form-label">
+                                <i class="fas fa-birthday-cake"></i> Дата рождения
+                            </label>
+                            <input type="date" class="form-control" id="id_birth_date"
+                                   name="birth_date" value="{{ profile_form.birth_date.value|date:'Y-m-d'|default:profile.birth_date|date:'Y-m-d' }}">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="id_telegram" class="form-label">
+                                <i class="fab fa-telegram"></i> Telegram
+                            </label>
+                            <input type="text" class="form-control" id="id_telegram"
+                                   name="telegram" value="{{ profile_form.telegram.value|default:profile.telegram }}">
+                            <small class="form-text text-muted">Укажите username в Telegram для получения уведомлений</small>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="id_linkedin" class="form-label">
+                                <i class="fab fa-linkedin"></i> LinkedIn
+                            </label>
+                            <input type="url" class="form-control" id="id_linkedin"
+                                   name="linkedin" value="{{ profile_form.linkedin.value|default:profile.linkedin }}">
+                            <small class="form-text text-muted">Ссылка на профиль LinkedIn</small>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="id_emergency_contact" class="form-label">
+                                    <i class="fas fa-user-friends"></i> Контакт для экстренных случаев
+                                </label>
+                                <input type="text" class="form-control" id="id_emergency_contact"
+                                       name="emergency_contact" value="{{ profile_form.emergency_contact.value|default:profile.emergency_contact }}">
+                                <small class="form-text text-muted">ФИО контактного лица</small>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label for="id_emergency_phone" class="form-label">
+                                    <i class="fas fa-phone-alt"></i> Телефон для экстренных случаев
+                                </label>
+                                <input type="text" class="form-control" id="id_emergency_phone"
+                                       name="emergency_phone" value="{{ profile_form.emergency_phone.value|default:profile.emergency_phone }}">
+                                <small class="form-text text-muted">Телефон контактного лица</small>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="d-flex justify-content-between">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-save"></i> Сохранить изменения
+                            </button>
+                            <a href="{% url 'accounts:profile' %}" class="btn btn-secondary">
+                                <i class="fas fa-times"></i> Отмена
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.card {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.card-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.form-control:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.btn i {
+    margin-right: 5px;
+}
+</style>
+{% endblock %}

@@ -1,0 +1,196 @@
+<!-- templates/tasks/task_form.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{% if form.instance.pk %}Редактирование задачи{% else %}Создание задачи{% endif %}{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="h3">{% if form.instance.pk %}Редактирование задачи{% else %}Создание задачи{% endif %}</h1>
+        <a href="{% url 'tasks:task_list' %}" class="btn btn-secondary">
+            <i class="fas fa-arrow-left"></i> Назад
+        </a>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-body">
+                    <form method="post">
+                        {% csrf_token %}
+
+                        {% if form.non_field_errors %}
+                            <div class="alert alert-danger">
+                                {% for error in form.non_field_errors %}
+                                    {{ error }}
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+
+                        <div class="mb-3">
+                            <label for="{{ form.title.id_for_label }}" class="form-label">Название *</label>
+                            {{ form.title }}
+                            {% if form.title.errors %}
+                                <div class="text-danger small">{{ form.title.errors }}</div>
+                            {% endif %}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="{{ form.description.id_for_label }}" class="form-label">Описание</label>
+                            {{ form.description }}
+                            {% if form.description.errors %}
+                                <div class="text-danger small">{{ form.description.errors }}</div>
+                            {% endif %}
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="{{ form.status.id_for_label }}" class="form-label">Статус</label>
+                                {{ form.status }}
+                                {% if form.status.errors %}
+                                    <div class="text-danger small">{{ form.status.errors }}</div>
+                                {% endif %}
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="{{ form.priority.id_for_label }}" class="form-label">Приоритет</label>
+                                {{ form.priority }}
+                                {% if form.priority.errors %}
+                                    <div class="text-danger small">{{ form.priority.errors }}</div>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="{{ form.due_date.id_for_label }}" class="form-label">Срок выполнения</label>
+                                {{ form.due_date }}
+                                {% if form.due_date.errors %}
+                                    <div class="text-danger small">{{ form.due_date.errors }}</div>
+                                {% endif %}
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="{{ form.completed_at.id_for_label }}" class="form-label">Дата завершения</label>
+                                {{ form.completed_at }}
+                                {% if form.completed_at.errors %}
+                                    <div class="text-danger small">{{ form.completed_at.errors }}</div>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="{{ form.estimated_hours.id_for_label }}" class="form-label">Плановые часы</label>
+                                {{ form.estimated_hours }}
+                                {% if form.estimated_hours.errors %}
+                                    <div class="text-danger small">{{ form.estimated_hours.errors }}</div>
+                                {% endif %}
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="{{ form.actual_hours.id_for_label }}" class="form-label">Фактические часы</label>
+                                {{ form.actual_hours }}
+                                {% if form.actual_hours.errors %}
+                                    <div class="text-danger small">{{ form.actual_hours.errors }}</div>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="{{ form.client.id_for_label }}" class="form-label">Клиент</label>
+                                {{ form.client }}
+                                {% if form.client.errors %}
+                                    <div class="text-danger small">{{ form.client.errors }}</div>
+                                {% endif %}
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="{{ form.contract.id_for_label }}" class="form-label">Контракт</label>
+                                {{ form.contract }}
+                                {% if form.contract.errors %}
+                                    <div class="text-danger small">{{ form.contract.errors }}</div>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="{{ form.assigned_to.id_for_label }}" class="form-label">Назначить</label>
+                            {{ form.assigned_to }}
+                            {% if form.assigned_to.errors %}
+                                <div class="text-danger small">{{ form.assigned_to.errors }}</div>
+                            {% endif %}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="{{ form.comments.id_for_label }}" class="form-label">Комментарии</label>
+                            {{ form.comments }}
+                            {% if form.comments.errors %}
+                                <div class="text-danger small">{{ form.comments.errors }}</div>
+                            {% endif %}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="{{ form.private_notes.id_for_label }}" class="form-label">Приватные заметки</label>
+                            {{ form.private_notes }}
+                            <small class="text-muted d-block">Доступны только автору и администратору</small>
+                            {% if form.private_notes.errors %}
+                                <div class="text-danger small">{{ form.private_notes.errors }}</div>
+                            {% endif %}
+                        </div>
+
+                        <hr>
+
+                        <div class="d-flex justify-content-between">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-save"></i> Сохранить
+                            </button>
+                            <a href="{% url 'tasks:task_list' %}" class="btn btn-secondary">Отмена</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow">
+                <div class="card-header">
+                    <h5 class="mb-0">Подсказка</h5>
+                </div>
+                <div class="card-body">
+                    <ul class="small text-muted">
+                        <li>Обязательные поля отмечены звездочкой (*)</li>
+                        <li>Срок выполнения не должен быть в прошлом (если задача ещё не завершена)</li>
+                        <li>Приватные заметки видны только создателю и администраторам</li>
+                        <li>Плановые часы используются для оценки трудозатрат</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Автоматическая фильтрация контрактов по выбранному клиенту
+    document.addEventListener('DOMContentLoaded', function() {
+        const clientSelect = document.getElementById('{{ form.client.id_for_label }}');
+        const contractSelect = document.getElementById('{{ form.contract.id_for_label }}');
+
+        if (clientSelect && contractSelect) {
+            function filterContracts() {
+                const clientId = clientSelect.value;
+                for (let option of contractSelect.options) {
+                    const contractClientId = option.getAttribute('data-client-id');
+                    if (!clientId || contractClientId === clientId) {
+                        option.style.display = '';
+                    } else {
+                        option.style.display = 'none';
+                    }
+                }
+            }
+            clientSelect.addEventListener('change', filterContracts);
+            filterContracts();
+        }
+    });
+</script>
+{% endblock %}

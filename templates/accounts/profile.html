@@ -1,0 +1,417 @@
+<!-- accounts/templates/accounts/profile.html -->
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Профиль пользователя{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-4">
+            <!-- Аватар и основная информация -->
+            <div class="card mb-4">
+                <div class="card-body text-center">
+                    {% if user.avatar %}
+                        <img src="{{ user.avatar.url }}" class="rounded-circle img-fluid mb-3" style="width: 150px; height: 150px; object-fit: cover;" alt="Avatar">
+                    {% else %}
+                        <div class="rounded-circle bg-secondary text-white d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 150px; height: 150px; font-size: 48px;">
+                            {{ user.get_full_name|slice:":1"|default:user.username|slice:":1"|upper }}
+                        </div>
+                    {% endif %}
+
+                    <h4>{{ user.get_full_name|default:user.username }}</h4>
+                    <p class="text-muted">{{ user.get_role_display }}</p>
+
+                    {% if user.position %}
+                        <p class="mb-1"><strong>{{ user.position }}</strong></p>
+                    {% endif %}
+
+                    {% if user.department %}
+                        <p class="text-muted">{{ user.department }}</p>
+                    {% endif %}
+
+                    <hr>
+
+                    <div class="text-start">
+                        <p><strong>📧 Email:</strong> {{ user.email }}</p>
+                        <p><strong>📱 Телефон:</strong> {{ user.phone|default:"Не указан" }}</p>
+                        <p><strong>👤 Логин:</strong> {{ user.username }}</p>
+                        <p><strong>📅 Дата регистрации:</strong> {{ user.date_joined|date:"d.m.Y" }}</p>
+
+                        {% if user.hire_date %}
+                            <p><strong>🏢 Дата найма:</strong> {{ user.hire_date|date:"d.m.Y" }}</p>
+                        {% endif %}
+
+                        {% if user.employee_id %}
+                            <p><strong>🆔 Табельный номер:</strong> {{ user.employee_id }}</p>
+                        {% endif %}
+                    </div>
+
+                    <hr>
+
+                    <div class="d-grid gap-2">
+                        <a href="{% url 'accounts:profile_edit' %}" class="btn btn-outline-primary btn-sm">
+                            <i class="fas fa-edit"></i> Редактировать профиль
+                        </a>
+                        <a href="{% url 'accounts:user_activity' %}" class="btn btn-outline-info btn-sm">
+                            <i class="fas fa-history"></i> Моя активность
+                        </a>
+                        <a href="{% url 'accounts:settings' %}" class="btn btn-outline-secondary btn-sm">
+                            <i class="fas fa-cog"></i> Настройки
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <!-- Вкладки с дополнительной информацией -->
+            <ul class="nav nav-tabs mb-3" id="profileTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="info-tab" data-bs-toggle="tab" data-bs-target="#info" type="button" role="tab">
+                        <i class="fas fa-user"></i> Личная информация
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="tasks-tab" data-bs-toggle="tab" data-bs-target="#tasks" type="button" role="tab">
+                        <i class="fas fa-tasks"></i> Мои задачи
+                        {% if tasks %}
+                            <span class="badge bg-primary ms-1">{{ tasks|length }}</span>
+                        {% endif %}
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="notifications-tab" data-bs-toggle="tab" data-bs-target="#notifications" type="button" role="tab">
+                        <i class="fas fa-bell"></i> Уведомления
+                        {% if notifications %}
+                            <span class="badge bg-danger ms-1">{{ notifications|length }}</span>
+                        {% endif %}
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="security-tab" data-bs-toggle="tab" data-bs-target="#security" type="button" role="tab">
+                        <i class="fas fa-shield-alt"></i> Безопасность
+                    </button>
+                </li>
+            </ul>
+
+            <div class="tab-content">
+                <!-- Вкладка: Личная информация -->
+                <div class="tab-pane fade show active" id="info" role="tabpanel">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">Личная информация</h5>
+                        </div>
+                        <div class="card-body">
+                            <form method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="first_name" class="form-label">Имя</label>
+                                        <input type="text" class="form-control" id="first_name" name="first_name" value="{{ user.first_name }}">
+                                    </div>
+
+                                    <div class="col-md-6 mb-3">
+                                        <label for="last_name" class="form-label">Фамилия</label>
+                                        <input type="text" class="form-control" id="last_name" name="last_name" value="{{ user.last_name }}">
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" name="email" value="{{ user.email }}">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="phone" class="form-label">Телефон</label>
+                                    <input type="text" class="form-control" id="phone" name="phone" value="{{ user.phone }}">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="avatar" class="form-label">Аватар</label>
+                                    <input type="file" class="form-control" id="avatar" name="avatar" accept="image/*">
+                                    <small class="text-muted">Поддерживаются форматы: JPG, PNG, GIF</small>
+                                </div>
+
+                                {% if profile %}
+                                    <hr>
+                                    <h6>Дополнительная информация</h6>
+
+                                    <div class="mb-3">
+                                        <label for="birth_date" class="form-label">Дата рождения</label>
+                                        <input type="date" class="form-control" id="birth_date" name="birth_date" value="{{ profile.birth_date|date:'Y-m-d' }}">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="telegram" class="form-label">Telegram</label>
+                                        <input type="text" class="form-control" id="telegram" name="telegram" value="{{ profile.telegram }}">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="linkedin" class="form-label">LinkedIn</label>
+                                        <input type="url" class="form-control" id="linkedin" name="linkedin" value="{{ profile.linkedin }}">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="emergency_contact" class="form-label">Контакт для экстренных случаев</label>
+                                        <input type="text" class="form-control" id="emergency_contact" name="emergency_contact" value="{{ profile.emergency_contact }}">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="emergency_phone" class="form-label">Телефон для экстренных случаев</label>
+                                        <input type="text" class="form-control" id="emergency_phone" name="emergency_phone" value="{{ profile.emergency_phone }}">
+                                    </div>
+                                {% endif %}
+
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-save"></i> Сохранить изменения
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Вкладка: Мои задачи -->
+                <div class="tab-pane fade" id="tasks" role="tabpanel">
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0">Мои активные задачи</h5>
+                            <a href="{% url 'tasks:task_list' %}" class="btn btn-sm btn-outline-primary">
+                                <i class="fas fa-list"></i> Все задачи
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            {% if tasks %}
+                                <div class="list-group">
+                                    {% for task in tasks %}
+                                        <div class="list-group-item list-group-item-action">
+                                            <div class="d-flex justify-content-between align-items-start">
+                                                <div class="flex-grow-1">
+                                                    <div class="d-flex align-items-center mb-2">
+                                                        <span class="badge bg-{% if task.priority == 'urgent' %}danger{% elif task.priority == 'high' %}warning{% elif task.priority == 'medium' %}info{% else %}secondary{% endif %} me-2">
+                                                            {{ task.get_priority_display }}
+                                                        </span>
+                                                        <span class="badge bg-{% if task.status == 'completed' %}success{% elif task.status == 'in_progress' %}primary{% elif task.status == 'new' %}secondary{% else %}danger{% endif %}">
+                                                            {{ task.get_status_display }}
+                                                        </span>
+                                                        {% if task.is_overdue %}
+                                                            <span class="badge bg-danger ms-2">⚠️ Просрочена</span>
+                                                        {% endif %}
+                                                    </div>
+                                                    <h6 class="mb-1">{{ task.title }}</h6>
+                                                    <p class="mb-1 text-muted small">{{ task.description|truncatechars:100 }}</p>
+                                                    <small class="text-muted">
+                                                        <i class="far fa-calendar-alt"></i> Срок: {{ task.due_date|date:"d.m.Y H:i" }}
+                                                        {% if task.client %}
+                                                            | <i class="fas fa-building"></i> {{ task.client.full_name }}
+                                                        {% endif %}
+                                                    </small>
+                                                </div>
+                                                <div>
+                                                    <a href="{% url 'tasks:task_detail' task.id %}" class="btn btn-sm btn-outline-primary">
+                                                        <i class="fas fa-eye"></i> Подробнее
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                <div class="text-center py-4">
+                                    <i class="fas fa-check-circle fa-3x text-muted mb-3"></i>
+                                    <p class="text-muted">У вас нет активных задач</p>
+                                    <a href="{% url 'tasks:task_list' %}" class="btn btn-sm btn-outline-primary">
+                                        <i class="fas fa-list"></i> Посмотреть все задачи
+                                    </a>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Вкладка: Уведомления -->
+                <div class="tab-pane fade" id="notifications" role="tabpanel">
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0">Мои уведомления</h5>
+                            {% if notifications %}
+                                <button class="btn btn-sm btn-outline-primary" onclick="markAllRead()">
+                                    <i class="fas fa-check-double"></i> Отметить все как прочитанные
+                                </button>
+                            {% endif %}
+                        </div>
+                        <div class="card-body">
+                            {% if notifications %}
+                                <div class="list-group">
+                                    {% for notification in notifications %}
+                                        <div class="list-group-item {% if not notification.is_read %}list-group-item-warning{% endif %}">
+                                            <div class="d-flex justify-content-between align-items-start">
+                                                <div class="flex-grow-1">
+                                                    <div class="d-flex align-items-center mb-2">
+                                                        <span class="badge bg-{% if notification.type == 'success' %}success{% elif notification.type == 'warning' %}warning{% elif notification.type == 'error' %}danger{% else %}info{% endif %} me-2">
+                                                            <i class="fas fa-{% if notification.type == 'success' %}check-circle{% elif notification.type == 'warning' %}exclamation-triangle{% elif notification.type == 'error' %}times-circle{% else %}info-circle{% endif %}"></i>
+                                                            {{ notification.get_type_display }}
+                                                        </span>
+                                                        {% if not notification.is_read %}
+                                                            <span class="badge bg-primary">Новое</span>
+                                                        {% endif %}
+                                                    </div>
+                                                    <h6 class="mb-1">{{ notification.title }}</h6>
+                                                    <p class="mb-1">{{ notification.message }}</p>
+                                                    <small class="text-muted">
+                                                        <i class="far fa-clock"></i> {{ notification.created_at|date:"d.m.Y H:i" }}
+                                                        {% if notification.read_at %}
+                                                            | <i class="fas fa-eye"></i> Прочитано: {{ notification.read_at|date:"d.m.Y H:i" }}
+                                                        {% endif %}
+                                                    </small>
+                                                </div>
+                                                {% if not notification.is_read %}
+                                                    <div>
+                                                        <button class="btn btn-sm btn-outline-success" onclick="markRead({{ notification.id }})">
+                                                            <i class="fas fa-check"></i> Прочитано
+                                                        </button>
+                                                    </div>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                <div class="text-center py-4">
+                                    <i class="fas fa-bell-slash fa-3x text-muted mb-3"></i>
+                                    <p class="text-muted">У вас нет уведомлений</p>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Вкладка: Безопасность -->
+                <div class="tab-pane fade" id="security" role="tabpanel">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">Безопасность аккаунта</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-4">
+                                <h6><i class="fas fa-key"></i> Изменение пароля</h6>
+                                <p class="text-muted small">Рекомендуется регулярно менять пароль для безопасности аккаунта.</p>
+                                <a href="{% url 'accounts:change_password' %}" class="btn btn-outline-primary">
+                                    <i class="fas fa-lock"></i> Изменить пароль
+                                </a>
+                            </div>
+
+                            <hr>
+
+                            <div class="mb-4">
+                                <h6><i class="fas fa-history"></i> История активности</h6>
+                                <p class="text-muted small">Последний вход: {{ user.last_login|date:"d.m.Y H:i"|default:"Неизвестно" }}</p>
+                                <a href="{% url 'accounts:user_activity' %}" class="btn btn-outline-info">
+                                    <i class="fas fa-list"></i> Просмотреть активность
+                                </a>
+                            </div>
+
+                            <hr>
+
+                            <div class="mb-4">
+                                <h6><i class="fas fa-tasks"></i> Мои задачи</h6>
+                                <p class="text-muted small">Просмотр всех задач, назначенных вам.</p>
+                                <a href="{% url 'tasks:my_tasks' %}" class="btn btn-outline-success">
+                                    <i class="fas fa-tasks"></i> Мои задачи
+                                </a>
+                            </div>
+
+                            <hr>
+
+                            <div class="mb-4">
+                                <h6><i class="fas fa-envelope"></i> Сброс пароля</h6>
+                                <p class="text-muted small">Если вы забыли пароль, вы можете сбросить его по email.</p>
+                                <a href="{% url 'accounts:password_reset' %}" class="btn btn-outline-warning">
+                                    <i class="fas fa-envelope"></i> Сбросить пароль
+                                </a>
+                            </div>
+
+                            <hr>
+
+                            <div class="mb-3">
+                                <h6><i class="fas fa-sign-out-alt"></i> Завершение сессии</h6>
+                                <p class="text-muted small">Выйти из системы.</p>
+                                <a href="{% url 'accounts:logout' %}" class="btn btn-outline-danger">
+                                    <i class="fas fa-power-off"></i> Выйти
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function markRead(notificationId) {
+    fetch(`/notifications/mark-read/${notificationId}/`, {
+        method: 'POST',
+        headers: {
+            'X-CSRFToken': '{{ csrf_token }}',
+            'Content-Type': 'application/json',
+        },
+    }).then(response => {
+        if (response.ok) {
+            location.reload();
+        }
+    }).catch(error => {
+        console.error('Error:', error);
+    });
+}
+
+function markAllRead() {
+    fetch('/notifications/mark-all-read/', {
+        method: 'POST',
+        headers: {
+            'X-CSRFToken': '{{ csrf_token }}',
+            'Content-Type': 'application/json',
+        },
+    }).then(response => {
+        if (response.ok) {
+            location.reload();
+        }
+    }).catch(error => {
+        console.error('Error:', error);
+    });
+}
+</script>
+
+<style>
+.card {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    transition: all 0.2s;
+}
+
+.card:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.list-group-item {
+    transition: all 0.2s;
+}
+
+.list-group-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.tab-content {
+    min-height: 400px;
+}
+
+.badge {
+    font-weight: 500;
+}
+
+.btn-sm i, .btn i {
+    margin-right: 5px;
+}
+</style>
+{% endblock %}

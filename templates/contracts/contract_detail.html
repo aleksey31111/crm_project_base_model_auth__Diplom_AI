@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ contract.number }}{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-header d-flex justify-content-between">
+            <h2>{{ contract.number }} – {{ contract.title }}</h2>
+            <div>
+                <a href="{% url 'contracts:contract_edit' contract.pk %}" class="btn btn-warning">Редактировать</a>
+                <a href="{% url 'contracts:contract_renew' contract.pk %}" class="btn btn-success">Продлить</a>
+                <a href="{% url 'contracts:contract_payments' contract.pk %}" class="btn btn-info">Оплаты</a>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <p><strong>Клиент:</strong> <a href="{% url 'clients:client_detail' contract.client.pk %}">{{ contract.client.full_name }}</a></p>
+                    <p><strong>Тип:</strong> {{ contract.get_type_display }}</p>
+                    <p><strong>Статус:</strong> {{ contract.get_status_display }}</p>
+                    <p><strong>Менеджер:</strong> {{ contract.manager.get_full_name|default:"Не назначен" }}</p>
+                </div>
+                <div class="col-md-6">
+                    <p><strong>Дата начала:</strong> {{ contract.start_date }}</p>
+                    <p><strong>Дата окончания:</strong> {{ contract.end_date }}</p>
+                    <p><strong>Сумма:</strong> {{ contract.amount }} ₽</p>
+                    <p><strong>Оплачено:</strong> {{ contract.paid_amount }} ₽ ({{ contract.payment_percentage|floatformat:0 }}%)</p>
+                </div>
+            </div>
+            <p><strong>Описание:</strong> {{ contract.description|linebreaks }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

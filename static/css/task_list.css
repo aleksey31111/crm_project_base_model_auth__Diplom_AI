@@ -1,0 +1,61 @@
+from django.db.models import Q
+from django.utils import timezone
+
+class TaskListView(LoginRequiredMixin, ListView):
+    model = Task
+    template_name = 'tasks/task_list.html'
+    context_object_name = 'tasks'
+    paginate_by = 20
+
+    def get_queryset(self):
+        queryset = super().get_queryset().select_related('assigned_to', 'client', 'contract')
+
+        # Поиск
+        search = self.request.GET.get('search', '')
+        if search:
+            queryset = queryset.filter(title__icontains=search)
+
+        # Статус
+        status = self.request.GET.get('status', '')
+        if status:
+            queryset = queryset.filter(status=status)
+
+        # Приоритет
+        priority = self.request.GET.get('priority', '')
+        if priority:
+            queryset = queryset.filter(priority=priority)
+
+        # Назначено
+        assigned_to = self.request.GET.get('assigned_to', '')
+        if assigned_to == 'me':
+            queryset = queryset.filter(assigned_to=self.request.user)
+
+        return queryset
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        # Получаем отфильтрованный queryset для статистики
+        qs = self.get_queryset()
+
+        context['total_tasks'] = qs.count()
+        context['in_progress_tasks'] = qs.filter(status='in_progress').count()
+        context['completed_tasks'] = qs.filter(status='completed').count()
+
+        now = timezone.now()
+        context['overdue_tasks'] = qs.filter(
+            due_date__lt=now,
+            status__in=['new', 'in_progress']
+        ).count()
+
+        # Передаём текущие значения фильтров в шаблон
+        context['search_query'] = self.request.GET.get('search', '')
+        context['current_status'] = self.request.GET.get('status', '')
+        context['current_priority'] = self.request.GET.get('priority', '')
+        context['assigned_to_me'] = self.request.GET.get('assigned_to') == 'me'
+
+        # Списки для выпадающих меню
+        context['status_choices'] = Task.Status.choices
+        context['priority_choices'] = Task.Priority.choices
+
+        return context

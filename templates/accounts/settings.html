@@ -1,0 +1,242 @@
+<!-- accounts/templates/accounts/settings.html -->
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Настройки пользователя{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card mb-4">
+                <div class="list-group list-group-flush">
+                    <a href="#general" class="list-group-item list-group-item-action active" data-bs-toggle="list">
+                        <i class="fas fa-cog"></i> Основные
+                    </a>
+                    <a href="#notifications" class="list-group-item list-group-item-action" data-bs-toggle="list">
+                        <i class="fas fa-bell"></i> Уведомления
+                    </a>
+                    <a href="#interface" class="list-group-item list-group-item-action" data-bs-toggle="list">
+                        <i class="fas fa-palette"></i> Интерфейс
+                    </a>
+                    <a href="#security" class="list-group-item list-group-item-action" data-bs-toggle="list">
+                        <i class="fas fa-shield-alt"></i> Безопасность
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-9">
+            <div class="tab-content">
+                <!-- Основные настройки -->
+                <div class="tab-pane fade show active" id="general">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">Основные настройки</h5>
+                        </div>
+                        <div class="card-body">
+                            <form method="post">
+                                {% csrf_token %}
+                                <div class="mb-3">
+                                    <label for="language" class="form-label">Язык интерфейса</label>
+                                    <select class="form-select" id="language" name="language">
+                                        <option value="ru" {% if user.language == 'ru' %}selected{% endif %}>Русский</option>
+                                        <option value="en" {% if user.language == 'en' %}selected{% endif %}>English</option>
+                                    </select>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="timezone" class="form-label">Часовой пояс</label>
+                                    <select class="form-select" id="timezone" name="timezone">
+                                        <option value="Europe/Moscow" {% if user.timezone == 'Europe/Moscow' %}selected{% endif %}>Москва (UTC+3)</option>
+                                        <option value="Europe/London" {% if user.timezone == 'Europe/London' %}selected{% endif %}>Лондон (UTC+0)</option>
+                                        <option value="America/New_York" {% if user.timezone == 'America/New_York' %}selected{% endif %}>Нью-Йорк (UTC-5)</option>
+                                    </select>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="date_format" class="form-label">Формат даты</label>
+                                    <select class="form-select" id="date_format" name="date_format">
+                                        <option value="d.m.Y">ДД.ММ.ГГГГ</option>
+                                        <option value="Y-m-d">ГГГГ-ММ-ДД</option>
+                                        <option value="m/d/Y">ММ/ДД/ГГГГ</option>
+                                    </select>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-save"></i> Сохранить настройки
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Настройки уведомлений -->
+                <div class="tab-pane fade" id="notifications">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">Настройки уведомлений</h5>
+                        </div>
+                        <div class="card-body">
+                            <form method="post">
+                                {% csrf_token %}
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="email_notifications"
+                                           name="email_notifications" {% if user.email_notifications %}checked{% endif %}>
+                                    <label class="form-check-label" for="email_notifications">
+                                        Получать уведомления по email
+                                    </label>
+                                </div>
+
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="telegram_notifications"
+                                           name="telegram_notifications" {% if user.telegram_notifications %}checked{% endif %}>
+                                    <label class="form-check-label" for="telegram_notifications">
+                                        Получать уведомления в Telegram
+                                    </label>
+                                </div>
+
+                                <hr>
+
+                                <h6>Уведомления о задачах</h6>
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="task_assigned"
+                                           name="task_assigned" checked>
+                                    <label class="form-check-label" for="task_assigned">
+                                        Назначение новой задачи
+                                    </label>
+                                </div>
+
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="task_overdue"
+                                           name="task_overdue" checked>
+                                    <label class="form-check-label" for="task_overdue">
+                                        Просроченные задачи
+                                    </label>
+                                </div>
+
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="task_completed"
+                                           name="task_completed" checked>
+                                    <label class="form-check-label" for="task_completed">
+                                        Выполненные задачи
+                                    </label>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-save"></i> Сохранить настройки
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Настройки интерфейса -->
+                <div class="tab-pane fade" id="interface">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">Настройки интерфейса</h5>
+                        </div>
+                        <div class="card-body">
+                            <form method="post">
+                                {% csrf_token %}
+                                <div class="mb-3">
+                                    <label class="form-label">Тема оформления</label>
+                                    <div class="btn-group w-100" role="group">
+                                        <input type="radio" class="btn-check" name="theme" id="theme-light" value="light"
+                                               {% if user.theme == 'light' %}checked{% endif %}>
+                                        <label class="btn btn-outline-secondary" for="theme-light">
+                                            <i class="fas fa-sun"></i> Светлая
+                                        </label>
+
+                                        <input type="radio" class="btn-check" name="theme" id="theme-dark" value="dark"
+                                               {% if user.theme == 'dark' %}checked{% endif %}>
+                                        <label class="btn btn-outline-secondary" for="theme-dark">
+                                            <i class="fas fa-moon"></i> Темная
+                                        </label>
+
+                                        <input type="radio" class="btn-check" name="theme" id="theme-auto" value="auto"
+                                               {% if user.theme == 'auto' %}checked{% endif %}>
+                                        <label class="btn btn-outline-secondary" for="theme-auto">
+                                            <i class="fas fa-adjust"></i> Авто
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="items_per_page" class="form-label">Количество записей на странице</label>
+                                    <select class="form-select" id="items_per_page" name="items_per_page">
+                                        <option value="25">25</option>
+                                        <option value="50">50</option>
+                                        <option value="100">100</option>
+                                        <option value="200">200</option>
+                                    </select>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-save"></i> Сохранить настройки
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Безопасность -->
+                <div class="tab-pane fade" id="security">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">Настройки безопасности</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-4">
+                                <h6><i class="fas fa-key"></i> Изменение пароля</h6>
+                                <p class="text-muted">Рекомендуется регулярно менять пароль для безопасности аккаунта.</p>
+                                <a href="{% url 'accounts:change_password' %}" class="btn btn-outline-primary">
+                                    <i class="fas fa-lock"></i> Изменить пароль
+                                </a>
+                            </div>
+
+                            <hr>
+
+                            <div class="mb-4">
+                                <h6><i class="fas fa-history"></i> Активность аккаунта</h6>
+                                <p class="text-muted">Последний вход: {{ user.last_login|date:"d.m.Y H:i"|default:"Неизвестно" }}</p>
+                                <a href="{% url 'accounts:user_activity' %}" class="btn btn-outline-info">
+                                    <i class="fas fa-list"></i> Просмотреть активность
+                                </a>
+                            </div>
+
+                            <hr>
+
+                            <div class="mb-3">
+                                <h6><i class="fas fa-sign-out-alt"></i> Завершение сессии</h6>
+                                <p class="text-muted">Выйти из системы на всех устройствах.</p>
+                                <button class="btn btn-outline-danger" onclick="logoutAll()">
+                                    <i class="fas fa-power-off"></i> Выйти из всех устройств
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function logoutAll() {
+    if (confirm('Вы уверены, что хотите выйти из системы на всех устройствах?')) {
+        fetch('/accounts/logout-all/', {
+            method: 'POST',
+            headers: {
+                'X-CSRFToken': '{{ csrf_token }}',
+            },
+        }).then(response => {
+            if (response.ok) {
+                window.location.href = '{% url "accounts:login" %}';
+            }
+        });
+    }
+}
+</script>
+{% endblock %}

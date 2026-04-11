@@ -1,0 +1,145 @@
+<!-- accounts/templates/accounts/user_detail.html -->
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Детали пользователя{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    {% if profile_user.avatar %}
+                        <img src="{{ profile_user.avatar.url }}" class="rounded-circle img-fluid mb-3" style="width: 150px; height: 150px; object-fit: cover;">
+                    {% else %}
+                        <div class="rounded-circle bg-secondary text-white d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 150px; height: 150px; font-size: 48px;">
+                            {{ profile_user.get_full_name|slice:":1"|default:profile_user.username|slice:":1"|upper }}
+                        </div>
+                    {% endif %}
+
+                    <h4>{{ profile_user.get_full_name|default:profile_user.username }}</h4>
+                    <p class="text-muted">{{ profile_user.get_role_display }}</p>
+
+                    <hr>
+
+                    <div class="text-start">
+                        <p><strong>📧 Email:</strong> {{ profile_user.email }}</p>
+                        <p><strong>📱 Телефон:</strong> {{ profile_user.phone|default:"Не указан" }}</p>
+                        <p><strong>🏢 Отдел:</strong> {{ profile_user.department|default:"Не указан" }}</p>
+                        <p><strong>💼 Должность:</strong> {{ profile_user.position|default:"Не указана" }}</p>
+                        <p><strong>📅 Дата регистрации:</strong> {{ profile_user.date_joined|date:"d.m.Y" }}</p>
+                        <p><strong>🕐 Последний вход:</strong> {{ profile_user.last_login|date:"d.m.Y H:i"|default:"Никогда" }}</p>
+                    </div>
+
+                    <hr>
+
+                    <div class="d-grid gap-2">
+                        {% if profile_user.is_active %}
+                            <form method="post" action="{% url 'accounts:user_toggle_status' profile_user.id %}">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-danger w-100">
+                                    <i class="fas fa-ban"></i> Деактивировать
+                                </button>
+                            </form>
+                        {% else %}
+                            <form method="post" action="{% url 'accounts:user_toggle_status' profile_user.id %}">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-success w-100">
+                                    <i class="fas fa-check"></i> Активировать
+                                </button>
+                            </form>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <ul class="nav nav-tabs mb-3" role="tablist">
+                <li class="nav-item">
+                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#stats">
+                        <i class="fas fa-chart-bar"></i> Статистика
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#edit">
+                        <i class="fas fa-edit"></i> Редактировать роль
+                    </button>
+                </li>
+            </ul>
+
+            <div class="tab-content">
+                <!-- Статистика -->
+                <div class="tab-pane fade show active" id="stats">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <div class="card bg-primary text-white">
+                                <div class="card-body">
+                                    <h5 class="card-title">Клиенты</h5>
+                                    <h2 class="mb-0">{{ stats.clients_count }}</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="card bg-success text-white">
+                                <div class="card-body">
+                                    <h5 class="card-title">Контракты</h5>
+                                    <h2 class="mb-0">{{ stats.contracts_count }}</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="card bg-info text-white">
+                                <div class="card-body">
+                                    <h5 class="card-title">Всего задач</h5>
+                                    <h2 class="mb-0">{{ stats.tasks_count }}</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="card bg-warning text-white">
+                                <div class="card-body">
+                                    <h5 class="card-title">Выполнено задач</h5>
+                                    <h2 class="mb-0">{{ stats.completed_tasks }}</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Редактирование роли -->
+                <div class="tab-pane fade" id="edit">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">Изменение роли пользователя</h5>
+                        </div>
+                        <div class="card-body">
+                            <form method="post" action="{% url 'accounts:user_change_role' profile_user.id %}">
+                                {% csrf_token %}
+                                <div class="mb-3">
+                                    <label class="form-label">Текущая роль</label>
+                                    <input type="text" class="form-control" value="{{ profile_user.get_role_display }}" disabled>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="role" class="form-label">Новая роль</label>
+                                    <select class="form-select" id="role" name="role">
+                                        <option value="ADMIN">Администратор</option>
+                                        <option value="MANAGER">Менеджер</option>
+                                        <option value="SALES">Продажник</option>
+                                        <option value="SUPPORT">Поддержка</option>
+                                        <option value="VIEWER">Наблюдатель</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-save"></i> Сохранить изменения
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

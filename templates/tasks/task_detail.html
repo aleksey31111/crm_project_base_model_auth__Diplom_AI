@@ -1,0 +1,141 @@
+<!-- templates/tasks/task_detail.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ task.title }}{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="h3">{{ task.title }}</h1>
+        <div>
+            <a href="{% url 'tasks:task_edit' task.id %}" class="btn btn-warning">
+                <i class="fas fa-edit"></i> Редактировать
+            </a>
+            <a href="{% url 'tasks:task_delete' task.id %}" class="btn btn-danger">
+                <i class="fas fa-trash"></i> Удалить
+            </a>
+            <a href="{% url 'tasks:task_list' %}" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Назад
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card shadow mb-4">
+                <div class="card-header">
+                    <h5 class="mb-0">Информация о задаче</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row mb-3">
+                        <div class="col-md-3 fw-bold">Статус:</div>
+                        <div class="col-md-9">
+                            {% if task.status == 'new' %}
+                                <span class="badge bg-secondary">Новая</span>
+                            {% elif task.status == 'in_progress' %}
+                                <span class="badge bg-primary">В работе</span>
+                            {% elif task.status == 'completed' %}
+                                <span class="badge bg-success">Завершена</span>
+                            {% else %}
+                                <span class="badge bg-danger">Отменена</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-3 fw-bold">Приоритет:</div>
+                        <div class="col-md-9">
+                            {% if task.priority == 'urgent' %}
+                                <span class="badge bg-danger">Срочно</span>
+                            {% elif task.priority == 'high' %}
+                                <span class="badge bg-warning">Высокий</span>
+                            {% elif task.priority == 'medium' %}
+                                <span class="badge bg-info">Средний</span>
+                            {% else %}
+                                <span class="badge bg-secondary">Низкий</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-3 fw-bold">Описание:</div>
+                        <div class="col-md-9">{{ task.description|linebreaks|default:"—" }}</div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-3 fw-bold">Комментарии:</div>
+                        <div class="col-md-9">{{ task.comments|linebreaks|default:"—" }}</div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-3 fw-bold">Срок выполнения:</div>
+                        <div class="col-md-9">
+                            {% if task.due_date %}
+                                <span class="{% if task.is_overdue %}text-danger fw-bold{% endif %}">
+                                    {{ task.due_date|date:"d.m.Y H:i" }}
+                                    {% if task.is_overdue %} (просрочена){% endif %}
+                                </span>
+                            {% else %}—{% endif %}
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-3 fw-bold">Фактические часы:</div>
+                        <div class="col-md-9">{{ task.actual_hours|default:"—" }}</div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-3 fw-bold">Плановые часы:</div>
+                        <div class="col-md-9">{{ task.estimated_hours|default:"—" }}</div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-3 fw-bold">Приватные заметки:</div>
+                        <div class="col-md-9">{{ task.private_notes|linebreaks|default:"—" }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow mb-4">
+                <div class="card-header">
+                    <h5 class="mb-0">Связанные объекты</h5>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <strong>Назначено:</strong><br>
+                        {% if task.assigned_to %}
+                            <a href="{% url 'accounts:user_detail' task.assigned_to.id %}">
+                                {{ task.assigned_to.get_full_name|default:task.assigned_to.username }}
+                            </a>
+                        {% else %}—{% endif %}
+                    </div>
+                    <div class="mb-3">
+                        <strong>Клиент:</strong><br>
+                        {% if task.client %}
+                            <a href="{% url 'clients:client_detail' task.client.id %}">
+                                {{ task.client.full_name }}
+                            </a>
+                        {% else %}—{% endif %}
+                    </div>
+                    <div class="mb-3">
+                        <strong>Контракт:</strong><br>
+                        {% if task.contract %}
+                            <a href="{% url 'contracts:contract_detail' task.contract.id %}">
+                                {{ task.contract.title }}
+                            </a>
+                        {% else %}—{% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="card shadow mb-4">
+                <div class="card-header">
+                    <h5 class="mb-0">Системная информация</h5>
+                </div>
+                <div class="card-body">
+                    <div><strong>Создана:</strong> {{ task.created_at|date:"d.m.Y H:i" }}</div>
+                    <div><strong>Создал:</strong> {{ task.created_by|default:"—" }}</div>
+                    <div><strong>Обновлена:</strong> {{ task.updated_at|date:"d.m.Y H:i" }}</div>
+                    <div><strong>Завершена:</strong> {{ task.completed_at|date:"d.m.Y H:i"|default:"—" }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

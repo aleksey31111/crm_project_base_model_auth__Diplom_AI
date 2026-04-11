@@ -1,0 +1,155 @@
+<!-- clients/templates/clients/client_list.html -->
+{% extends 'base.html' %}
+
+{% block title %}Клиенты - CRM System{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="h3">Клиенты</h1>
+        <a href="{% url 'clients:client_create' %}" class="btn btn-primary">
+            <i class="fas fa-plus"></i> Добавить клиента
+        </a>
+    </div>
+
+    <!-- Поиск -->
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <form method="get" class="row g-3">
+                <div class="col-md-6">
+                    <input type="text" name="search" class="form-control"
+                           placeholder="Поиск по названию, email, телефону, ИНН..."
+                           value="{{ search_query }}">
+                </div>
+                <div class="col-md-3">
+                    <select name="type" class="form-select">
+                        <option value="">Все типы</option>
+                        {% for type_value, type_label in client_types %}
+                        <option value="{{ type_value }}" {% if current_type == type_value %}selected{% endif %}>
+                            {{ type_label }}
+                        </option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <button type="submit" class="btn btn-primary w-100">
+                        <i class="fas fa-search"></i> Поиск
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Таблица клиентов -->
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Наименование</th>
+                            <th>Тип</th>
+                            <th>Email</th>
+                            <th>Телефон</th>
+                            <th>Менеджер</th>
+                            <th>Статус</th>
+                            <th>Действия</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for client in clients %}
+                        <tr>
+                            <td>{{ client.id }}</td>
+                            <td>
+                                <a href="{% url 'clients:client_detail' client.id %}" class="text-decoration-none">
+                                    {{ client.full_name }}
+                                </a>
+                            </td>
+                            <td>
+                                {% if client.type == 'individual' %}
+                                    <span class="badge bg-info">Физ. лицо</span>
+                                {% elif client.type == 'company' %}
+                                    <span class="badge bg-primary">Юр. лицо</span>
+                                {% else %}
+                                    <span class="badge bg-warning">ИП</span>
+                                {% endif %}
+                            </td>
+                            <td>{{ client.email|default:"—" }}</td>
+                            <td>{{ client.phone|default:"—" }}</td>
+                            <td>{{ client.manager|default:"—" }}</td>
+                            <td>
+                                {% if client.status == 'active' %}
+                                    <span class="badge bg-success">Активен</span>
+                                {% elif client.status == 'inactive' %}
+                                    <span class="badge bg-secondary">Неактивен</span>
+                                {% else %}
+                                    <span class="badge bg-warning">Потенциальный</span>
+                                {% endif %}
+                            </td>
+                            <td>
+                                <a href="{% url 'clients:client_detail' client.id %}" class="btn btn-sm btn-outline-primary">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                                <a href="{% url 'clients:client_edit' client.id %}" class="btn btn-sm btn-outline-secondary">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="8" class="text-center py-4">
+                                <i class="fas fa-users fa-3x text-gray-300 mb-3 d-block"></i>
+                                <p class="mb-0">Клиенты не найдены</p>
+                                <a href="{% url 'clients:client_create' %}" class="btn btn-primary mt-3">
+                                    Добавить первого клиента
+                                </a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Пагинация -->
+            {% if is_paginated %}
+            <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center">
+                    {% if page_obj.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page=1{% if search_query %}&search={{ search_query }}{% endif %}">
+                            « Первая
+                        </a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page_obj.previous_page_number }}{% if search_query %}&search={{ search_query }}{% endif %}">
+                            Предыдущая
+                        </a>
+                    </li>
+                    {% endif %}
+
+                    <li class="page-item active">
+                        <span class="page-link">
+                            {{ page_obj.number }} / {{ page_obj.paginator.num_pages }}
+                        </span>
+                    </li>
+
+                    {% if page_obj.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page_obj.next_page_number }}{% if search_query %}&search={{ search_query }}{% endif %}">
+                            Следующая
+                        </a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}{% if search_query %}&search={{ search_query }}{% endif %}">
+                            Последняя »
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </nav>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

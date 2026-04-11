@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}{% if form.instance.pk %}Редактирование оплаты{% else %}Новая оплата{% endif %}{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-header">
+            <h3>{% if form.instance.pk %}Редактирование оплаты{% else %}Добавление оплаты{% endif %}</h3>
+        </div>
+        <div class="card-body">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-success">Сохранить</button>
+                <a href="{% url 'contracts:contract_payments' contract.pk %}" class="btn btn-secondary">Отмена</a>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,33 @@
+# Core
+Django>=4.2,<5.0
+djangorestframework>=3.14.0
+django-cors-headers>=4.3.0
+
+# Authentication
+djangorestframework-simplejwt>=5.3.0
+django-allauth>=0.60.0
+django-rest-auth>=0.9.5
+
+# Database
+psycopg2-binary>=2.9.0  # для PostgreSQL
+# или
+mysqlclient>=2.2.0      # для MySQL
+
+# Utilities
+python-dotenv>=1.0.0
+django-environ>=0.11.0
+Pillow>=10.0.0          # для работы с изображениями
+
+# Task queue (опционально)
+celery>=5.3.0
+redis>=5.0.0
+
+# Testing
+pytest>=8.0.0
+pytest-django>=4.7.0
+factory-boy>=3.3.0
+
+# Code quality
+black>=24.0.0
+flake8>=7.0.0
+isort>=5.13.0
