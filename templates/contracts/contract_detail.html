@@ -3,6 +3,9 @@
 {% block title %}{{ contract.number }}{% endblock %}
 
 {% block content %}
+{% if contract.is_overdue %}
+    <div class="alert alert-warning">⚠️ Контракт просрочен!</div>
+{% endif %}
 <div class="container mt-4">
     <div class="card">
         <div class="card-header d-flex justify-content-between">

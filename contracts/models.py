@@ -9,6 +9,7 @@ from django.db import models
 from django.core.validators import MinValueValidator
 from django.urls import reverse
 from core.models import BaseModel
+from django.utils import timezone
 
 
 class Contract(BaseModel):
@@ -142,13 +143,27 @@ class Contract(BaseModel):
         return reverse('contracts:contract_detail', args=[self.id])
 
     def save(self, *args, **kwargs):
-        """Автоматический расчет статуса оплаты"""
+        # 1. Обновление статуса оплаты (оставляем как есть)
         if self.paid_amount >= self.amount:
             self.payment_status = self.PaymentStatus.PAID
         elif self.paid_amount > 0:
             self.payment_status = self.PaymentStatus.PARTIALLY_PAID
         else:
             self.payment_status = self.PaymentStatus.NOT_PAID
+
+        # 2. Автоматическое обновление статуса контракта на основе дат
+        today = timezone.now().date()
+        if self.end_date and self.end_date < today:
+            # Контракт просрочен
+            self.status = self.StatusChoices.INACTIVE
+        elif self.start_date and self.end_date and self.start_date > self.end_date:
+            # Некорректные даты (начало позже окончания)
+            self.status = self.StatusChoices.INACTIVE
+        else:
+            # Если контракт ещё не просрочен и даты корректны, оставляем активным
+            if self.status not in [self.StatusChoices.INACTIVE, self.StatusChoices.ARCHIVED]:
+                self.status = self.StatusChoices.ACTIVE
+
         super().save(*args, **kwargs)
 
     @property

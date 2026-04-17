@@ -71,6 +71,32 @@ class User(AbstractUser, TimeStampedModel):
         verbose_name='Email уведомления'
     )
 
+    # Настройки интерфейса
+    theme = models.CharField(
+        max_length=20,
+        default='light',
+        choices=[('light', 'Светлая'), ('dark', 'Тёмная')],
+        verbose_name='Тема оформления'
+    )
+
+    language = models.CharField(
+        max_length=10,
+        default='ru',
+        choices=[('ru', 'Русский'), ('en', 'English')],
+        verbose_name='Язык'
+    )
+
+    timezone = models.CharField(
+        max_length=50,
+        default='Europe/Moscow',
+        verbose_name='Часовой пояс'
+    )
+
+    telegram_notifications = models.BooleanField(
+        default=False,
+        verbose_name='Уведомления в Telegram'
+    )
+
     class Meta:
         verbose_name = 'Пользователь'
         verbose_name_plural = 'Пользователи'
@@ -111,6 +137,10 @@ class UserProfile(models.Model):
         related_name='profile',
         verbose_name='Пользователь'
     )
+    company = models.CharField(
+        max_length=255,
+        blank=True,
+        verbose_name='Компания')
 
     # Личная информация
     birth_date = models.DateField(

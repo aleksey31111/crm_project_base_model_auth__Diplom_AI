@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Отчёт по продажам{% endblock %}
+{% block content %}
+<div class="container-fluid">
+    <h1>Отчёт по продажам</h1>
+    <div class="row">
+        <div class="col-md-4"><div class="card"><div class="card-body">Общая выручка: <strong>{{ total_sales|floatformat:0 }} ₽</strong></div></div></div>
+        <div class="col-md-4"><div class="card"><div class="card-body">Оплачено: {{ paid_amount|floatformat:0 }} ₽</div></div></div>
+        <div class="col-md-4"><div class="card"><div class="card-body">Не оплачено: {{ unpaid_amount|floatformat:0 }} ₽</div></div></div>
+    </div>
+    <h3 class="mt-4">По типам контрактов</h3>
+    <table class="table"><tr><th>Тип</th><th>Сумма</th></tr>
+    {% for item in sales_by_type %}<tr><td>{{ item.type }}</td><td>{{ item.total|floatformat:0 }} ₽</td></tr>{% endfor %}
+    </table>
+    <h3>По менеджерам</h3>
+    <table class="table"><tr><th>Менеджер</th><th>Сумма</th></tr>
+    {% for item in sales_by_manager %}<tr><td>{{ item.manager__first_name }} {{ item.manager__last_name }}</td><td>{{ item.total|floatformat:0 }} ₽</td></tr>{% endfor %}
+    </table>
+    <a href="{% url 'analytics:export_report' 'sales' %}" class="btn btn-success">Экспорт CSV</a>
+</div>
+{% endblock %}

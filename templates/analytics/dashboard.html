@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Аналитика{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.css">
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <h1 class="mb-4">Аналитическая панель</h1>
+    <div class="row">
+        <div class="col-md-3 mb-3">
+            <div class="card text-white bg-primary">
+                <div class="card-body">
+                    <h5 class="card-title">Клиенты</h5>
+                    <p class="card-text display-4">{{ total_clients }}</p>
+                    <small>Активных: {{ active_clients }}</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
+            <div class="card text-white bg-success">
+                <div class="card-body">
+                    <h5 class="card-title">Контракты</h5>
+                    <p class="card-text display-4">{{ total_contracts }}</p>
+                    <small>Активных: {{ active_contracts }}</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
+            <div class="card text-white bg-info">
+                <div class="card-body">
+                    <h5 class="card-title">Выручка (всего)</h5>
+                    <p class="card-text display-4">{{ total_amount|floatformat:0 }} ₽</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
+            <div class="card text-white bg-warning">
+                <div class="card-body">
+                    <h5 class="card-title">Просроченные задачи</h5>
+                    <p class="card-text display-4">{{ overdue_tasks }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-header">Выручка по месяцам</div>
+                <div class="card-body">
+                    <canvas id="revenueChart" width="400" height="250"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-header">Статусы задач</div>
+                <div class="card-body">
+                    <canvas id="taskStatusChart" width="400" height="250"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+<script>
+    fetch('/analytics/api/chart-data/?type=revenue')
+        .then(res => res.json())
+        .then(data => {
+            new Chart(document.getElementById('revenueChart'), {
+                type: 'line',
+                data: { labels: data.labels, datasets: [{ label: 'Выручка (₽)', data: data.data, borderColor: '#4e73df' }] }
+            });
+        });
+    fetch('/analytics/api/chart-data/?type=tasks_status')
+        .then(res => res.json())
+        .then(data => {
+            new Chart(document.getElementById('taskStatusChart'), {
+                type: 'pie',
+                data: { labels: data.labels, datasets: [{ data: data.data, backgroundColor: ['#1cc88a','#4e73df','#f6c23e','#e74a3b'] }] }
+            });
+        });
+</script>
+{% endblock %}

@@ -42,13 +42,13 @@
     <div class="table-responsive">
         <table class="table table-striped">
             <thead>
-                <tr>
+                <tr class="{% if contract.is_overdue %}table-danger{% endif %}">>
                     <th>№</th><th>Название</th><th>Клиент</th><th>Сумма</th><th>Оплачено</th><th>Статус</th><th>Действия</th>
                 </tr>
             </thead>
             <tbody>
                 {% for contract in contracts %}
-                <tr>
+                 <tr class="{% if contract.is_overdue %}table-danger{% endif %}">>
                     <td>{{ contract.number }}</td>
                     <td><a href="{% url 'contracts:contract_detail' contract.pk %}">{{ contract.title }}</a></td>
                     <td>{{ contract.client.full_name }}</td>
@@ -62,7 +62,7 @@
                     </td>
                 </tr>
                 {% empty %}
-                <tr><td colspan="7">Нет контрактов.</td></tr>
+                <tr class="{% if contract.is_overdue %}table-danger{% endif %}">><td colspan="7">Нет контрактов.</td></tr>
                 {% endfor %}
             </tbody>
         </table>

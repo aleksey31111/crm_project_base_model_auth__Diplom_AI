@@ -1,80 +1,74 @@
-<!-- templates/dashboard/index.html -->
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Главная панель{% endblock %}
 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
 {% block content %}
-<div class="container-fluid">
-    <h1 class="h3 mb-4">Добро пожаловать, {{ user.get_full_name|default:user.username }}!</h1>
+<div class="dashboard-container">
+    <div class="dashboard-header">
+        <h1>Добро пожаловать, {{ user.get_full_name|default:user.username }}!</h1>
+    </div>
 
-    <div class="row">
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row align-items-center">
-                        <div class="col">
-                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                Клиенты</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ total_clients|default:"0" }}</div>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fas fa-users fa-2x text-gray-300"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Карточки статистики -->
+    <div class="stats-row">
+    <a href="{% url 'clients:client_list' %}" class="stat-card-link">
+        <div class="stat-card">
+            <div class="stat-title">Клиенты</div>
+            <div class="stat-value">{{ total_clients }}</div>
+            <i class="fas fa-users stat-icon"></i>
         </div>
-
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-success shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row align-items-center">
-                        <div class="col">
-                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                Контракты</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ total_contracts|default:"0" }}</div>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fas fa-file-contract fa-2x text-gray-300"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    </a>
+    <a href="{% url 'contracts:contract_list' %}" class="stat-card-link">
+        <div class="stat-card">
+            <div class="stat-title">Активные контракты</div>
+            <div class="stat-value">{{ active_contracts }}</div>
+            <i class="fas fa-file-contract stat-icon"></i>
         </div>
-
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-info shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row align-items-center">
-                        <div class="col">
-                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
-                                Мои задачи</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ my_tasks|default:"0" }}</div>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fas fa-tasks fa-2x text-gray-300"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    </a>
+    <a href="{% url 'analytics:dashboard' %}" class="stat-card-link">
+        <div class="stat-card">
+            <div class="stat-title">Выручка (активные)</div>
+            <div class="stat-value">{{ total_revenue|floatformat:0 }} ₽</div>
+            <i class="fas fa-ruble-sign stat-icon"></i>
         </div>
+    </a>
+    <a href="{% url 'tasks:task_list' %}?status=overdue" class="stat-card-link">
+        <div class="stat-card">
+            <div class="stat-title">Просроченные задачи</div>
+            <div class="stat-value">{{ overdue_tasks }}</div>
+            <i class="fas fa-exclamation-triangle stat-icon"></i>
+        </div>
+    </a>
+</div>
 
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-warning shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row align-items-center">
-                        <div class="col">
-                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                Просроченные</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ overdue_tasks|default:"0" }}</div>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fas fa-exclamation-triangle fa-2x text-gray-300"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Графики -->
+    <div class="charts-row">
+        <div class="chart-card">
+            <h3>Выручка по месяцам</h3>
+            <canvas id="revenueChart" width="400" height="250"></canvas>
+        </div>
+        <div class="chart-card">
+            <h3>Статусы задач</h3>
+            <canvas id="taskStatusChart" width="400" height="250"></canvas>
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="{% static 'js/index.js' %}"></script>
+<script>
+    // Передаём данные из контекста в глобальный объект
+    window.chartData = {
+        months: {{ months|safe }},
+        revenues: {{ revenues|safe }},
+        statusLabels: {{ status_labels|safe }},
+        statusData: {{ status_data|safe }}
+    };
+</script>
 {% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Kanban-доска задач{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/kanban-board.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="kanban-container">
+    <div class="kanban-header">
+        <h1>Kanban-доска задач</h1>
+        <a href="{% url 'tasks:task_list' %}" class="btn-secondary">Обычный список</a>
+    </div>
+
+    <div class="kanban-board">
+        {% for status, column in columns.items %}
+        <div class="kanban-column" data-status="{{ status }}">
+            <div class="column-header">
+                <h3>{{ column.title }}</h3>
+                <span class="task-count">{{ column.tasks|length }}</span>
+            </div>
+            <div class="task-list">
+                {% for task in column.tasks %}
+                <div class="task-card {% if task.is_overdue %}overdue{% endif %}" data-task-id="{{ task.id }}" draggable="true">
+                    <div class="task-title">{{ task.title }}</div>
+                    <div class="task-meta">
+                        <i class="far fa-calendar-alt"></i> {{ task.due_date|date:"d.m.Y H:i" }}
+                        {% if task.assigned_to %}
+                        <br><i class="fas fa-user"></i> {{ task.assigned_to.get_full_name|default:task.assigned_to.username }}
+                        {% endif %}
+                    </div>
+                </div>
+                {% empty %}
+                <div class="empty-column">Нет задач</div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/kanban-board.js' %}"></script>
+{% endblock %}

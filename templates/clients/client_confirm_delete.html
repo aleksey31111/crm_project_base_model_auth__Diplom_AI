@@ -1,0 +1,77 @@
+<!-- clients/templates/clients/client_confirm_delete.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Удаление клиента{% endblock %}
+
+{% block content %}
+
+{% if client.contracts.exists %}
+    <div class="alert alert-danger">
+        <i class="fas fa-ban"></i>
+        <strong>Невозможно удалить клиента!</strong>
+        <p>У клиента есть следующие контракты:</p>
+        <ul>
+            {% for contract in client.contracts.all %}
+                <li>
+                    <a href="{% url 'contracts:contract_detail' contract.id %}">
+                        {{ contract.number }} – {{ contract.title }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+        <p>Пожалуйста, сначала удалите или переназначьте эти контракты.</p>
+    </div>
+    <a href="{% url 'clients:client_detail' client.id %}" class="btn btn-secondary">
+        <i class="fas fa-arrow-left"></i> Назад к клиенту
+    </a>
+{% else %}
+    <!-- стандартная форма подтверждения удаления -->
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Да, удалить</button>
+        <a href="{% url 'clients:client_detail' client.id %}" class="btn btn-secondary">Отмена</a>
+    </form>
+{% endif %}
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-header bg-danger text-white">
+                    <h4 class="mb-0">
+                        <i class="fas fa-exclamation-triangle"></i> Подтверждение удаления
+                    </h4>
+                </div>
+                <div class="card-body">
+                    <p class="lead">Вы действительно хотите удалить клиента?</p>
+
+                    <div class="alert alert-warning">
+                        <strong>{{ client.full_name }}</strong>
+                        {% if client.inn %} (ИНН: {{ client.inn }}){% endif %}
+                        <br>
+                        <small>Тип: {{ client.get_type_display }} | Статус: {{ client.get_status_display }}</small>
+                    </div>
+
+                    <p class="text-danger small">
+                        <i class="fas fa-info-circle"></i> Это действие невозможно отменить.
+                        Будут удалены все связанные контракты, задачи и история взаимодействий.
+                    </p>
+
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="d-flex justify-content-between mt-4">
+                            <button type="submit" class="btn btn-danger">
+                                <i class="fas fa-trash-alt"></i> Да, удалить
+                            </button>
+                            <a href="{% url 'clients:client_detail' client.id %}" class="btn btn-secondary">
+                                <i class="fas fa-times"></i> Отмена
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

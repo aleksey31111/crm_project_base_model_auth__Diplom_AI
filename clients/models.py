@@ -115,6 +115,13 @@ class Client(BaseModel, ContactInfoModel):
         verbose_name='Должность'
     )
 
+    logo = models.ImageField(
+        upload_to='client_logos/',
+        blank=True,
+        null=True,
+        verbose_name='Логотип'
+    )
+
     class Meta:
         verbose_name = 'Клиент'
         verbose_name_plural = 'Клиенты'

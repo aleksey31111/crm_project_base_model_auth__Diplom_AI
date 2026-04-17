@@ -9,6 +9,7 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.contrib import messages
 from django.urls import reverse_lazy
+# from core.models import BaseModel
 from django.db.models import Q
 from django.http import JsonResponse, HttpResponse
 from .models import Client
@@ -58,7 +59,8 @@ class ClientListView(LoginRequiredMixin, ListView):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Клиенты'
         context['client_types'] = Client.ClientType.choices
-        context['status_choices'] = Client.Status.choices
+        # context['status_choices'] = Client.Status.choices
+        context['status_choices'] = Client._meta.get_field('status').choices
         context['search_query'] = self.request.GET.get('search', '')
         context['current_type'] = self.request.GET.get('type', '')
         context['current_status'] = self.request.GET.get('status', '')
@@ -133,17 +135,26 @@ class ClientUpdateView(LoginRequiredMixin, UpdateView):
 
 
 class ClientDeleteView(LoginRequiredMixin, DeleteView):
-    """
-    Удаление клиента.
-    """
     model = Client
     template_name = 'clients/client_confirm_delete.html'
     success_url = reverse_lazy('clients:client_list')
 
     def delete(self, request, *args, **kwargs):
-        messages.success(self.request, 'Клиент успешно удален.')
-        return super().delete(request, *args, **kwargs)
-
+        self.object = self.get_object()
+        # Проверяем наличие связанных контрактов
+        if self.object.contracts.exists():
+            contract_list = ', '.join([c.number for c in self.object.contracts.all()])
+            messages.error(
+                request,
+                f'Невозможно удалить клиента "{self.object.full_name}", так как у него есть активные контракты: {contract_list}. '
+                f'Сначала удалите или переназначьте контракты.'
+            )
+            return redirect('clients:client_detail', pk=self.object.pk)
+        # Если контрактов нет – удаляем
+        success_url = self.get_success_url()
+        self.object.delete()
+        messages.success(request, f'Клиент "{self.object.full_name}" успешно удалён.')
+        return redirect(success_url)
 
 def export_clients(request):
     """

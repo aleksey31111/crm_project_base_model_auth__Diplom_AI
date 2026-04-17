@@ -33,4 +33,13 @@ urlpatterns = [
 
     # Добавление комментария к задаче
     path('<int:pk>/comment/', views.add_task_comment, name='task_add_comment'),
+    # path('', views.TaskListView.as_view(), name='task_list'),
+    path('overdue/', views.OverdueTasksView.as_view(), name='overdue_tasks'),   # новый маршрут
+    path('<int:pk>/', views.TaskDetailView.as_view(), name='task_detail'),
+    path('create/', views.TaskCreateView.as_view(), name='task_create'),
+    path('<int:pk>/edit/', views.TaskUpdateView.as_view(), name='task_edit'),
+    path('<int:pk>/delete/', views.TaskDeleteView.as_view(), name='task_delete'),
+
+    path('kanban/', views.kanban_board, name='kanban_board'),
+    path('<int:task_id>/update-status/', views.update_task_status, name='update_task_status'),
 ]

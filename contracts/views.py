@@ -18,6 +18,7 @@ import csv
 from django.http import HttpResponse
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import View
+from .tasks import send_contract_created_email
 
 class ContractExportView(LoginRequiredMixin, View):
     """Экспорт контрактов в CSV"""
@@ -136,10 +137,18 @@ class ContractUpdateView(LoginRequiredMixin, UpdateView):
     ]
     success_url = reverse_lazy('contracts:contract_list')
 
+    # def form_valid(self, form):
+    #     form.instance.updated_by = self.request.user
+    #     messages.success(self.request, 'Контракт успешно обновлен.')
+    #     return super().form_valid(form)
+
     def form_valid(self, form):
-        form.instance.updated_by = self.request.user
-        messages.success(self.request, 'Контракт успешно обновлен.')
-        return super().form_valid(form)
+        form.instance.created_by = self.request.user
+        response = super().form_valid(form)
+        # Асинхронная отправка email
+        send_contract_created_email.delay(self.object.id)
+        messages.success(self.request, 'Контракт успешно создан.')
+        return response
 
 
 class ContractDeleteView(LoginRequiredMixin, DeleteView):

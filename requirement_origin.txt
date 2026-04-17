@@ -14,7 +14,7 @@ psycopg2-binary>=2.9.0  # для PostgreSQL
 mysqlclient>=2.2.0      # для MySQL
 
 # Utilities
-python-dotenv>=1.0.0
+#  python-dotenv>=1.0.0
 django-environ>=0.11.0
 Pillow>=10.0.0          # для работы с изображениями
 
@@ -31,3 +31,14 @@ factory-boy>=3.3.0
 black>=24.0.0
 flake8>=7.0.0
 isort>=5.13.0
+
+#  psycopg2-binary
+#redis
+#celery
+#djangorestframework
+#djangorestframework-simplejwt
+django-filter
+drf-spectacular
+#Pillow
+
+gunicorn

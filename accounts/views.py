@@ -197,7 +197,7 @@ def user_list_view(request):
     """
     # Фильтры
     role = request.GET.get('role', '')
-    department = request.GET.get('department', '')
+    # department = request.GET.get('department', '')
     status = request.GET.get('status', '')
     search = request.GET.get('search', '')
 
@@ -205,8 +205,8 @@ def user_list_view(request):
 
     if role:
         users = users.filter(role=role)
-    if department:
-        users = users.filter(department=department)
+    # if department:
+    #     users = users.filter(department=department)
     if status:
         users = users.filter(is_active=(status == 'active'))
     if search:
@@ -233,10 +233,10 @@ def user_list_view(request):
         'active_users': active_users,
         'admin_users': admin_users,
         'role_choices': User.Role.choices,
-        'department_choices': User.Department.choices,
+        # 'department_choices': User.Department.choices,
         'filters': {
             'role': role,
-            'department': department,
+            # 'department': department,
             'status': status,
             'search': search,
         }
