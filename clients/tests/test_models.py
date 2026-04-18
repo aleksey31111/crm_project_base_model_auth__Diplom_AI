@@ -2,6 +2,7 @@ from django.test import TestCase
 from django.contrib.auth import get_user_model
 from clients.models import Client
 from contracts.models import Contract
+from datetime import date
 
 User = get_user_model()
 
@@ -34,8 +35,8 @@ class ClientModelTest(TestCase):
             client=self.client,
             number='C-001',
             title='Тестовый контракт',
-            start_date='2025-01-01',
-            end_date='2025-12-31',
+            start_date=date(2025, 1, 1),
+            end_date=date(2025, 12, 31),
             amount=100000,
             manager=self.user
         )

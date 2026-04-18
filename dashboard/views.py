@@ -1,11 +1,12 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
-from django.db.models import Sum, Count
 from django.utils import timezone
 from datetime import timedelta
-from contracts.models import Contract
 from tasks.models import Task
 from clients.models import Client
+from contracts.models import Contract, Payment
+from django.db.models import Sum, Q
+from django.db.models import Sum, Count
 
 @login_required
 def index(request):
@@ -40,6 +41,12 @@ def index(request):
         status__in=['new', 'in_progress']
     ).count()
 
+    # Сумма оплаченных и ожидаемых платежей (по контрактам)
+    paid_amount = Contract.objects.aggregate(total_paid=Sum('paid_amount'))['total_paid'] or 0
+    # Ожидаемые платежи = сумма всех контрактов минус оплаченная сумма
+    total_contract_amount = Contract.objects.aggregate(total=Sum('amount'))['total'] or 0
+    expected_amount = total_contract_amount - paid_amount
+
     context = {
         'months': months,
         'revenues': revenues,
@@ -49,5 +56,7 @@ def index(request):
         'active_contracts': active_contracts,
         'total_revenue': total_revenue,
         'overdue_tasks': overdue_tasks,
+        'paid_amount': paid_amount,
+        'expected_amount': expected_amount,
     }
     return render(request, 'dashboard/index.html', context)

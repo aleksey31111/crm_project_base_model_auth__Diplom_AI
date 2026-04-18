@@ -19,6 +19,112 @@ from django.http import HttpResponse
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import View
 from .tasks import send_contract_created_email
+######################################################################################################
+########### Часть 1. Создание эндпоинта вебхука для уведомлений от ЮKassa ############################
+######################################################################################################
+# contracts/views.py
+import json
+import hashlib
+from django.views.decorators.csrf import csrf_exempt
+from django.http import JsonResponse, HttpResponse
+from django.utils import timezone
+from yookassa import Configuration
+from .models import Contract, Payment
+import ipaddress
+from django.core.mail import send_mail   # для отправки уведомлений
+
+ALLOWED_IPS = [
+    '185.71.76.0/27',
+    '77.75.153.0/25',
+    '77.75.156.11',
+    # Добавьте актуальные диапазоны из документации ЮKassa
+]
+
+def is_yookassa_ip(request):
+    ip = request.META.get('REMOTE_ADDR')
+    for allowed in ALLOWED_IPS:
+        if ipaddress.ip_address(ip) in ipaddress.ip_network(allowed):
+            return True
+    return False
+
+@csrf_exempt
+def yookassa_webhook(request):
+    """
+    Обработчик уведомлений от ЮKassa.
+    """
+    if request.method != 'POST':
+        return HttpResponse(status=405)
+
+    # Проверка IP-адреса
+    if not is_yookassa_ip(request):
+        return JsonResponse({'error': 'Forbidden'}, status=403)
+
+    # Получение тела запроса
+    body = request.body
+    # Проверка подписи (опционально, для безопасности)
+    # Можно проверить IP-адрес отправителя или использовать заголовок `HTTP_CONTENT_SIGNATURE`
+    # Для упрощения пропустим проверку подписи (в реальном проекте обязательно)
+
+    try:
+        event_data = json.loads(body)
+    except json.JSONDecodeError:
+        return JsonResponse({'error': 'Invalid JSON'}, status=400)
+
+    # Проверяем, что это уведомление о платеже
+    if event_data.get('event') not in ['payment.succeeded', 'payment.canceled', 'payment.waiting_for_capture']:
+        return JsonResponse({'error': 'Unsupported event'}, status=400)
+
+    payment_id = event_data['object']['id']
+    payment_status = event_data['object']['status']
+
+    try:
+        # Находим платёж в нашей системе по yookassa_id
+        payment = Payment.objects.get(yookassa_id=payment_id)
+        contract = payment.contract
+    except Payment.DoesNotExist:
+        return JsonResponse({'error': 'Payment not found'}, status=404)
+
+    # Обновляем статус в нашей модели Payment
+    payment.yookassa_status = payment_status
+    if payment_status == 'succeeded':
+        payment.paid_at = timezone.now()
+        payment.yookassa_status = 'succeeded'  # явно установим статус
+        payment.save()
+
+        # Обновляем контракт: увеличиваем оплаченную сумму
+        contract = payment.contract
+        contract.paid_amount += payment.amount
+        contract.save()  # save() также пересчитает payment_status
+
+        # --- Уведомления ---
+        # Менеджеру
+        if contract.manager and contract.manager.email:
+            send_mail(
+                subject=f'Оплата по контракту {contract.number}',
+                message=f'Поступила оплата {payment.amount} ₽ по контракту {contract.number}.',
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                recipient_list=[contract.manager.email],
+                fail_silently=True,
+            )
+        # Клиенту (если есть email)
+        if contract.client and contract.client.email:
+            send_mail(
+                subject=f'Подтверждение оплаты по контракту {contract.number}',
+                message=f'Ваш платёж на сумму {payment.amount} ₽ успешно зачислен.',
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                recipient_list=[contract.client.email],
+                fail_silently=True,
+            )
+        # Создаём уведомление менеджеру (опционально)
+        # Notification.objects.create(...)
+    elif payment_status == 'canceled':
+        payment.save()
+        # Можно удалить ссылку на оплату из контракта, если нужно
+
+    return JsonResponse({'status': 'ok'})
+########################################################################################################################
+########################################################################################################################
+########################################################################################################################
 
 class ContractExportView(LoginRequiredMixin, View):
     """Экспорт контрактов в CSV"""

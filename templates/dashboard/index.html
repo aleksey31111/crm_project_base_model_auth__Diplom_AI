@@ -43,6 +43,12 @@
             <i class="fas fa-exclamation-triangle stat-icon"></i>
         </div>
     </a>
+        <!-- В блоке stats-row добавьте ещё одну карточку -->
+    <div class="stat-card">
+        <div class="stat-title">Оплачено / Ожидается</div>
+        <div class="stat-value">{{ paid_amount|floatformat:0 }} ₽ / {{ expected_amount|floatformat:0 }} ₽</div>
+        <i class="fas fa-credit-card stat-icon"></i>
+    </div>
 </div>
 
     <!-- Графики -->
