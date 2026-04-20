@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'dashboard.apps.DashboardConfig',
     'analytics.apps.AnalyticsConfig',
     'notifications.apps.NotificationsConfig',
+    'logs.apps.LogsConfig',          # <-- добавить эту строку
 ]
 
 MIDDLEWARE = [
@@ -69,7 +70,51 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'logs.middleware.APILoggingMiddleware',
 ]
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {process:d} {thread:d} {message}',
+            'style': '{',
+        },
+        'simple': {
+            'format': '{levelname} {asctime} {message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': BASE_DIR / 'logs/crm_FAILED.log',
+            'formatter': 'verbose',
+        },
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file', 'console'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+        'contracts': {
+            'handlers': ['file', 'console'],
+            'level': 'DEBUG',
+        },
+        'yookassa': {
+            'handlers': ['file', 'console'],
+            'level': 'DEBUG',
+        },
+    },
+}
 
 ROOT_URLCONF = 'crm_project_base_model_auth.urls'
 
@@ -176,7 +221,7 @@ LOGOUT_URL = 'accounts:logout'
 
 # Email settings for development
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-DEFAULT_FROM_EMAIL = 'noreply@crm-system.local'
+DEFAULT_FROM_EMAIL = 'noreply@crm_FAILED-system.local'
 
 # Session settings
 SESSION_COOKIE_AGE = 1209600  # 2 Weeks in seconds.
@@ -257,3 +302,12 @@ SIMPLE_JWT = {
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
 }
 
+# ЮKassa
+YOOKASSA_SHOP_ID = os.getenv('YOOKASSA_SHOP_ID')
+YOOKASSA_SECRET_KEY = os.getenv('YOOKASSA_SECRET_KEY')
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = '192.168.1.100'      # адрес вашего SMTP-сервера в LAN
+EMAIL_PORT = 25
+EMAIL_USE_TLS = False
+DEFAULT_FROM_EMAIL = 'crm_FAILED@yourdomain.local'

@@ -9,6 +9,32 @@ from django.utils import timezone
 # from .models import Contract
 from .models import Contract, Payment
 
+actions = ['mock_payment_success']
+
+def mock_payment_success(self, request, queryset):
+    from django.utils import timezone
+    from .models import Payment
+    for contract in queryset:
+        if contract.payment_status == 'paid':
+            self.message_user(request, f'Контракт {contract.number} уже оплачен', level='WARNING')
+            continue
+        # Создаём платеж на всю сумму
+        payment = Payment.objects.create(
+            contract=contract,
+            amount=contract.remaining_amount,
+            payment_date=timezone.now().date(),
+            payment_method='card',
+            comment='Учебная имитация оплаты (через админку)',
+            created_by=request.user,
+            yookassa_id=f'admin_{contract.id}_{timezone.now().timestamp()}',
+            yookassa_status='succeeded',
+            paid_at=timezone.now()
+        )
+        contract.paid_amount = contract.amount
+        contract.save()
+        self.message_user(request, f'Контракт {contract.number} отмечен как оплаченный')
+mock_payment_success.short_description = "Имитировать успешную оплату (учебный режим)"
+
 class PaymentInline(admin.TabularInline):
     model = Payment
     extra = 1

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}Тестовая оплата{% endblock %}
+{% block content %}
+<div class="container mt-5">
+    <div class="card text-center">
+        <div class="card-header bg-primary text-white">
+            <h3>Тестовый платёж</h3>
+        </div>
+        <div class="card-body">
+            <p class="lead">Контракт: <strong>{{ contract.number }}</strong></p>
+            <p>Сумма к оплате: <strong>{{ request.GET.amount|default:contract.remaining_amount }} ₽</strong></p>
+            <p class="text-muted">Это учебная демонстрация – реальные деньги не списываются.</p>
+            <button id="payButton" class="btn btn-success btn-lg">
+                <i class="fas fa-credit-card"></i> Подтвердить оплату (учебный режим)
+            </button>
+            <div id="result" class="mt-3"></div>
+        </div>
+    </div>
+</div>
+<script>
+    document.getElementById('payButton').onclick = function() {
+        fetch('{% url "contracts:yookassa_webhook" %}', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                event: 'payment.succeeded',
+                object: { id: '{{ contract.yookassa_payment_id }}', status: 'succeeded' }
+            })
+        })
+        .then(res => res.json())
+        .then(data => {
+            document.getElementById('result').innerHTML = '<div class="alert alert-success">Оплата успешно проведена! Вы будете перенаправлены...</div>';
+            setTimeout(() => { window.location.href = '{% url "contracts:contract_detail" contract.id %}?payment_status=succeeded'; }, 1500);
+        })
+        .catch(err => {
+            document.getElementById('result').innerHTML = '<div class="alert alert-danger">Ошибка, попробуйте ещё раз.</div>';
+        });
+    };
+</script>
+{% endblock %}

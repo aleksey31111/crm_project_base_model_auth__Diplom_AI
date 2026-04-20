@@ -35,4 +35,11 @@
         </div>
     </div>
 </div>
+
+{% if contract.payment_url and contract.payment_status != 'paid' %}
+    <a href="{% url 'contracts:fake_payment_page' contract.id %}?amount={{ contract.remaining_amount }}" class="btn btn-success">
+        <i class="fas fa-credit-card"></i> Оплатить (тест)
+    </a>
+{% endif %}
+
 {% endblock %}

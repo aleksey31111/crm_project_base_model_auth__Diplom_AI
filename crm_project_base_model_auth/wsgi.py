@@ -1,5 +1,5 @@
 """
-WSGI config for crm_project_base_model_auth project.
+WSGI config for crm_project_base_model_auth1 project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 

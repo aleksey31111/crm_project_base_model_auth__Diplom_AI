@@ -30,4 +30,6 @@ urlpatterns = [
 
     # Импорт клиентов
     path('import/', views.import_clients, name='client_import'),
+    path('export/excel/', views.export_clients_excel, name='client_export_excel'),
+    path('import/csv/', views.import_clients_ajax, name='client_import_csv')
 ]

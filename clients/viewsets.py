@@ -14,7 +14,10 @@ class ClientViewSet(viewsets.ModelViewSet):
     ordering_fields = ['created_at', 'full_name']
 
     def perform_create(self, serializer):
-        serializer.save(created_by=self.request.user)
+        user = self.request.user
+        # Если пользователь менеджер или администратор, назначаем его менеджером клиента
+        manager = user if user.role in ['ADMIN', 'MANAGER'] or user.is_superuser else None
+        serializer.save(created_by=user, manager=manager)
 
     def get_queryset(self):
         user = self.request.user

@@ -16,3 +16,9 @@ class ContractSerializer(serializers.ModelSerializer):
         model = Contract
         fields = '__all__'
         read_only_fields = ('id', 'created_at', 'updated_at', 'created_by', 'paid_amount', 'payment_status')
+
+class InitiatePaymentSerializer(serializers.Serializer):
+    amount = serializers.DecimalField(
+        max_digits=15, decimal_places=2, required=False,
+        help_text="Сумма оплаты. Если не указана, используется остаток по контракту."
+    )

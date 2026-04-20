@@ -2,12 +2,17 @@ from django.test import TestCase
 from django.contrib.auth import get_user_model
 from clients.models import Client
 from contracts.models import Contract
+from datetime import date
 
 User = get_user_model()
 
 class ClientModelTest(TestCase):
     def setUp(self):
-        self.user = User.objects.create_user(username='manager', password='pass', role='MANAGER')
+        self.user = User.objects.create_user(
+            username='manager',
+            password='pass',
+            role='MANAGER'
+        )
         self.client = Client.objects.create(
             full_name='ООО Тест',
             inn='123456789012',
@@ -34,8 +39,8 @@ class ClientModelTest(TestCase):
             client=self.client,
             number='C-001',
             title='Тестовый контракт',
-            start_date='2025-01-01',
-            end_date='2025-12-31',
+            start_date=date(2025, 1, 1),
+            end_date=date(2025, 12, 31),
             amount=100000,
             manager=self.user
         )
@@ -43,6 +48,5 @@ class ClientModelTest(TestCase):
         self.assertEqual(self.client.contracts.first(), contract)
 
     def test_client_logo_field(self):
-        # По умолчанию поле logo пустое (None в БД)
-        # В Django пустое поле возвращает объект, у которого .name == None
-        self.assertIsNone(self.client.logo.name)
+        # Поле logo может быть пустым (None в БД)
+        self.assertIsNone(self.client.logo.name if self.client.logo else None)

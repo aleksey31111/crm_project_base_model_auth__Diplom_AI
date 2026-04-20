@@ -1,0 +1,335 @@
+WARNING 2026-04-20 15:47:52,896 log 13320 5000 Not Found: /api/clients/2/
+WARNING 2026-04-20 15:48:03,620 log 13320 5000 Unauthorized: /api/clients/
+WARNING 2026-04-20 16:16:13,923 log 9732 5000 Not Found: /api/clients/2/
+WARNING 2026-04-20 16:16:24,760 log 9732 5000 Unauthorized: /api/clients/
+WARNING 2026-04-20 16:16:50,272 log 9732 5000 Not Found: /api/clients/2/
+WARNING 2026-04-20 16:17:01,155 log 9732 5000 Unauthorized: /api/clients/
+WARNING 2026-04-20 16:17:49,234 log 876 11720 Not Found: /api/clients/2/
+WARNING 2026-04-20 16:18:00,018 log 876 11720 Unauthorized: /api/clients/
+WARNING 2026-04-20 16:18:43,231 log 8488 9688 Not Found: /api/clients/2/
+WARNING 2026-04-20 16:18:54,049 log 8488 9688 Unauthorized: /api/clients/
+ERROR 2026-04-20 16:47:24,601 log 13988 4976 Internal Server Error: /api/contracts/1/initiate-payment/
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\rest_framework\views.py", line 517, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\rest_framework\views.py", line 429, in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected a `Response`, `HttpResponse` or `StreamingHttpResponse` to be returned from the view, but received a `<class 'NoneType'>`
+ERROR 2026-04-20 16:47:27,387 log 13988 4976 Internal Server Error: /api/contracts/1/initiate-payment/
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\rest_framework\views.py", line 517, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\rest_framework\views.py", line 429, in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected a `Response`, `HttpResponse` or `StreamingHttpResponse` to be returned from the view, but received a `<class 'NoneType'>`
+ERROR 2026-04-20 16:47:30,095 log 13988 4976 Internal Server Error: /api/contracts/1/initiate-payment/
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\rest_framework\views.py", line 517, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\rest_framework\views.py", line 429, in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected a `Response`, `HttpResponse` or `StreamingHttpResponse` to be returned from the view, but received a `<class 'NoneType'>`
+ERROR 2026-04-20 16:47:32,783 log 13988 4976 Internal Server Error: /api/contracts/1/initiate-payment/
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\rest_framework\views.py", line 517, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\rest_framework\views.py", line 429, in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected a `Response`, `HttpResponse` or `StreamingHttpResponse` to be returned from the view, but received a `<class 'NoneType'>`
+ERROR 2026-04-20 16:47:35,461 log 13988 4976 Internal Server Error: /api/contracts/1/initiate-payment/
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\rest_framework\views.py", line 517, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\rest_framework\views.py", line 429, in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected a `Response`, `HttpResponse` or `StreamingHttpResponse` to be returned from the view, but received a `<class 'NoneType'>`
+ERROR 2026-04-20 16:47:39,073 log 13988 4976 Internal Server Error: /api/contracts/2/initiate-payment/
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\rest_framework\views.py", line 517, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\rest_framework\views.py", line 429, in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected a `Response`, `HttpResponse` or `StreamingHttpResponse` to be returned from the view, but received a `<class 'NoneType'>`
+WARNING 2026-04-20 16:47:41,746 log 13988 4976 Unauthorized: /api/contracts/1/initiate-payment/
+ERROR 2026-04-20 16:47:44,413 log 13988 4976 Internal Server Error: /api/contracts/1/initiate-payment/
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\rest_framework\views.py", line 517, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\rest_framework\views.py", line 429, in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected a `Response`, `HttpResponse` or `StreamingHttpResponse` to be returned from the view, but received a `<class 'NoneType'>`
+WARNING 2026-04-20 16:47:52,432 log 13988 4976 Not Found: /api/payments/1/
+ERROR 2026-04-20 16:49:35,830 log 11792 13256 Internal Server Error: /api/contracts/1/initiate-payment/
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\rest_framework\views.py", line 517, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\rest_framework\views.py", line 429, in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected a `Response`, `HttpResponse` or `StreamingHttpResponse` to be returned from the view, but received a `<class 'NoneType'>`
+ERROR 2026-04-20 16:49:38,566 log 11792 13256 Internal Server Error: /api/contracts/1/initiate-payment/
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\rest_framework\views.py", line 517, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\rest_framework\views.py", line 429, in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected a `Response`, `HttpResponse` or `StreamingHttpResponse` to be returned from the view, but received a `<class 'NoneType'>`
+ERROR 2026-04-20 16:49:41,242 log 11792 13256 Internal Server Error: /api/contracts/1/initiate-payment/
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\rest_framework\views.py", line 517, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\rest_framework\views.py", line 429, in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected a `Response`, `HttpResponse` or `StreamingHttpResponse` to be returned from the view, but received a `<class 'NoneType'>`
+ERROR 2026-04-20 16:49:43,911 log 11792 13256 Internal Server Error: /api/contracts/1/initiate-payment/
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\rest_framework\views.py", line 517, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\rest_framework\views.py", line 429, in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected a `Response`, `HttpResponse` or `StreamingHttpResponse` to be returned from the view, but received a `<class 'NoneType'>`
+ERROR 2026-04-20 16:49:46,586 log 11792 13256 Internal Server Error: /api/contracts/1/initiate-payment/
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\rest_framework\views.py", line 517, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\rest_framework\views.py", line 429, in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected a `Response`, `HttpResponse` or `StreamingHttpResponse` to be returned from the view, but received a `<class 'NoneType'>`
+ERROR 2026-04-20 16:49:50,147 log 11792 13256 Internal Server Error: /api/contracts/2/initiate-payment/
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\rest_framework\views.py", line 517, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\rest_framework\views.py", line 429, in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected a `Response`, `HttpResponse` or `StreamingHttpResponse` to be returned from the view, but received a `<class 'NoneType'>`
+WARNING 2026-04-20 16:49:52,819 log 11792 13256 Unauthorized: /api/contracts/1/initiate-payment/
+ERROR 2026-04-20 16:49:55,476 log 11792 13256 Internal Server Error: /api/contracts/1/initiate-payment/
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\rest_framework\views.py", line 517, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\rest_framework\views.py", line 429, in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected a `Response`, `HttpResponse` or `StreamingHttpResponse` to be returned from the view, but received a `<class 'NoneType'>`
+WARNING 2026-04-20 16:50:03,482 log 11792 13256 Not Found: /api/payments/1/
+WARNING 2026-04-20 18:05:14,041 log 7476 7564 Forbidden: /contracts/webhook/yookassa/
+WARNING 2026-04-20 18:05:15,842 log 7476 7564 Forbidden: /contracts/webhook/yookassa/
+WARNING 2026-04-20 18:05:17,622 log 7476 7564 Forbidden: /contracts/webhook/yookassa/
+WARNING 2026-04-20 18:05:19,443 log 7476 7564 Forbidden: /contracts/webhook/yookassa/
+WARNING 2026-04-20 18:05:21,305 log 7476 7564 Forbidden: /contracts/webhook/yookassa/
+WARNING 2026-04-20 18:05:23,164 log 7476 7564 Forbidden: /contracts/webhook/yookassa/
+WARNING 2026-04-20 18:05:24,983 log 7476 7564 Method Not Allowed: /contracts/webhook/yookassa/
+WARNING 2026-04-20 18:05:27,674 log 7476 7564 Bad Request: /api/contracts/1/initiate-payment/
+WARNING 2026-04-20 18:05:30,361 log 7476 7564 Bad Request: /api/contracts/1/initiate-payment/
+WARNING 2026-04-20 18:05:33,069 log 7476 7564 Bad Request: /api/contracts/1/initiate-payment/
+ERROR 2026-04-20 18:05:35,732 log 7476 7564 Not Implemented: /api/contracts/1/initiate-payment/
+ERROR 2026-04-20 18:05:38,422 log 7476 7564 Not Implemented: /api/contracts/1/initiate-payment/
+WARNING 2026-04-20 18:05:42,027 log 7476 7564 Not Found: /api/contracts/2/initiate-payment/
+WARNING 2026-04-20 18:05:44,698 log 7476 7564 Unauthorized: /api/contracts/1/initiate-payment/
+WARNING 2026-04-20 18:05:47,375 log 7476 7564 Not Found: /api/contracts/1/initiate-payment/
+WARNING 2026-04-20 18:05:55,402 log 7476 7564 Not Found: /api/payments/1/
+WARNING 2026-04-20 18:12:08,707 log 14320 1136 Bad Request: /contracts/webhook/yookassa/
+WARNING 2026-04-20 18:12:10,482 log 14320 1136 Bad Request: /contracts/webhook/yookassa/
+WARNING 2026-04-20 18:12:14,043 log 14320 1136 Not Found: /contracts/webhook/yookassa/
+WARNING 2026-04-20 18:12:15,813 log 14320 1136 Method Not Allowed: /contracts/webhook/yookassa/
+WARNING 2026-04-20 18:12:18,489 log 14320 1136 Bad Request: /api/contracts/1/initiate-payment/
+WARNING 2026-04-20 18:12:21,150 log 14320 1136 Bad Request: /api/contracts/1/initiate-payment/
+WARNING 2026-04-20 18:12:23,834 log 14320 1136 Bad Request: /api/contracts/1/initiate-payment/
+WARNING 2026-04-20 18:12:32,765 log 14320 1136 Not Found: /api/contracts/2/initiate-payment/
+WARNING 2026-04-20 18:12:35,452 log 14320 1136 Unauthorized: /api/contracts/1/initiate-payment/
+WARNING 2026-04-20 18:12:38,132 log 14320 1136 Not Found: /api/contracts/1/initiate-payment/
+WARNING 2026-04-20 18:12:46,166 log 14320 1136 Not Found: /api/payments/1/

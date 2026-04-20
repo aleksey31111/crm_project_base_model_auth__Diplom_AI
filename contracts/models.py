@@ -120,6 +120,28 @@ class Contract(BaseModel):
         verbose_name='Файл договора'
     )
 
+    # contracts/models.py (внутри класса Contract, например, после поля document)
+
+    # Поля для интеграции с ЮKassa
+    payment_url = models.URLField(
+        max_length=500,
+        blank=True,
+        null=True,
+        verbose_name='Ссылка на оплату'
+    )
+    yookassa_payment_id = models.CharField(
+        max_length=100,
+        blank=True,
+        null=True,
+        unique=True,
+        verbose_name='ID платежа в ЮKassa'
+    )
+    payment_expires_at = models.DateTimeField(
+        blank=True,
+        null=True,
+        verbose_name='Срок действия ссылки на оплату'
+    )
+
     class Meta:
         verbose_name = 'Контракт'
         verbose_name_plural = 'Контракты'
@@ -186,46 +208,25 @@ class Contract(BaseModel):
 
 
 class Payment(models.Model):
-    """
-    Модель оплаты по контракту.
-    """
     class PaymentMethod(models.TextChoices):
         CASH = 'cash', 'Наличные'
         BANK_TRANSFER = 'bank_transfer', 'Банковский перевод'
         CARD = 'card', 'Банковская карта'
         ELECTRONIC = 'electronic', 'Электронные деньги'
 
-    contract = models.ForeignKey(
-        Contract,
-        on_delete=models.CASCADE,
-        related_name='payments',
-        verbose_name='Контракт'
-    )
-    amount = models.DecimalField(
-        max_digits=15,
-        decimal_places=2,
-        validators=[MinValueValidator(0)],
-        verbose_name='Сумма платежа'
-    )
-    payment_date = models.DateField(
-        default=date.today,
-        verbose_name='Дата оплаты'
-    )
-    payment_method = models.CharField(
-        max_length=20,
-        choices=PaymentMethod.choices,
-        default=PaymentMethod.BANK_TRANSFER,
-        verbose_name='Способ оплаты'
-    )
+    contract = models.ForeignKey(Contract, on_delete=models.CASCADE, related_name='payments', verbose_name='Контракт')
+    amount = models.DecimalField(max_digits=15, decimal_places=2, validators=[MinValueValidator(0)], verbose_name='Сумма платежа')
+    payment_date = models.DateField(default=date.today, verbose_name='Дата оплаты')
+    payment_method = models.CharField(max_length=20, choices=PaymentMethod.choices, default=PaymentMethod.BANK_TRANSFER, verbose_name='Способ оплаты')
     comment = models.TextField(blank=True, verbose_name='Комментарий')
     created_at = models.DateTimeField(auto_now_add=True)
-    created_by = models.ForeignKey(
-        'accounts.User',
-        on_delete=models.SET_NULL,
-        null=True,
-        related_name='payments_created',
-        verbose_name='Кем добавлен'
-    )
+    created_by = models.ForeignKey('accounts.User', on_delete=models.SET_NULL, null=True, related_name='payments_created', verbose_name='Кем добавлен')
+
+    # Поля для интеграции с ЮKassa
+    yookassa_id = models.CharField(max_length=100, blank=True, null=True, unique=True, verbose_name='ID платежа в ЮKassa')
+    yookassa_status = models.CharField(max_length=50, blank=True, default='pending', verbose_name='Статус платежа в ЮKassa')
+    paid_at = models.DateTimeField(blank=True, null=True, verbose_name='Дата и время фактической оплаты')
+    confirmation_url = models.URLField(max_length=500, blank=True, null=True, verbose_name='Ссылка для подтверждения оплаты')
 
     class Meta:
         verbose_name = 'Оплата'

@@ -30,11 +30,13 @@ from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 
 from clients.viewsets import ClientViewSet
 from contracts.viewsets import ContractViewSet
+from contracts.viewsets_payment import PaymentViewSet
+
 
 router = DefaultRouter()
 router.register(r'clients', ClientViewSet)
 router.register(r'contracts', ContractViewSet)
-
+router.register(r'payments', PaymentViewSet)
 
 urlpatterns = [
     # Админка Django

@@ -1,5 +1,5 @@
 """
-ASGI config for crm_project_base_model_auth project.
+ASGI config for crm_project_base_model_auth1 project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 

@@ -12,13 +12,150 @@ from django.contrib import messages
 from django.urls import reverse_lazy
 from django.db.models import Sum
 from django.db.models import Q
-from .models import Contract, Payment
 from .forms import PaymentForm
 import csv
 from django.http import HttpResponse
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import View
 from .tasks import send_contract_created_email
+from django.shortcuts import render, get_object_or_404
+from .models import Contract
+
+######################################################################################################
+########### Часть 1. Создание эндпоинта вебхука для уведомлений от ЮKassa ############################
+######################################################################################################
+# contracts/views.py
+import json
+import hashlib
+from django.views.decorators.csrf import csrf_exempt
+from django.http import JsonResponse, HttpResponse
+from django.utils import timezone
+from yookassa import Configuration
+from .models import Contract, Payment
+# contracts/views.py
+import json
+import ipaddress
+from django.conf import settings
+from django.views.decorators.csrf import csrf_exempt
+from django.http import JsonResponse, HttpResponse
+from django.utils import timezone
+from yookassa import Configuration
+from .models import Payment, Contract
+from .tasks import send_payment_success_notifications   # создадим позже
+import logging
+from django.shortcuts import render, get_object_or_404
+from .models import Contract
+
+def fake_payment_page(request, contract_id):
+    from .models import Contract
+    contract = get_object_or_404(Contract, id=contract_id)
+    return render(request, 'contracts/fake_payment.html', {'contract': contract})
+
+
+@csrf_exempt
+def yookassa_webhook(request):
+    if request.method != 'POST':
+        return HttpResponse(status=405)
+
+    # Для учебного проекта проверку IP отключаем
+    # if not settings.DEBUG:
+    #     if not is_allowed_ip(request):
+    #         return JsonResponse({'error': 'Forbidden'}, status=403)
+
+    try:
+        event_data = json.loads(request.body)
+    except json.JSONDecodeError:
+        return JsonResponse({'error': 'Invalid JSON'}, status=400)
+
+    event = event_data.get('event')
+    if event not in ['payment.succeeded', 'payment.canceled', 'payment.waiting_for_capture']:
+        return JsonResponse({'error': 'Unsupported event'}, status=400)
+
+    payment_id = event_data['object']['id']
+    payment_status = event_data['object']['status']
+
+    try:
+        payment = Payment.objects.get(yookassa_id=payment_id)
+        contract = payment.contract
+    except Payment.DoesNotExist:
+        return JsonResponse({'error': 'Payment not found'}, status=404)
+
+    payment.yookassa_status = payment_status
+    if payment_status == 'succeeded':
+        payment.paid_at = timezone.now()
+        payment.save()
+        contract.save()
+        # При желании можно вызвать задачу уведомления:
+        # send_payment_success_notifications.delay(payment.id)
+    elif payment_status == 'canceled':
+        payment.save()
+        contract.payment_url = ''
+        contract.yookassa_payment_id = ''
+        contract.save(update_fields=['payment_url', 'yookassa_payment_id'])
+
+    return JsonResponse({'status': 'ok'})
+
+
+logger = logging.getLogger(__name__)
+
+
+# @csrf_exempt
+# def yookassa_webhook(request):
+#     """
+#     Обработчик уведомлений от ЮKassa.
+#     """
+#     if request.method != 'POST':
+#         return HttpResponse(status=405)
+#
+#     # Получение тела запроса
+#     body = request.body
+#     # Проверка подписи (опционально, для безопасности)
+#     # Можно проверить IP-адрес отправителя или использовать заголовок `HTTP_CONTENT_SIGNATURE`
+#     # Для упрощения пропустим проверку подписи (в реальном проекте обязательно)
+#
+#     try:
+#         event_data = json.loads(body)
+#     except json.JSONDecodeError:
+#         return JsonResponse({'error': 'Invalid JSON'}, status=400)
+#
+#     # Внутри yookassa_webhook:
+#     logger.info(f"Webhook received: {event}, payment_id={payment_id}")
+#     if payment_status == 'succeeded':
+#         logger.info(f"Payment {payment_id} succeeded, updating contract {contract.id}")
+#
+#     # Проверяем, что это уведомление о платеже
+#     if event_data.get('event') not in ['payment.succeeded', 'payment.canceled', 'payment.waiting_for_capture']:
+#         return JsonResponse({'error': 'Unsupported event'}, status=400)
+#
+#     payment_id = event_data['object']['id']
+#     payment_status = event_data['object']['status']
+#
+#     try:
+#         # Находим платёж в нашей системе по yookassa_id
+#         payment = Payment.objects.get(yookassa_id=payment_id)
+#         contract = payment.contract
+#     except Payment.DoesNotExist:
+#         return JsonResponse({'error': 'Payment not found'}, status=404)
+#
+#     # Обновляем статус в нашей модели Payment
+#     payment.yookassa_status = payment_status
+#     if payment_status == 'succeeded':
+#         payment.paid_at = timezone.now()
+#         payment.save()
+#
+#         # Обновляем контракт
+#         #contract.paid_amount += payment.amount
+#         contract.save()  # save() обновит payment_status
+#         # Создаём уведомление менеджеру (опционально)
+#         # Notification.objects.create(...)
+#     elif payment_status == 'canceled':
+#         payment.save()
+#         # Можно удалить ссылку на оплату из контракта, если нужно
+#
+#     return JsonResponse({'status': 'ok'})
+########################################################################################################################
+########################################################################################################################
+########################################################################################################################
 
 class ContractExportView(LoginRequiredMixin, View):
     """Экспорт контрактов в CSV"""
@@ -160,15 +297,6 @@ class ContractDeleteView(LoginRequiredMixin, DeleteView):
     success_url = reverse_lazy('contracts:contract_list')
 
 
-def renew_contract(request, pk):
-    """
-    Продление контракта.
-    """
-    contract = get_object_or_404(Contract, pk=pk)
-    messages.success(request, f'Контракт {contract.number} продлен.')
-    return redirect('contracts:contract_detail', pk=pk)
-
-
 def contract_payments(request, pk):
     """
     Просмотр и управление оплатами по контракту.
@@ -234,3 +362,86 @@ def renew_contract(request, pk):
     new_contract.save()
     messages.success(request, f'Контракт {old_contract.number} продлён. Новый контракт: {new_contract.number}')
     return redirect('contracts:contract_detail', pk=new_contract.pk)
+
+# Разрешённые подсети ЮKassa (актуальны на 2025 год)
+YOOKASSA_SUBNETS = [
+    '185.71.76.0/27', '185.71.77.0/27', '77.75.153.0/25', '77.75.156.11',
+    '77.75.156.35', '77.75.156.131', '77.75.158.0/25', '79.142.16.0/25',
+    '79.142.17.0/25', '79.142.18.0/25', '79.142.19.0/25', '79.142.20.0/25',
+    '79.142.21.0/25', '79.142.22.0/25', '79.142.23.0/25'
+]
+
+# ДОБАВЛЯЕМ: ваша локальная сеть (для тестов, если используете ngrok или проброс)
+LOCAL_NETWORKS = [
+    '192.168.1.0/24',      # ваша LAN
+    '127.0.0.0/8',         # localhost
+]
+
+def is_allowed_ip(request):
+    """
+    Проверяет, что IP-адрес запроса принадлежит либо подсетям ЮKassa,
+    либо локальным сетям (только при DEBUG=True).
+    """
+    client_ip = request.META.get('HTTP_X_FORWARDED_FOR', request.META.get('REMOTE_ADDR'))
+    if client_ip:
+        client_ip = client_ip.split(',')[0].strip()
+        try:
+            client_ip_obj = ipaddress.ip_address(client_ip)
+            # Всегда разрешаем локальные сети в режиме отладки
+            if settings.DEBUG:
+                for net in LOCAL_NETWORKS:
+                    if client_ip_obj in ipaddress.ip_network(net):
+                        return True
+            # Проверка на IP ЮKassa
+            for subnet in YOOKASSA_SUBNETS:
+                if client_ip_obj in ipaddress.ip_network(subnet):
+                    return True
+        except ValueError:
+            pass
+    return False
+
+# @csrf_exempt
+# def yookassa_webhook(request):
+#     if request.method != 'POST':
+#         return HttpResponse(status=405)
+#
+#     # Проверка IP – в боевом режиме только ЮKassa, в DEBUG разрешаем локальные сети
+#     if not is_allowed_ip(request):
+#         # Логируем попытку несанкционированного доступа
+#         print(f"[WARN] Webhook rejected from IP: {request.META.get('REMOTE_ADDR')}")
+#         return JsonResponse({'error': 'Forbidden'}, status=403)
+#
+#     try:
+#         event_data = json.loads(request.body)
+#     except json.JSONDecodeError:
+#         return JsonResponse({'error': 'Invalid JSON'}, status=400)
+#
+#     event = event_data.get('event')
+#     if event not in ['payment.succeeded', 'payment.canceled', 'payment.waiting_for_capture']:
+#         return JsonResponse({'error': 'Unsupported event'}, status=400)
+#
+#     payment_id = event_data['object']['id']
+#     payment_status = event_data['object']['status']
+#
+#     try:
+#         payment = Payment.objects.get(yookassa_id=payment_id)
+#         contract = payment.contract
+#     except Payment.DoesNotExist:
+#         return JsonResponse({'error': 'Payment not found'}, status=404)
+#
+#     # Обновляем статус платежа
+#     payment.yookassa_status = payment_status
+#     if payment_status == 'succeeded':
+#         payment.paid_at = timezone.now()
+#         payment.save()
+#         contract.save()   # пересчитает paid_amount и payment_status
+#         # Асинхронная отправка уведомлений (см. следующий раздел)
+#         send_payment_success_notifications.delay(payment.id)
+#     elif payment_status == 'canceled':
+#         payment.save()
+#         # Очищаем ссылку на оплату в контракте
+#         contract.payment_url = ''
+#         contract.yookassa_payment_id = ''
+#         contract.save(update_fields=['payment_url', 'yookassa_payment_id'])
+#
+#     return JsonResponse({'status': 'ok'})

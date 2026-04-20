@@ -13,6 +13,12 @@ from django.urls import reverse_lazy
 from django.db.models import Q
 from django.http import JsonResponse, HttpResponse
 from .models import Client
+from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
+from django.contrib.admin.views.decorators import staff_member_required
+from django.http import JsonResponse
+from .tasks import import_clients_from_csv
+from utils.exporters import ExcelExporter
 
 
 class ClientListView(LoginRequiredMixin, ListView):
@@ -172,3 +178,29 @@ def import_clients(request):
     # Здесь будет логика импорта
     messages.info(request, 'Функция импорта в разработке.')
     return redirect('clients:client_list')
+
+def export_clients_excel(request):
+    queryset = Client.objects.all()  # примените фильтры по желанию
+    buffer = ExcelExporter.export_clients(queryset)
+    response = HttpResponse(
+        buffer.getvalue(),
+        content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+    )
+    response['Content-Disposition'] = 'attachment; filename="clients.xlsx"'
+    return response
+
+@staff_member_required
+@csrf_exempt
+def import_clients_ajax(request):
+    if request.method == 'POST' and request.FILES.get('csv_file'):
+        csv_file = request.FILES['csv_file']
+        if not csv_file.name.endswith('.csv'):
+            return JsonResponse({'error': 'Требуется CSV файл'}, status=400)
+        # Запускаем задачу
+        task = import_clients_from_csv.delay(
+            csv_file.read(),
+            csv_file.name,
+            request.user.id
+        )
+        return JsonResponse({'task_id': task.id, 'status': 'started'})
+    return JsonResponse({'error': 'Нет файла'}, status=400)

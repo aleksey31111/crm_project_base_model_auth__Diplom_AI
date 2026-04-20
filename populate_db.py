@@ -7,12 +7,12 @@
 import os
 import sys
 import django
-from datetime import datetime, timedelta, date
+from datetime import timedelta, date
 from decimal import Decimal
 
 # Настройка Django
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'crm_project_base_model_auth.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'crm_project_base_model_auth1.settings')
 django.setup()
 
 from django.contrib.auth import get_user_model
@@ -20,7 +20,7 @@ from django.utils import timezone
 from accounts.models import UserProfile
 from clients.models import Client
 from contracts.models import Contract
-from tasks.models import Task, TaskComment
+from crm_project_base_model_auth1.crm_project_base_model_auth.tasks.models import Task, TaskComment
 from analytics.models import Report
 from notifications.models import Notification
 
@@ -34,7 +34,7 @@ def create_users():
     users_data = [
         {
             'username': 'admin',
-            'email': 'admin@crm.ru',
+            'email': 'admin@crm_FAILED.ru',
             'password': 'admin123',
             'first_name': 'Админ',
             'last_name': 'Администратор',
@@ -49,7 +49,7 @@ def create_users():
         },
         {
             'username': 'ivanov',
-            'email': 'ivanov@crm.ru',
+            'email': 'ivanov@crm_FAILED.ru',
             'password': 'manager123',
             'first_name': 'Иван',
             'last_name': 'Иванов',
@@ -64,7 +64,7 @@ def create_users():
         },
         {
             'username': 'petrov',
-            'email': 'petrov@crm.ru',
+            'email': 'petrov@crm_FAILED.ru',
             'password': 'manager123',
             'first_name': 'Петр',
             'last_name': 'Петров',
@@ -79,7 +79,7 @@ def create_users():
         },
         {
             'username': 'sidorova',
-            'email': 'sidorova@crm.ru',
+            'email': 'sidorova@crm_FAILED.ru',
             'password': 'support123',
             'first_name': 'Анна',
             'last_name': 'Сидорова',
@@ -94,7 +94,7 @@ def create_users():
         },
         {
             'username': 'smirnov',
-            'email': 'smirnov@crm.ru',
+            'email': 'smirnov@crm_FAILED.ru',
             'password': 'viewer123',
             'first_name': 'Алексей',
             'last_name': 'Смирнов',
