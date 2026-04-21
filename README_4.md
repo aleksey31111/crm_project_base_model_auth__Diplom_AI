@@ -167,7 +167,7 @@ python manage.py test clients.tests.test_api
 # Только тесты платежей
 python manage.py test contracts.tests.test_payment_flow
 
-python manage.py test contracts.tests.test_payment_flow --verbosity 2
+python manage.py test contracts.tests.test_payment_flow --verbosity 2''
 
 # Запуск с параллельным выполнением (требуется Python 3.12+)
 python manage.py test --parallel
