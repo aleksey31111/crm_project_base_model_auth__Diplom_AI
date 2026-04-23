@@ -1,6 +1,5 @@
-from django.db.models.signals import post_save, m2m_changed
+from django.db.models.signals import post_save
 from django.dispatch import receiver
-from django.utils import timezone
 from clients.models import Client
 from contracts.models import Contract
 from tasks.models import Task
@@ -15,7 +14,6 @@ def create_notification(user, title, message, notification_type='info', link='')
         type=notification_type,
         link=link
     )
-    # Отправка email, если включено
     try:
         prefs = user.notification_prefs
         if prefs.email_enabled:
@@ -27,16 +25,14 @@ def create_notification(user, title, message, notification_type='info', link='')
 # Клиенты
 @receiver(post_save, sender=Client)
 def client_created_notification(sender, instance, created, **kwargs):
-    if created:
-        # уведомление менеджеру клиента
-        if instance.manager:
-            create_notification(
-                user=instance.manager,
-                title=f'Новый клиент: {instance.full_name}',
-                message=f'Клиент {instance.full_name} был добавлен в систему.',
-                notification_type='success',
-                link=f'/clients/{instance.id}/'
-            )
+    if created and instance.manager:
+        create_notification(
+            user=instance.manager,
+            title=f'Новый клиент: {instance.full_name}',
+            message=f'Клиент {instance.full_name} был добавлен в систему.',
+            notification_type='success',
+            link=f'/clients/{instance.id}/'
+        )
 
 # Контракты
 @receiver(post_save, sender=Contract)
@@ -61,6 +57,3 @@ def task_assigned_notification(sender, instance, created, **kwargs):
             notification_type='warning',
             link=f'/tasks/{instance.id}/'
         )
-
-# Проверка просроченных задач – лучше через Celery periodic task,
-# но для простоты можно запускать командой.

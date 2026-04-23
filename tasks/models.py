@@ -4,11 +4,20 @@
 Модели для управления задачами.
 """
 
+import re
 from django.db import models
 from django.core.validators import MinValueValidator
 from django.urls import reverse
+from django.contrib.auth import get_user_model
 from core.models import BaseModel
 
+User = get_user_model()
+
+def extract_mentions(text):
+    """Возвращает список пользователей, упомянутых через @username в тексте"""
+    pattern = r'@(\w+)'
+    usernames = re.findall(pattern, text)
+    return User.objects.filter(username__in=usernames)
 
 class Task(BaseModel):
     """

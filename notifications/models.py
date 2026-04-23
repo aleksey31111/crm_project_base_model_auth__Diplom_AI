@@ -7,6 +7,17 @@
 from django.db import models
 from django.urls import reverse
 from core.models import TimeStampedModel
+# notifications/models.py
+import re
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
+
+def extract_mentions(text):
+    """Возвращает список пользователей, упомянутых через @username в тексте"""
+    pattern = r'@(\w+)'
+    usernames = re.findall(pattern, text)
+    return User.objects.filter(username__in=usernames)
 
 
 class Notification(TimeStampedModel):

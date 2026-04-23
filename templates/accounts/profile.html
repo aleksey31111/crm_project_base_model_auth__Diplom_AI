@@ -75,16 +75,14 @@
                 <li class="nav-item" role="presentation">
                     <button class="nav-link" id="tasks-tab" data-bs-toggle="tab" data-bs-target="#tasks" type="button" role="tab">
                         <i class="fas fa-tasks"></i> Мои задачи
-                        {% if tasks %}
-                            <span class="badge bg-primary ms-1">{{ tasks|length }}</span>
-                        {% endif %}
+
                     </button>
                 </li>
                 <li class="nav-item" role="presentation">
                     <button class="nav-link" id="notifications-tab" data-bs-toggle="tab" data-bs-target="#notifications" type="button" role="tab">
                         <i class="fas fa-bell"></i> Уведомления
-                        {% if notifications %}
-                            <span class="badge bg-danger ms-1">{{ notifications|length }}</span>
+                        {% if unread_count > 0 %}
+                            <span class="badge bg-danger ms-1">{{ unread_count }}</span>
                         {% endif %}
                     </button>
                 </li>
@@ -351,35 +349,33 @@
 
 <script>
 function markRead(notificationId) {
-    fetch(`/notifications/mark-read/${notificationId}/`, {
+    fetch(`/notifications/${notificationId}/read/`, {
         method: 'POST',
         headers: {
             'X-CSRFToken': '{{ csrf_token }}',
+            'X-Requested-With': 'XMLHttpRequest',   // <-- добавить
             'Content-Type': 'application/json',
         },
     }).then(response => {
         if (response.ok) {
             location.reload();
         }
-    }).catch(error => {
-        console.error('Error:', error);
-    });
+    }).catch(error => console.error('Error:', error));
 }
 
 function markAllRead() {
-    fetch('/notifications/mark-all-read/', {
+    fetch('/notifications/read-all/', {
         method: 'POST',
         headers: {
             'X-CSRFToken': '{{ csrf_token }}',
+            'X-Requested-With': 'XMLHttpRequest',   // <-- добавить
             'Content-Type': 'application/json',
         },
     }).then(response => {
         if (response.ok) {
             location.reload();
         }
-    }).catch(error => {
-        console.error('Error:', error);
-    });
+    }).catch(error => console.error('Error:', error));
 }
 </script>
 

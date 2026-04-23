@@ -211,50 +211,51 @@ class TaskAdmin(admin.ModelAdmin):
     due_date_display.admin_order_field = 'due_date'
 
     def time_info(self, obj):
-        """Информация о времени выполнения"""
-        if obj.estimated_hours and obj.actual_hours:
-            diff = obj.time_difference
-            if diff > 0:
-                color = 'red'
-                sign = '+'
-            elif diff < 0:
-                color = 'green'
-                sign = ''
-            else:
-                color = 'gray'
-                sign = ''
+        estimated = obj.estimated_hours
+        actual = obj.actual_hours
 
-            return format_html(
-                '<div style="font-size: 11px;">'
-                '<span>План: {} ч</span><br>'
-                '<span>Факт: {} ч</span><br>'
-                '<span style="color: {};">Отклонение: {}{:.1f} ч</span>'
-                '</div>',
-                obj.estimated_hours,
-                obj.actual_hours,
-                color,
-                sign,
-                abs(diff)
-            )
-        elif obj.estimated_hours:
-            return format_html(
-                '<div style="font-size: 11px;">'
-                '<span>План: {} ч</span><br>'
-                '<span style="color: gray;">Факт: не указан</span>'
-                '</div>',
-                obj.estimated_hours
-            )
-        elif obj.actual_hours:
-            return format_html(
-                '<div style="font-size: 11px;">'
-                '<span style="color: gray;">План: не указан</span><br>'
-                '<span>Факт: {} ч</span>'
-                '</div>',
-                obj.actual_hours
-            )
+        if estimated is not None and actual is not None:
+            try:
+                est = float(estimated)
+                act = float(actual)
+                diff = act - est
+                sign = '+' if diff > 0 else ''
+                color = 'red' if diff > 0 else 'green' if diff < 0 else 'gray'
+                return format_html(
+                    '<div style="font-size: 11px;">'
+                    '<span>План: {} ч</span><br>'
+                    '<span>Факт: {} ч</span><br>'
+                    '<span style="color: {};">Отклонение: {}{:.1f} ч</span>'
+                    '</div>',
+                    est, act, color, sign, abs(diff)
+                )
+            except (TypeError, ValueError):
+                return '-'
+        elif estimated is not None:
+            try:
+                est = float(estimated)
+                return format_html(
+                    '<div style="font-size: 11px;">'
+                    '<span>План: {} ч</span><br>'
+                    '<span style="color: gray;">Факт: не указан</span>'
+                    '</div>',
+                    est
+                )
+            except (TypeError, ValueError):
+                return '-'
+        elif actual is not None:
+            try:
+                act = float(actual)
+                return format_html(
+                    '<div style="font-size: 11px;">'
+                    '<span style="color: gray;">План: не указан</span><br>'
+                    '<span>Факт: {} ч</span>'
+                    '</div>',
+                    act
+                )
+            except (TypeError, ValueError):
+                return '-'
         return '-'
-
-    time_info.short_description = 'Время'
 
     def mark_as_in_progress(self, request, queryset):
         """Отметить задачи как в работе"""

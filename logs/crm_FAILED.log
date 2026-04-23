@@ -333,3 +333,2154 @@ WARNING 2026-04-20 18:12:32,765 log 14320 1136 Not Found: /api/contracts/2/initi
 WARNING 2026-04-20 18:12:35,452 log 14320 1136 Unauthorized: /api/contracts/1/initiate-payment/
 WARNING 2026-04-20 18:12:38,132 log 14320 1136 Not Found: /api/contracts/1/initiate-payment/
 WARNING 2026-04-20 18:12:46,166 log 14320 1136 Not Found: /api/payments/1/
+INFO 2026-04-21 19:21:23,591 autoreload 7588 11836 Watching for file changes with StatReloader
+INFO 2026-04-21 19:23:37,745 autoreload 2788 12188 Watching for file changes with StatReloader
+INFO 2026-04-21 21:30:08,694 autoreload 4804 11092 Watching for file changes with StatReloader
+INFO 2026-04-21 21:30:13,385 log 4804 12312 "GET / HTTP/1.1" 302 0
+ERROR 2026-04-21 21:30:13,668 log 4804 12536 Internal Server Error: /accounts/login/
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 577, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'provider_login_url'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\accounts\views.py", line 87, in login_view
+    return render(request, 'accounts/login.html', {'form': form})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\engine.py", line 186, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 157, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 199, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 585, in parse
+    raise self.error(token, e)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 583, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\loader_tags.py", line 307, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 585, in parse
+    raise self.error(token, e)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 583, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\loader_tags.py", line 235, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 579, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 634, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Template: E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\templates\accounts\login.html, Invalid block tag on line 99: 'provider_login_url', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2026-04-21 21:30:13,668 log 4804 12536 "GET /accounts/login/?next=/ HTTP/1.1" 500 193316
+WARNING 2026-04-21 21:30:14,029 log 4804 12996 Not Found: /favicon.ico
+WARNING 2026-04-21 21:30:14,029 log 4804 12996 "GET /favicon.ico HTTP/1.1" 404 4579
+INFO 2026-04-21 21:31:05,451 log 4804 13264 "GET /accounts/login/?next=/ HTTP/1.1" 200 4518
+INFO 2026-04-21 21:31:10,071 log 4804 13264 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2026-04-21 21:31:10,160 log 4804 13264 "GET / HTTP/1.1" 200 6051
+INFO 2026-04-21 21:31:10,169 log 4804 13264 "GET /static/css/index.css HTTP/1.1" 304 0
+INFO 2026-04-21 21:31:10,169 log 4804 13124 "GET /static/js/index.js HTTP/1.1" 304 0
+INFO 2026-04-21 21:31:13,592 log 4804 13124 "GET /contracts/ HTTP/1.1" 200 12428
+INFO 2026-04-21 21:31:40,795 log 4804 13124 "GET /clients/ HTTP/1.1" 200 14726
+INFO 2026-04-21 21:31:42,650 log 4804 13124 "GET /clients/2/ HTTP/1.1" 200 13794
+INFO 2026-04-21 21:31:48,290 log 4804 13124 "GET /contracts/ HTTP/1.1" 200 12428
+INFO 2026-04-21 21:31:49,892 log 4804 13124 "GET /contracts/9/ HTTP/1.1" 200 4589
+INFO 2026-04-21 21:32:58,179 log 4804 13124 "GET /accounts/profile/ HTTP/1.1" 200 18797
+INFO 2026-04-21 21:32:58,191 log 4804 13124 "GET /media/avatars/IMG_20220805_193549_tdrwwQf.jpg HTTP/1.1" 304 0
+INFO 2026-04-21 21:33:02,911 log 4804 13124 "GET /accounts/profile/edit/ HTTP/1.1" 200 10817
+INFO 2026-04-21 21:35:02,812 log 4804 13124 "POST /accounts/profile/edit/ HTTP/1.1" 200 12988
+INFO 2026-04-21 21:39:00,102 log 4804 13124 "GET / HTTP/1.1" 200 5750
+INFO 2026-04-21 21:39:04,670 log 4804 13124 "GET /accounts/profile/ HTTP/1.1" 200 18797
+INFO 2026-04-21 21:39:28,941 log 4804 13124 "POST /accounts/profile/ HTTP/1.1" 200 18797
+INFO 2026-04-21 21:39:34,840 log 4804 13124 "POST /accounts/profile/ HTTP/1.1" 200 18797
+INFO 2026-04-21 21:43:32,100 autoreload 4804 11092 E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\accounts\forms.py changed, reloading.
+INFO 2026-04-21 21:43:33,209 autoreload 8424 12468 Watching for file changes with StatReloader
+INFO 2026-04-21 21:46:01,927 autoreload 13248 11028 Watching for file changes with StatReloader
+INFO 2026-04-21 21:46:06,740 log 13248 8148 "GET / HTTP/1.1" 302 0
+INFO 2026-04-21 21:46:06,803 log 13248 8148 "GET /accounts/login/?next=/ HTTP/1.1" 200 4518
+INFO 2026-04-21 21:46:06,833 log 13248 8148 "GET /static/css/style.css HTTP/1.1" 200 1568
+INFO 2026-04-21 21:46:06,870 log 13248 7448 "GET /static/js/main.js HTTP/1.1" 200 3346
+WARNING 2026-04-21 21:46:07,251 log 13248 7448 Not Found: /favicon.ico
+WARNING 2026-04-21 21:46:07,252 log 13248 7448 "GET /favicon.ico HTTP/1.1" 404 4579
+INFO 2026-04-21 21:46:10,550 log 13248 7448 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2026-04-21 21:46:10,594 log 13248 7448 "GET / HTTP/1.1" 200 6051
+INFO 2026-04-21 21:46:10,610 log 13248 7448 "GET /static/css/index.css HTTP/1.1" 200 1636
+INFO 2026-04-21 21:46:10,618 log 13248 8148 "GET /static/js/index.js HTTP/1.1" 200 1468
+INFO 2026-04-21 21:46:15,121 log 13248 8148 "GET /accounts/profile/ HTTP/1.1" 200 18797
+INFO 2026-04-21 21:46:15,171 log 13248 8148 "GET /media/avatars/IMG_20220805_193549_tdrwwQf.jpg HTTP/1.1" 200 2877310
+INFO 2026-04-21 21:46:18,653 log 13248 8148 "GET /accounts/profile/edit/ HTTP/1.1" 200 10817
+INFO 2026-04-21 21:46:35,124 log 13248 8148 "POST /accounts/profile/edit/ HTTP/1.1" 302 0
+INFO 2026-04-21 21:46:35,134 log 13248 8148 "GET /accounts/profile/ HTTP/1.1" 200 18807
+INFO 2026-04-21 21:46:44,063 log 13248 8148 "GET /accounts/profile/edit/ HTTP/1.1" 200 10817
+INFO 2026-04-21 21:47:09,529 log 13248 8148 "POST /accounts/profile/edit/ HTTP/1.1" 302 0
+INFO 2026-04-21 21:47:09,535 log 13248 8148 "GET /accounts/profile/ HTTP/1.1" 200 18807
+INFO 2026-04-21 21:47:12,917 log 13248 8148 "GET /accounts/profile/edit/ HTTP/1.1" 200 10817
+INFO 2026-04-21 21:47:58,271 log 13248 8148 "POST /accounts/profile/edit/ HTTP/1.1" 302 0
+INFO 2026-04-21 21:47:58,285 log 13248 8148 "GET /accounts/profile/ HTTP/1.1" 200 18826
+INFO 2026-04-21 21:48:00,878 log 13248 8148 "GET /accounts/profile/edit/ HTTP/1.1" 200 10836
+INFO 2026-04-21 22:00:52,866 autoreload 13248 11028 E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\accounts\forms.py changed, reloading.
+INFO 2026-04-21 22:00:54,237 autoreload 11944 11804 Watching for file changes with StatReloader
+INFO 2026-04-21 22:01:33,298 autoreload 11944 11804 E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\accounts\forms.py changed, reloading.
+INFO 2026-04-21 22:01:34,517 autoreload 10248 10656 Watching for file changes with StatReloader
+INFO 2026-04-21 22:03:37,351 autoreload 12344 3516 Watching for file changes with StatReloader
+INFO 2026-04-21 22:03:40,151 log 12344 184 "GET / HTTP/1.1" 200 5750
+INFO 2026-04-21 22:03:44,828 log 12344 184 "GET /accounts/profile/ HTTP/1.1" 200 18515
+INFO 2026-04-21 22:03:46,773 log 12344 184 "GET /accounts/profile/edit/ HTTP/1.1" 200 10865
+INFO 2026-04-21 22:04:07,187 log 12344 184 "POST /accounts/profile/edit/ HTTP/1.1" 302 0
+INFO 2026-04-21 22:04:07,205 log 12344 184 "GET /accounts/profile/ HTTP/1.1" 200 18826
+INFO 2026-04-21 22:04:15,456 log 12344 184 "POST /accounts/profile/ HTTP/1.1" 200 18515
+INFO 2026-04-21 22:04:22,675 log 12344 184 "GET / HTTP/1.1" 200 5750
+INFO 2026-04-21 22:04:26,231 log 12344 184 "GET /accounts/profile/ HTTP/1.1" 200 18515
+INFO 2026-04-21 22:04:34,807 log 12344 184 "POST /accounts/logout/ HTTP/1.1" 302 0
+INFO 2026-04-21 22:04:34,812 log 12344 184 "GET /accounts/login/ HTTP/1.1" 200 4830
+INFO 2026-04-21 22:04:39,371 log 12344 184 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2026-04-21 22:04:39,391 log 12344 184 "GET / HTTP/1.1" 200 6051
+INFO 2026-04-21 22:04:43,462 log 12344 184 "GET /accounts/profile/ HTTP/1.1" 200 18515
+INFO 2026-04-21 22:05:11,164 log 12344 184 "GET /tasks/ HTTP/1.1" 200 31536
+INFO 2026-04-21 22:05:11,171 log 12344 184 "GET /static/css/task_list.css HTTP/1.1" 304 0
+INFO 2026-04-21 22:05:29,901 log 12344 184 "GET /tasks/?search=&status=&priority=&assigned_to=me HTTP/1.1" 200 13095
+INFO 2026-04-21 22:05:53,157 log 12344 184 "GET /tasks/?search=&status=&priority=low&assigned_to=me HTTP/1.1" 200 11072
+INFO 2026-04-21 22:06:00,983 log 12344 184 "GET /tasks/?search=&status=in_progress&priority=low&assigned_to=me HTTP/1.1" 200 11080
+INFO 2026-04-21 22:06:04,592 log 12344 184 "GET /tasks/?search=&status=in_progress&priority=&assigned_to=me HTTP/1.1" 200 11072
+INFO 2026-04-21 22:06:09,050 log 12344 184 "GET /tasks/?search=&status=new&priority=&assigned_to=me HTTP/1.1" 200 13103
+INFO 2026-04-21 22:06:28,363 log 12344 184 "POST /accounts/logout/ HTTP/1.1" 302 0
+INFO 2026-04-21 22:06:28,367 log 12344 184 "GET /accounts/login/ HTTP/1.1" 200 4830
+INFO 2026-04-21 22:53:20,174 autoreload 11688 13156 Watching for file changes with StatReloader
+INFO 2026-04-21 23:17:28,889 autoreload 11572 7224 Watching for file changes with StatReloader
+INFO 2026-04-21 23:17:44,584 log 11572 5532 "GET / HTTP/1.1" 302 0
+INFO 2026-04-21 23:17:44,599 log 11572 5532 "GET /accounts/login/?next=/ HTTP/1.1" 200 4518
+INFO 2026-04-21 23:17:48,399 log 11572 5532 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2026-04-21 23:17:48,430 log 11572 5532 "GET / HTTP/1.1" 200 6051
+INFO 2026-04-21 23:18:21,562 log 11572 5532 "GET /admin/ HTTP/1.1" 200 20894
+INFO 2026-04-21 23:18:21,562 log 11572 8232 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2026-04-21 23:18:21,562 log 11572 5532 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2026-04-21 23:18:21,578 log 11572 3104 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2026-04-21 23:18:21,578 log 11572 9680 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:18:21,578 log 11572 13004 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2026-04-21 23:18:21,578 log 11572 12940 "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2026-04-21 23:18:21,578 log 11572 12940 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:18:21,578 log 11572 12940 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2026-04-21 23:18:21,578 log 11572 13004 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2026-04-21 23:18:26,315 log 11572 13004 "GET /admin/logs/apilog/ HTTP/1.1" 200 18320
+INFO 2026-04-21 23:18:26,341 log 11572 13004 "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2026-04-21 23:18:26,341 log 11572 12940 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:18:26,342 log 11572 9680 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:18:26,343 log 11572 8232 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:18:26,343 log 11572 3104 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:18:26,348 log 11572 13004 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:18:26,350 log 11572 12940 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:18:26,350 log 11572 9680 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:18:26,351 log 11572 8232 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:18:26,351 log 11572 3104 "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+INFO 2026-04-21 23:18:26,356 log 11572 3104 "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2026-04-21 23:18:26,385 log 11572 5532 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-21 23:18:26,398 log 11572 5532 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+INFO 2026-04-21 23:18:26,398 log 11572 3104 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+INFO 2026-04-21 23:18:29,434 log 11572 3104 "GET /admin/telegram_bot/telegramuser/ HTTP/1.1" 200 18130
+INFO 2026-04-21 23:18:29,451 log 11572 3104 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-21 23:18:39,315 log 11572 3104 "GET /admin/analytics/report/ HTTP/1.1" 200 26287
+INFO 2026-04-21 23:18:39,334 log 11572 3104 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-21 23:18:39,347 log 11572 3104 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 304 0
+INFO 2026-04-21 23:19:31,067 log 11572 3104 "GET /admin/accounts/user/ HTTP/1.1" 200 33688
+INFO 2026-04-21 23:19:31,084 log 11572 3104 "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+INFO 2026-04-21 23:19:31,088 log 11572 3104 "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+INFO 2026-04-21 23:19:31,095 log 11572 5532 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-21 23:19:42,998 log 11572 5532 "GET /admin/accounts/user/add/ HTTP/1.1" 200 37638
+INFO 2026-04-21 23:19:43,014 log 11572 13004 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2026-04-21 23:19:43,021 log 11572 9680 "GET /static/admin/css/unusable_password_field.css HTTP/1.1" 200 663
+INFO 2026-04-21 23:19:43,022 log 11572 5532 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-21 23:19:43,036 log 11572 3104 "GET /static/admin/js/calendar.js HTTP/1.1" 200 9159
+INFO 2026-04-21 23:19:43,036 log 11572 12940 "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19698
+INFO 2026-04-21 23:19:43,042 log 11572 8232 "GET /static/admin/js/inlines.js HTTP/1.1" 200 15628
+INFO 2026-04-21 23:19:43,053 log 11572 3104 "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2026-04-21 23:19:43,085 log 11572 3104 "GET /static/admin/img/inline-delete.svg HTTP/1.1" 200 651
+INFO 2026-04-21 23:19:43,091 log 11572 3104 "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1112
+INFO 2026-04-21 23:26:16,739 log 11572 12824 "POST /admin/accounts/user/add/ HTTP/1.1" 302 0
+INFO 2026-04-21 23:26:16,831 log 11572 12824 "GET /admin/accounts/user/8/change/ HTTP/1.1" 200 58615
+INFO 2026-04-21 23:26:16,849 log 11572 12044 "GET /static/admin/js/SelectBox.js HTTP/1.1" 200 4530
+INFO 2026-04-21 23:26:16,907 log 11572 12904 "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 200 16428
+INFO 2026-04-21 23:26:16,912 log 11572 12824 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-21 23:26:16,944 log 11572 12824 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 558
+INFO 2026-04-21 23:26:16,976 log 11572 12824 "GET /static/admin/img/selector-icons.svg HTTP/1.1" 200 2387
+INFO 2026-04-21 23:27:31,487 log 11572 12824 "POST /admin/accounts/user/8/change/ HTTP/1.1" 302 0
+INFO 2026-04-21 23:27:31,551 log 11572 12824 "GET /admin/accounts/user/ HTTP/1.1" 200 35107
+INFO 2026-04-21 23:27:31,577 log 11572 12824 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-21 23:27:41,084 log 11572 12824 "GET /admin/accounts/user/8/change/ HTTP/1.1" 200 58294
+INFO 2026-04-21 23:27:41,099 log 11572 12824 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-21 23:29:15,991 log 11572 12824 "POST /admin/accounts/user/8/change/ HTTP/1.1" 302 0
+INFO 2026-04-21 23:29:16,021 log 11572 12824 "GET /admin/accounts/user/ HTTP/1.1" 200 35255
+INFO 2026-04-21 23:29:16,045 log 11572 12824 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-21 23:30:34,589 log 11572 12824 "GET /admin/clients/client/ HTTP/1.1" 200 46551
+INFO 2026-04-21 23:30:34,613 log 11572 12824 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-21 23:30:34,618 log 11572 12904 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 689
+INFO 2026-04-21 23:30:48,829 log 11572 12904 "GET /admin/clients/client/add/ HTTP/1.1" 200 36720
+INFO 2026-04-21 23:30:48,840 log 11572 12904 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-21 23:32:22,790 log 11572 12904 "POST /admin/clients/client/add/ HTTP/1.1" 302 0
+ERROR 2026-04-21 23:32:22,961 log 11572 12904 Internal Server Error: /admin/clients/client/
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\db\models\options.py", line 684, in get_field
+    return self.fields_map[field_name]
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'contract_count_display'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\utils.py", line 293, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\utils.py", line 333, in _get_non_gfk_field
+    field = opts.get_field(name)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\db\models\options.py", line 686, in get_field
+    raise FieldDoesNotExist(
+django.core.exceptions.FieldDoesNotExist: Client has no field named 'contract_count_display'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\base.py", line 221, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\templatetags\base.py", line 47, in render
+    return super().render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\library.py", line 363, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 357, in result_list
+    "results": list(results(cl)),
+               ^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 330, in results
+    yield ResultList(form, items_for_result(cl, res, form))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 324, in __init__
+    super().__init__(*items)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 221, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\utils.py", line 302, in lookup_field
+    value = attr(obj)
+            ^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\clients\admin.py", line 74, in contract_count_display
+    return format_html('<span style="color: gray;">0</span>')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\utils\html.py", line 137, in format_html
+    raise TypeError("args or kwargs must be provided.")
+TypeError: args or kwargs must be provided.
+ERROR 2026-04-21 23:32:22,961 log 11572 12904 "GET /admin/clients/client/ HTTP/1.1" 500 421293
+INFO 2026-04-21 23:32:27,465 log 11572 12904 "GET /admin/clients/client/add/ HTTP/1.1" 200 36720
+INFO 2026-04-21 23:39:48,312 log 11572 8060 "POST /admin/clients/client/add/ HTTP/1.1" 302 0
+ERROR 2026-04-21 23:39:48,462 log 11572 8060 Internal Server Error: /admin/clients/client/
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\db\models\options.py", line 684, in get_field
+    return self.fields_map[field_name]
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'contract_count_display'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\utils.py", line 293, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\utils.py", line 333, in _get_non_gfk_field
+    field = opts.get_field(name)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\db\models\options.py", line 686, in get_field
+    raise FieldDoesNotExist(
+django.core.exceptions.FieldDoesNotExist: Client has no field named 'contract_count_display'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\base.py", line 221, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\templatetags\base.py", line 47, in render
+    return super().render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\library.py", line 363, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 357, in result_list
+    "results": list(results(cl)),
+               ^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 330, in results
+    yield ResultList(form, items_for_result(cl, res, form))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 324, in __init__
+    super().__init__(*items)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 221, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\utils.py", line 302, in lookup_field
+    value = attr(obj)
+            ^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\clients\admin.py", line 74, in contract_count_display
+    return format_html('<span style="color: gray;">0</span>')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\utils\html.py", line 137, in format_html
+    raise TypeError("args or kwargs must be provided.")
+TypeError: args or kwargs must be provided.
+ERROR 2026-04-21 23:39:48,465 log 11572 8060 "GET /admin/clients/client/ HTTP/1.1" 500 421297
+INFO 2026-04-21 23:52:05,313 autoreload 11572 7224 E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\clients\admin.py changed, reloading.
+INFO 2026-04-21 23:52:06,486 autoreload 6584 9312 Watching for file changes with StatReloader
+INFO 2026-04-21 23:52:23,427 autoreload 6584 9312 E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\clients\admin.py changed, reloading.
+INFO 2026-04-21 23:52:24,547 autoreload 7996 5508 Watching for file changes with StatReloader
+INFO 2026-04-21 23:52:40,220 autoreload 7996 5508 E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\clients\admin.py changed, reloading.
+INFO 2026-04-21 23:52:41,351 autoreload 7028 4856 Watching for file changes with StatReloader
+INFO 2026-04-21 23:54:24,490 autoreload 7028 4856 E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\accounts\forms.py changed, reloading.
+INFO 2026-04-21 23:54:25,647 autoreload 11496 12280 Watching for file changes with StatReloader
+INFO 2026-04-22 00:14:00,537 autoreload 12832 10392 Watching for file changes with StatReloader
+INFO 2026-04-22 00:14:03,034 log 12832 12300 "GET / HTTP/1.1" 200 5750
+INFO 2026-04-22 00:14:07,735 log 12832 12300 "GET /admin/clients/client/ HTTP/1.1" 200 53721
+INFO 2026-04-22 00:14:07,750 log 12832 12300 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-22 00:14:31,325 log 12832 12300 "GET /admin/accounts/user/1/delete/?_to_field=id&_popup=1 HTTP/1.1" 200 8554
+INFO 2026-04-22 00:14:31,330 log 12832 12300 "GET /static/admin/js/cancel.js HTTP/1.1" 200 884
+INFO 2026-04-22 00:14:56,402 log 12832 12300 "POST /admin/accounts/user/1/delete/?_to_field=id&_popup=1 HTTP/1.1" 200 370
+INFO 2026-04-22 00:14:56,421 log 12832 12300 "GET /static/admin/js/popup_response.js HTTP/1.1" 200 532
+INFO 2026-04-22 00:15:05,278 log 12832 12300 "GET /admin/clients/client/ HTTP/1.1" 302 0
+INFO 2026-04-22 00:15:05,327 log 12832 12300 "GET /admin/login/?next=/admin/clients/client/ HTTP/1.1" 200 4315
+INFO 2026-04-22 00:15:05,331 log 12832 12300 "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2026-04-22 00:15:09,612 log 12832 12300 "POST /admin/login/?next=/admin/clients/client/ HTTP/1.1" 200 4596
+INFO 2026-04-22 00:15:22,001 log 12832 12300 "POST /admin/login/?next=/admin/clients/client/ HTTP/1.1" 200 4596
+INFO 2026-04-22 00:15:31,904 log 12832 12300 "GET / HTTP/1.1" 302 0
+INFO 2026-04-22 00:15:31,919 log 12832 12300 "GET /accounts/login/?next=/ HTTP/1.1" 200 4518
+INFO 2026-04-22 00:15:35,363 log 12832 12300 "POST /accounts/login/ HTTP/1.1" 200 5121
+WARNING 2026-04-22 00:16:10,606 log 12832 12300 Forbidden (CSRF token from POST incorrect.): /accounts/login/
+WARNING 2026-04-22 00:16:10,622 log 12832 12300 "POST /accounts/login/ HTTP/1.1" 403 2545
+INFO 2026-04-22 00:28:43,638 autoreload 12832 10392 E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\crm_project_base_model_auth\settings.py changed, reloading.
+INFO 2026-04-22 00:28:44,779 autoreload 11608 6444 Watching for file changes with StatReloader
+INFO 2026-04-22 00:31:43,226 autoreload 9060 12664 Watching for file changes with StatReloader
+INFO 2026-04-22 00:31:45,884 log 9060 11768 "GET / HTTP/1.1" 302 0
+INFO 2026-04-22 00:31:45,899 log 9060 11768 "GET /accounts/login/?next=/ HTTP/1.1" 200 4518
+INFO 2026-04-22 00:31:49,568 log 9060 11768 "POST /accounts/login/ HTTP/1.1" 200 5121
+INFO 2026-04-22 00:34:37,389 autoreload 11488 11960 Watching for file changes with StatReloader
+INFO 2026-04-22 00:34:39,953 log 11488 12988 "GET / HTTP/1.1" 302 0
+INFO 2026-04-22 00:34:39,969 log 11488 12988 "GET /accounts/login/?next=/ HTTP/1.1" 200 4518
+INFO 2026-04-22 00:34:43,385 log 11488 12988 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2026-04-22 00:34:43,448 log 11488 12988 "GET / HTTP/1.1" 200 6020
+INFO 2026-04-22 00:39:30,142 log 11488 12988 "GET /admin/ HTTP/1.1" 200 16758
+INFO 2026-04-22 00:39:35,308 log 11488 12988 "GET /admin/analytics/report/ HTTP/1.1" 200 26133
+INFO 2026-04-22 00:39:35,339 log 11488 12988 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+ERROR 2026-04-22 00:39:41,967 log 11488 12988 Internal Server Error: /admin/notifications/notification/
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\db\models\options.py", line 684, in get_field
+    return self.fields_map[field_name]
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'is_read_badge'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\utils.py", line 293, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\utils.py", line 333, in _get_non_gfk_field
+    field = opts.get_field(name)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\db\models\options.py", line 686, in get_field
+    raise FieldDoesNotExist(
+django.core.exceptions.FieldDoesNotExist: Notification has no field named 'is_read_badge'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\base.py", line 221, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\templatetags\base.py", line 47, in render
+    return super().render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\library.py", line 363, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 357, in result_list
+    "results": list(results(cl)),
+               ^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 333, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 324, in __init__
+    super().__init__(*items)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 221, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\utils.py", line 302, in lookup_field
+    value = attr(obj)
+            ^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\notifications\admin.py", line 132, in is_read_badge
+    return format_html(
+           ^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\utils\html.py", line 137, in format_html
+    raise TypeError("args or kwargs must be provided.")
+TypeError: args or kwargs must be provided.
+ERROR 2026-04-22 00:39:41,972 log 11488 12988 "GET /admin/notifications/notification/ HTTP/1.1" 500 414484
+INFO 2026-04-22 19:07:52,478 autoreload 7140 6328 Watching for file changes with StatReloader
+INFO 2026-04-22 19:08:03,399 log 7140 11384 "GET / HTTP/1.1" 302 0
+INFO 2026-04-22 19:08:03,547 log 7140 11592 "GET /accounts/login/?next=/ HTTP/1.1" 200 4518
+WARNING 2026-04-22 19:08:03,884 log 7140 11896 Not Found: /favicon.ico
+WARNING 2026-04-22 19:08:03,884 log 7140 11896 "GET /favicon.ico HTTP/1.1" 404 4579
+INFO 2026-04-22 19:08:09,416 log 7140 12048 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2026-04-22 19:08:09,683 log 7140 12048 "GET / HTTP/1.1" 200 6020
+INFO 2026-04-22 19:08:09,735 log 7140 12048 "GET /static/css/index.css HTTP/1.1" 304 0
+INFO 2026-04-22 19:08:28,484 log 7140 12048 "GET /admin/ HTTP/1.1" 200 16758
+INFO 2026-04-22 19:10:18,215 log 7140 12048 "GET /admin/clients/client/ HTTP/1.1" 200 52999
+INFO 2026-04-22 19:10:18,277 log 7140 12048 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-22 19:10:48,771 log 7140 12048 "POST /admin/clients/client/ HTTP/1.1" 200 16718
+INFO 2026-04-22 19:10:50,641 log 7140 12048 "POST /admin/clients/client/ HTTP/1.1" 302 0
+INFO 2026-04-22 19:10:50,698 log 7140 12048 "GET /admin/clients/client/ HTTP/1.1" 200 49788
+INFO 2026-04-22 19:10:50,718 log 7140 12048 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-22 19:11:04,696 log 7140 12048 "GET /admin/clients/client/add/ HTTP/1.1" 200 36641
+INFO 2026-04-22 19:11:04,705 log 7140 12048 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-22 19:19:03,206 log 7140 10792 "POST /admin/clients/client/add/ HTTP/1.1" 302 0
+INFO 2026-04-22 19:19:03,305 log 7140 10792 "GET /admin/clients/client/ HTTP/1.1" 200 53207
+INFO 2026-04-22 19:19:03,321 log 7140 10792 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-22 19:19:44,972 log 7140 10792 "GET /admin/contracts/contract/ HTTP/1.1" 200 44726
+WARNING 2026-04-22 19:19:44,988 log 7140 12632 "GET /static/admin/css/contracts.css HTTP/1.1" 404 1996
+WARNING 2026-04-22 19:19:44,988 log 7140 12652 "GET /static/admin/js/contracts.js HTTP/1.1" 404 1990
+INFO 2026-04-22 19:19:44,988 log 7140 10792 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-22 19:19:51,373 log 7140 10792 "GET /admin/contracts/contract/add/ HTTP/1.1" 200 39900
+WARNING 2026-04-22 19:19:51,396 log 7140 13076 "GET /static/admin/css/contracts.css HTTP/1.1" 404 1996
+WARNING 2026-04-22 19:19:51,397 log 7140 12144 "GET /static/admin/js/contracts.js HTTP/1.1" 404 1990
+INFO 2026-04-22 19:19:51,404 log 7140 10792 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-22 19:35:58,280 log 7140 8276 "POST /admin/contracts/contract/add/ HTTP/1.1" 302 0
+INFO 2026-04-22 19:35:58,330 log 7140 8276 "GET /admin/contracts/contract/ HTTP/1.1" 200 47100
+WARNING 2026-04-22 19:35:58,344 log 7140 8276 "GET /static/admin/css/contracts.css HTTP/1.1" 404 1996
+WARNING 2026-04-22 19:35:58,349 log 7140 12276 "GET /static/admin/js/contracts.js HTTP/1.1" 404 1990
+INFO 2026-04-22 19:35:58,359 log 7140 11556 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-22 19:36:58,074 log 7140 11556 "GET /admin/contracts/contract/15/change/ HTTP/1.1" 200 43505
+WARNING 2026-04-22 19:36:58,103 log 7140 11556 "GET /static/admin/css/contracts.css HTTP/1.1" 404 1996
+WARNING 2026-04-22 19:36:58,107 log 7140 13272 "GET /static/admin/js/contracts.js HTTP/1.1" 404 1990
+INFO 2026-04-22 19:36:58,117 log 7140 7292 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-22 19:36:58,138 log 7140 7292 "GET /static/admin/img/tooltag-arrowright.svg HTTP/1.1" 200 569
+INFO 2026-04-22 19:38:48,542 log 7140 7292 "POST /admin/contracts/contract/15/change/ HTTP/1.1" 302 0
+INFO 2026-04-22 19:38:48,579 log 7140 7292 "GET /admin/contracts/contract/ HTTP/1.1" 200 47102
+WARNING 2026-04-22 19:38:48,606 log 7140 7292 "GET /static/admin/css/contracts.css HTTP/1.1" 404 1996
+WARNING 2026-04-22 19:38:48,610 log 7140 12276 "GET /static/admin/js/contracts.js HTTP/1.1" 404 1990
+INFO 2026-04-22 19:38:48,619 log 7140 2444 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-22 19:40:01,367 log 7140 2444 "GET /admin/tasks/task/ HTTP/1.1" 200 43089
+INFO 2026-04-22 19:40:01,414 log 7140 2444 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-22 19:40:14,864 log 7140 2444 "GET /admin/tasks/task/add/ HTTP/1.1" 200 36247
+INFO 2026-04-22 19:40:14,886 log 7140 2444 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-22 19:40:14,934 log 7140 2444 "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 805
+INFO 2026-04-22 19:43:20,874 log 7140 2444 "GET /static/admin/img/calendar-icons.svg HTTP/1.1" 200 1320
+INFO 2026-04-22 19:45:21,622 log 7140 2444 "POST /admin/tasks/task/add/ HTTP/1.1" 302 0
+ERROR 2026-04-22 19:45:22,019 log 7140 2444 Internal Server Error: /admin/tasks/task/
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\db\models\options.py", line 684, in get_field
+    return self.fields_map[field_name]
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'time_info'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\utils.py", line 293, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\utils.py", line 333, in _get_non_gfk_field
+    field = opts.get_field(name)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\db\models\options.py", line 686, in get_field
+    raise FieldDoesNotExist(
+django.core.exceptions.FieldDoesNotExist: Task has no field named 'time_info'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\base.py", line 221, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\templatetags\base.py", line 47, in render
+    return super().render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\library.py", line 363, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 357, in result_list
+    "results": list(results(cl)),
+               ^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 330, in results
+    yield ResultList(form, items_for_result(cl, res, form))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 324, in __init__
+    super().__init__(*items)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 221, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\utils.py", line 302, in lookup_field
+    value = attr(obj)
+            ^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\tasks\admin.py", line 227, in time_info
+    return format_html(
+           ^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\utils\html.py", line 140, in format_html
+    return mark_safe(format_string.format(*args_safe, **kwargs_safe))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Unknown format code 'f' for object of type 'SafeString'
+ERROR 2026-04-22 19:45:22,024 log 7140 2444 "GET /admin/tasks/task/ HTTP/1.1" 500 420667
+INFO 2026-04-22 20:56:43,467 autoreload 7140 6328 E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\tasks\admin.py changed, reloading.
+INFO 2026-04-22 20:56:44,744 autoreload 14196 13668 Watching for file changes with StatReloader
+INFO 2026-04-22 20:56:51,232 log 14196 11676 "GET /admin/tasks/task/ HTTP/1.1" 200 45454
+INFO 2026-04-22 20:56:51,263 log 14196 11676 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-22 20:57:20,698 log 14196 11676 "POST /admin/tasks/task/ HTTP/1.1" 302 0
+INFO 2026-04-22 20:57:20,745 log 14196 11676 "GET /admin/tasks/task/ HTTP/1.1" 200 45801
+INFO 2026-04-22 20:57:20,765 log 14196 11676 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-22 20:59:01,057 autoreload 13612 8056 Watching for file changes with StatReloader
+ERROR 2026-04-22 20:59:14,611 log 13612 7184 Internal Server Error: /admin/notifications/notification/
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\db\models\options.py", line 684, in get_field
+    return self.fields_map[field_name]
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'is_read_badge'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\utils.py", line 293, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\utils.py", line 333, in _get_non_gfk_field
+    field = opts.get_field(name)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\db\models\options.py", line 686, in get_field
+    raise FieldDoesNotExist(
+django.core.exceptions.FieldDoesNotExist: Notification has no field named 'is_read_badge'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\base.py", line 221, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\templatetags\base.py", line 47, in render
+    return super().render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\library.py", line 363, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 357, in result_list
+    "results": list(results(cl)),
+               ^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 333, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 324, in __init__
+    super().__init__(*items)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 221, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\utils.py", line 302, in lookup_field
+    value = attr(obj)
+            ^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\notifications\admin.py", line 132, in is_read_badge
+    return format_html(
+           ^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\utils\html.py", line 137, in format_html
+    raise TypeError("args or kwargs must be provided.")
+TypeError: args or kwargs must be provided.
+ERROR 2026-04-22 20:59:14,618 log 13612 7184 "GET /admin/notifications/notification/ HTTP/1.1" 500 415628
+INFO 2026-04-22 21:04:43,438 autoreload 13612 8056 E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\notifications\admin.py changed, reloading.
+INFO 2026-04-22 21:04:44,640 autoreload 13820 13136 Watching for file changes with StatReloader
+INFO 2026-04-22 21:05:45,358 autoreload 13820 13136 E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\notifications\admin.py changed, reloading.
+INFO 2026-04-22 21:05:46,452 autoreload 1896 13408 Watching for file changes with StatReloader
+ERROR 2026-04-22 21:05:48,171 log 1896 5748 Internal Server Error: /admin/notifications/notification/
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\db\models\options.py", line 684, in get_field
+    return self.fields_map[field_name]
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'actions_buttons'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\utils.py", line 293, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\utils.py", line 333, in _get_non_gfk_field
+    field = opts.get_field(name)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\db\models\options.py", line 686, in get_field
+    raise FieldDoesNotExist(
+django.core.exceptions.FieldDoesNotExist: Notification has no field named 'actions_buttons'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\base.py", line 221, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\templatetags\base.py", line 47, in render
+    return super().render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\library.py", line 363, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 357, in result_list
+    "results": list(results(cl)),
+               ^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 333, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 324, in __init__
+    super().__init__(*items)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 221, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\utils.py", line 302, in lookup_field
+    value = attr(obj)
+            ^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\notifications\admin.py", line 162, in actions_buttons
+    return format_html(''.join(buttons))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\utils\html.py", line 137, in format_html
+    raise TypeError("args or kwargs must be provided.")
+TypeError: args or kwargs must be provided.
+ERROR 2026-04-22 21:05:48,171 log 1896 5748 "GET /admin/notifications/notification/ HTTP/1.1" 500 417086
+INFO 2026-04-22 21:06:03,410 autoreload 10596 13572 Watching for file changes with StatReloader
+ERROR 2026-04-22 21:06:06,722 log 10596 648 Internal Server Error: /admin/notifications/notification/
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\db\models\options.py", line 684, in get_field
+    return self.fields_map[field_name]
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'actions_buttons'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\utils.py", line 293, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\utils.py", line 333, in _get_non_gfk_field
+    field = opts.get_field(name)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\db\models\options.py", line 686, in get_field
+    raise FieldDoesNotExist(
+django.core.exceptions.FieldDoesNotExist: Notification has no field named 'actions_buttons'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\base.py", line 221, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\templatetags\base.py", line 47, in render
+    return super().render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\library.py", line 363, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 357, in result_list
+    "results": list(results(cl)),
+               ^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 333, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 324, in __init__
+    super().__init__(*items)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 221, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\utils.py", line 302, in lookup_field
+    value = attr(obj)
+            ^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\notifications\admin.py", line 162, in actions_buttons
+    return format_html(''.join(buttons))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\utils\html.py", line 137, in format_html
+    raise TypeError("args or kwargs must be provided.")
+TypeError: args or kwargs must be provided.
+ERROR 2026-04-22 21:06:06,722 log 10596 648 "GET /admin/notifications/notification/ HTTP/1.1" 500 417086
+INFO 2026-04-22 21:07:18,419 autoreload 12428 10492 Watching for file changes with StatReloader
+INFO 2026-04-22 21:07:20,992 log 12428 12552 "GET / HTTP/1.1" 200 5688
+INFO 2026-04-22 21:07:21,023 log 12428 12552 "GET /static/js/index.js HTTP/1.1" 304 0
+INFO 2026-04-22 21:07:31,071 log 12428 12552 "GET /admin/ HTTP/1.1" 200 20875
+ERROR 2026-04-22 21:07:35,470 log 12428 12552 Internal Server Error: /admin/notifications/notification/
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\db\models\options.py", line 684, in get_field
+    return self.fields_map[field_name]
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'actions_buttons'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\utils.py", line 293, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\utils.py", line 333, in _get_non_gfk_field
+    field = opts.get_field(name)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\db\models\options.py", line 686, in get_field
+    raise FieldDoesNotExist(
+django.core.exceptions.FieldDoesNotExist: Notification has no field named 'actions_buttons'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\base.py", line 221, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\templatetags\base.py", line 47, in render
+    return super().render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\library.py", line 363, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 357, in result_list
+    "results": list(results(cl)),
+               ^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 333, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 324, in __init__
+    super().__init__(*items)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 221, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\utils.py", line 302, in lookup_field
+    value = attr(obj)
+            ^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\notifications\admin.py", line 162, in actions_buttons
+    return format_html(''.join(buttons))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\utils\html.py", line 137, in format_html
+    raise TypeError("args or kwargs must be provided.")
+TypeError: args or kwargs must be provided.
+ERROR 2026-04-22 21:07:35,488 log 12428 12552 "GET /admin/notifications/notification/ HTTP/1.1" 500 416938
+ERROR 2026-04-22 21:31:12,757 log 12428 13804 Internal Server Error: /admin/notifications/notification/
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\db\models\options.py", line 684, in get_field
+    return self.fields_map[field_name]
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'actions_buttons'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\utils.py", line 293, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\utils.py", line 333, in _get_non_gfk_field
+    field = opts.get_field(name)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\db\models\options.py", line 686, in get_field
+    raise FieldDoesNotExist(
+django.core.exceptions.FieldDoesNotExist: Notification has no field named 'actions_buttons'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\base.py", line 221, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\templatetags\base.py", line 47, in render
+    return super().render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\library.py", line 363, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 357, in result_list
+    "results": list(results(cl)),
+               ^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 333, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 324, in __init__
+    super().__init__(*items)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 221, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\utils.py", line 302, in lookup_field
+    value = attr(obj)
+            ^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\notifications\admin.py", line 162, in actions_buttons
+    return format_html(''.join(buttons))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\utils\html.py", line 137, in format_html
+    raise TypeError("args or kwargs must be provided.")
+TypeError: args or kwargs must be provided.
+ERROR 2026-04-22 21:31:13,003 log 12428 13804 "GET /admin/notifications/notification/ HTTP/1.1" 500 417075
+INFO 2026-04-22 21:31:13,593 autoreload 12428 10492 E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\notifications\admin.py changed, reloading.
+INFO 2026-04-22 21:31:14,752 autoreload 12996 14008 Watching for file changes with StatReloader
+INFO 2026-04-22 21:31:37,275 autoreload 12996 14008 E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\notifications\admin.py changed, reloading.
+INFO 2026-04-22 21:31:38,342 autoreload 1896 12412 Watching for file changes with StatReloader
+INFO 2026-04-22 21:31:45,341 log 1896 9900 "GET /admin/notifications/notification/ HTTP/1.1" 200 59166
+WARNING 2026-04-22 21:31:45,357 log 1896 12144 "GET /static/admin/css/notifications.css HTTP/1.1" 404 2008
+WARNING 2026-04-22 21:31:45,373 log 1896 11980 "GET /static/admin/js/notifications.js HTTP/1.1" 404 2002
+INFO 2026-04-22 21:31:45,373 log 1896 9900 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-22 21:32:18,403 log 1896 9900 "GET /admin/notifications/notification/ HTTP/1.1" 200 59166
+WARNING 2026-04-22 21:32:18,425 log 1896 9900 "GET /static/admin/css/notifications.css HTTP/1.1" 404 2008
+WARNING 2026-04-22 21:32:18,431 log 1896 4084 "GET /static/admin/js/notifications.js HTTP/1.1" 404 2002
+INFO 2026-04-22 21:32:18,438 log 1896 13664 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-22 21:32:30,303 log 1896 13664 "GET / HTTP/1.1" 200 5688
+INFO 2026-04-22 21:32:36,916 log 1896 13664 "POST /accounts/logout/ HTTP/1.1" 302 0
+INFO 2026-04-22 21:32:36,922 log 1896 13664 "GET /accounts/login/ HTTP/1.1" 200 4830
+INFO 2026-04-22 21:33:11,589 autoreload 1896 12412 E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\notifications\admin.py changed, reloading.
+INFO 2026-04-22 21:33:12,742 autoreload 13800 13696 Watching for file changes with StatReloader
+INFO 2026-04-22 21:34:11,243 log 13800 13656 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2026-04-22 21:34:11,273 log 13800 13656 "GET / HTTP/1.1" 200 6022
+INFO 2026-04-22 21:34:24,189 log 13800 13656 "GET /tasks/?status=overdue HTTP/1.1" 200 11060
+INFO 2026-04-22 21:34:31,894 log 13800 13656 "GET /tasks/?search=&status=&priority=&assigned_to=me HTTP/1.1" 200 13150
+INFO 2026-04-22 21:34:53,346 log 13800 13656 "GET /tasks/11/ HTTP/1.1" 200 8791
+INFO 2026-04-22 21:35:20,258 log 13800 13656 "GET /contracts/15/ HTTP/1.1" 200 4677
+INFO 2026-04-22 21:35:27,311 log 13800 13656 "GET /contracts/15/edit/ HTTP/1.1" 200 6028
+ERROR 2026-04-22 21:36:49,945 log 13800 13656 Internal Server Error: /contracts/15/edit/
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 1003, in connect_check_health
+    sock = self._connect()
+           ^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 1479, in _connect
+    for res in socket.getaddrinfo(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Aleksey\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 976, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 130, in reconnect_on_error
+    yield
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 180, in _consume_from
+    self._pubsub.subscribe(key)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\client.py", line 1265, in subscribe
+    ret_val = self.execute_command("SUBSCRIBE", *new_channels.keys())
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\client.py", line 1023, in execute_command
+    self.connection = self.connection_pool.get_connection()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\utils.py", line 236, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 3041, in get_connection
+    connection.connect()
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 976, in connect
+    self.retry.call_with_retry(
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\retry.py", line 132, in call_with_retry
+    raise error
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\retry.py", line 120, in call_with_retry
+    return do()
+           ^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 977, in <lambda>
+    lambda: self.connect_check_health(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 1025, in connect_check_health
+    raise e
+redis.exceptions.ConnectionError: Error 11001 connecting to redis:6379. getaddrinfo failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 1003, in connect_check_health
+    sock = self._connect()
+           ^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 1479, in _connect
+    for res in socket.getaddrinfo(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Aleksey\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 976, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 133, in reconnect_on_error
+    self._ensure(self._reconnect_pubsub, ())
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 428, in ensure
+    return retry_over_time(
+           ^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\kombu\utils\functional.py", line 318, in retry_over_time
+    return fun(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 109, in _reconnect_pubsub
+    metas = self.backend.client.mget(self.subscribed_to)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\commands\core.py", line 2241, in mget
+    return self.execute_command("MGET", *args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\client.py", line 716, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\client.py", line 722, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\utils.py", line 236, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 3041, in get_connection
+    connection.connect()
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 976, in connect
+    self.retry.call_with_retry(
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\retry.py", line 132, in call_with_retry
+    raise error
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\retry.py", line 120, in call_with_retry
+    return do()
+           ^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 977, in <lambda>
+    lambda: self.connect_check_health(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 1025, in connect_check_health
+    raise e
+redis.exceptions.ConnectionError: Error 11001 connecting to redis:6379. getaddrinfo failed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\views\generic\base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\auth\mixins.py", line 74, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\views\generic\base.py", line 145, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\views\generic\edit.py", line 206, in post
+    return super().post(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\views\generic\edit.py", line 151, in post
+    return self.form_valid(form)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\contracts\views.py", line 286, in form_valid
+    send_contract_created_email.delay(self.object.id)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\app\task.py", line 444, in delay
+    return self.apply_async(args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\app\task.py", line 608, in apply_async
+    return app.send_task(
+           ^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\app\base.py", line 946, in send_task
+    self.backend.on_task_call(P, task_id)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 417, in on_task_call
+    self.result_consumer.consume_from(task_id)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 172, in consume_from
+    return self.start(task_id)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 150, in start
+    self._consume_from(initial_task_id)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 179, in _consume_from
+    with self.reconnect_on_error():
+  File "C:\Users\Aleksey\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 136, in reconnect_on_error
+    raise RuntimeError(E_RETRY_LIMIT_EXCEEDED) from e
+RuntimeError: 
+Retry limit exceeded while trying to reconnect to the Celery redis result store backend. The Celery application must be restarted.
+
+INFO 2026-04-22 21:36:49,955 basehttp 13800 13656 - Broken pipe from ('127.0.0.1', 52429)
+INFO 2026-04-22 21:36:51,455 log 13800 13432 "GET /contracts/15/edit/ HTTP/1.1" 200 6044
+INFO 2026-04-22 21:36:58,630 log 13800 13432 "GET /contracts/ HTTP/1.1" 200 13197
+ERROR 2026-04-22 21:37:07,696 log 13800 3880 Internal Server Error: /contracts/15/edit/
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 1003, in connect_check_health
+    sock = self._connect()
+           ^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 1479, in _connect
+    for res in socket.getaddrinfo(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Aleksey\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 976, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 130, in reconnect_on_error
+    yield
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 180, in _consume_from
+    self._pubsub.subscribe(key)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\client.py", line 1265, in subscribe
+    ret_val = self.execute_command("SUBSCRIBE", *new_channels.keys())
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\client.py", line 1023, in execute_command
+    self.connection = self.connection_pool.get_connection()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\utils.py", line 236, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 3041, in get_connection
+    connection.connect()
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 976, in connect
+    self.retry.call_with_retry(
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\retry.py", line 132, in call_with_retry
+    raise error
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\retry.py", line 120, in call_with_retry
+    return do()
+           ^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 977, in <lambda>
+    lambda: self.connect_check_health(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 1025, in connect_check_health
+    raise e
+redis.exceptions.ConnectionError: Error 11001 connecting to redis:6379. getaddrinfo failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 1003, in connect_check_health
+    sock = self._connect()
+           ^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 1479, in _connect
+    for res in socket.getaddrinfo(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Aleksey\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 976, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 133, in reconnect_on_error
+    self._ensure(self._reconnect_pubsub, ())
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 428, in ensure
+    return retry_over_time(
+           ^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\kombu\utils\functional.py", line 318, in retry_over_time
+    return fun(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 109, in _reconnect_pubsub
+    metas = self.backend.client.mget(self.subscribed_to)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\commands\core.py", line 2241, in mget
+    return self.execute_command("MGET", *args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\client.py", line 716, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\client.py", line 722, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\utils.py", line 236, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 3041, in get_connection
+    connection.connect()
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 976, in connect
+    self.retry.call_with_retry(
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\retry.py", line 132, in call_with_retry
+    raise error
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\retry.py", line 120, in call_with_retry
+    return do()
+           ^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 977, in <lambda>
+    lambda: self.connect_check_health(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 1025, in connect_check_health
+    raise e
+redis.exceptions.ConnectionError: Error 11001 connecting to redis:6379. getaddrinfo failed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\views\generic\base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\auth\mixins.py", line 74, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\views\generic\base.py", line 145, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\views\generic\edit.py", line 206, in post
+    return super().post(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\views\generic\edit.py", line 151, in post
+    return self.form_valid(form)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\contracts\views.py", line 286, in form_valid
+    send_contract_created_email.delay(self.object.id)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\app\task.py", line 444, in delay
+    return self.apply_async(args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\app\task.py", line 608, in apply_async
+    return app.send_task(
+           ^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\app\base.py", line 946, in send_task
+    self.backend.on_task_call(P, task_id)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 417, in on_task_call
+    self.result_consumer.consume_from(task_id)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 172, in consume_from
+    return self.start(task_id)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 150, in start
+    self._consume_from(initial_task_id)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 179, in _consume_from
+    with self.reconnect_on_error():
+  File "C:\Users\Aleksey\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 136, in reconnect_on_error
+    raise RuntimeError(E_RETRY_LIMIT_EXCEEDED) from e
+RuntimeError: 
+Retry limit exceeded while trying to reconnect to the Celery redis result store backend. The Celery application must be restarted.
+
+INFO 2026-04-22 21:37:07,711 basehttp 13800 3880 - Broken pipe from ('127.0.0.1', 52447)
+INFO 2026-04-22 21:38:17,331 log 13800 13432 "GET /tasks/11/edit/ HTTP/1.1" 200 13750
+INFO 2026-04-22 21:40:16,615 log 13800 13432 "POST /tasks/11/edit/ HTTP/1.1" 302 0
+INFO 2026-04-22 21:40:16,635 log 13800 13432 "GET /tasks/ HTTP/1.1" 200 34416
+INFO 2026-04-22 21:40:59,452 log 13800 13432 "GET / HTTP/1.1" 200 5720
+INFO 2026-04-22 21:41:09,036 log 13800 13432 "GET /accounts/profile/ HTTP/1.1" 200 18928
+INFO 2026-04-22 21:41:40,089 log 13800 13432 "GET /accounts/profile/activity/ HTTP/1.1" 200 3885
+INFO 2026-04-22 21:42:09,182 log 13800 13432 "GET /tasks/ HTTP/1.1" 200 34105
+INFO 2026-04-22 21:42:22,880 log 13800 13432 "GET /tasks/?search=&status=&priority=&assigned_to=me HTTP/1.1" 200 12987
+INFO 2026-04-22 21:42:32,884 log 13800 13432 "GET / HTTP/1.1" 200 5720
+INFO 2026-04-22 21:42:36,876 log 13800 13432 "GET /accounts/profile/ HTTP/1.1" 200 18928
+INFO 2026-04-22 21:44:39,520 log 13800 13432 "GET / HTTP/1.1" 200 5720
+INFO 2026-04-22 21:44:42,360 log 13800 13432 "GET /contracts/ HTTP/1.1" 200 13197
+INFO 2026-04-22 21:45:22,587 log 13800 13432 "GET /tasks/?status=overdue HTTP/1.1" 200 11060
+INFO 2026-04-22 21:45:25,661 log 13800 13432 "GET /tasks/create/ HTTP/1.1" 200 13309
+INFO 2026-04-22 21:47:37,835 log 13800 13432 "POST /tasks/create/ HTTP/1.1" 200 13875
+INFO 2026-04-22 21:48:10,117 log 13800 13432 "POST /tasks/create/ HTTP/1.1" 302 0
+INFO 2026-04-22 21:48:10,134 log 13800 13432 "GET /tasks/ HTTP/1.1" 200 36553
+INFO 2026-04-22 21:48:27,313 log 13800 13432 "GET /tasks/12/ HTTP/1.1" 200 8275
+INFO 2026-04-22 21:48:48,982 log 13800 13432 "GET /tasks/12/edit/ HTTP/1.1" 200 13560
+INFO 2026-04-22 21:50:03,666 log 13800 13432 "POST /tasks/12/edit/ HTTP/1.1" 302 0
+INFO 2026-04-22 21:50:03,688 log 13800 13432 "GET /tasks/ HTTP/1.1" 200 36864
+INFO 2026-04-22 21:50:29,595 log 13800 13432 "GET / HTTP/1.1" 200 5721
+INFO 2026-04-22 21:50:57,775 log 13800 13432 "GET /accounts/profile/ HTTP/1.1" 200 18928
+INFO 2026-04-22 21:51:01,828 log 13800 13432 "GET /accounts/profile/activity/ HTTP/1.1" 200 3885
+INFO 2026-04-22 21:52:53,076 log 13800 13432 "GET /tasks/ HTTP/1.1" 200 36553
+INFO 2026-04-22 21:54:40,810 log 13800 13432 "GET /accounts/profile/activity/ HTTP/1.1" 200 3885
+INFO 2026-04-22 21:55:14,418 log 13800 13432 "POST /accounts/profile/ HTTP/1.1" 200 18928
+INFO 2026-04-22 21:55:36,341 log 13800 13432 "GET /accounts/profile/change-password/ HTTP/1.1" 200 5930
+INFO 2026-04-22 21:56:50,601 log 13800 13432 "POST /accounts/profile/change-password/ HTTP/1.1" 302 0
+INFO 2026-04-22 21:56:50,621 log 13800 13432 "GET /accounts/profile/change-password/done/ HTTP/1.1" 200 4242
+INFO 2026-04-22 21:56:58,253 log 13800 13432 "GET /accounts/profile/ HTTP/1.1" 200 18928
+INFO 2026-04-22 21:58:55,985 log 13800 13432 "GET /accounts/profile/activity/ HTTP/1.1" 200 3885
+INFO 2026-04-22 21:59:04,659 log 13800 13432 "GET /tasks/my/ HTTP/1.1" 200 14214
+INFO 2026-04-22 21:59:25,464 log 13800 13432 "GET /accounts/password-reset/ HTTP/1.1" 200 5221
+INFO 2026-04-22 21:59:41,973 log 13800 13432 "POST /accounts/password-reset/ HTTP/1.1" 302 0
+ERROR 2026-04-22 21:59:42,039 log 13800 13432 Internal Server Error: /accounts/password-reset/done/
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\base.py", line 221, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: accounts/password_reset_done.html
+ERROR 2026-04-22 21:59:42,040 log 13800 13432 "GET /accounts/password-reset/done/ HTTP/1.1" 500 90529
+INFO 2026-04-22 22:02:48,515 log 13800 13432 "GET /accounts/password-reset/ HTTP/1.1" 200 5221
+INFO 2026-04-22 22:04:28,629 log 13800 13432 "GET /accounts/login/ HTTP/1.1" 302 0
+INFO 2026-04-22 22:04:28,679 log 13800 13432 "GET / HTTP/1.1" 200 5721
+INFO 2026-04-22 22:04:36,934 log 13800 13432 "GET /accounts/profile/ HTTP/1.1" 200 18928
+INFO 2026-04-22 22:04:47,359 log 13800 13432 "GET /accounts/logout/ HTTP/1.1" 302 0
+INFO 2026-04-22 22:04:47,368 log 13800 13432 "GET /accounts/login/ HTTP/1.1" 200 4830
+INFO 2026-04-22 22:04:50,473 log 13800 13432 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2026-04-22 22:04:50,494 log 13800 13432 "GET / HTTP/1.1" 200 6023
+INFO 2026-04-22 23:52:06,736 autoreload 7360 14084 Watching for file changes with StatReloader
+INFO 2026-04-22 23:52:39,293 log 7360 12020 "GET /accounts/profile/ HTTP/1.1" 200 34648
+WARNING 2026-04-22 23:52:47,863 log 7360 12020 Not Found: /notifications/mark-read/35/
+WARNING 2026-04-22 23:52:47,863 log 7360 12020 "POST /notifications/mark-read/35/ HTTP/1.1" 404 6475
+WARNING 2026-04-22 23:52:51,526 log 7360 12020 Not Found: /notifications/mark-read/34/
+WARNING 2026-04-22 23:52:51,527 log 7360 12020 "POST /notifications/mark-read/34/ HTTP/1.1" 404 6475
+WARNING 2026-04-22 23:52:57,428 log 7360 12020 Not Found: /notifications/mark-read/33/
+WARNING 2026-04-22 23:52:57,429 log 7360 12020 "POST /notifications/mark-read/33/ HTTP/1.1" 404 6475
+WARNING 2026-04-22 23:52:59,269 log 7360 12020 Not Found: /notifications/mark-read/32/
+WARNING 2026-04-22 23:52:59,269 log 7360 12020 "POST /notifications/mark-read/32/ HTTP/1.1" 404 6475
+WARNING 2026-04-22 23:53:15,541 log 7360 12020 Not Found: /notifications/mark-all-read/
+WARNING 2026-04-22 23:53:15,541 log 7360 12020 "POST /notifications/mark-all-read/ HTTP/1.1" 404 6478
+INFO 2026-04-22 23:53:41,944 log 7360 12020 "GET /tasks/my/ HTTP/1.1" 200 14214
+INFO 2026-04-22 23:54:02,744 log 7360 12020 "GET /tasks/my/?search=&status=&priority=&assigned_to=me HTTP/1.1" 200 14214
+INFO 2026-04-22 23:54:04,870 log 7360 12020 "GET /tasks/my/?search=&status=&priority=&assigned_to= HTTP/1.1" 200 14214
+INFO 2026-04-22 23:54:23,806 log 7360 12020 "GET /tasks/12/delete/ HTTP/1.1" 200 4864
+INFO 2026-04-22 23:54:42,477 log 7360 12020 "GET /tasks/12/ HTTP/1.1" 200 8301
+INFO 2026-04-22 23:54:56,608 log 7360 12020 "GET /tasks/12/delete/ HTTP/1.1" 200 4864
+INFO 2026-04-22 23:54:58,622 log 7360 12020 "POST /tasks/12/delete/ HTTP/1.1" 302 0
+INFO 2026-04-22 23:54:58,648 log 7360 12020 "GET /tasks/ HTTP/1.1" 200 34105
+INFO 2026-04-22 23:55:04,912 log 7360 12020 "GET /tasks/?search=&status=&priority=&assigned_to= HTTP/1.1" 200 34105
+INFO 2026-04-22 23:55:09,705 log 7360 12020 "GET /tasks/?search=&status=&priority=&assigned_to=me HTTP/1.1" 200 12987
+INFO 2026-04-22 23:55:16,993 log 7360 12020 "GET /tasks/?search=&status=&priority=&assigned_to= HTTP/1.1" 200 34105
+INFO 2026-04-22 23:55:36,999 log 7360 12020 "GET / HTTP/1.1" 200 5720
+INFO 2026-04-22 23:55:41,047 log 7360 12020 "GET /accounts/profile/ HTTP/1.1" 200 32370
+INFO 2026-04-22 23:55:46,047 log 7360 12020 "GET /accounts/profile/activity/ HTTP/1.1" 200 3885
+WARNING 2026-04-22 23:55:57,622 log 7360 12020 Not Found: /notifications/mark-read/35/
+WARNING 2026-04-22 23:55:57,622 log 7360 12020 "POST /notifications/mark-read/35/ HTTP/1.1" 404 6475
+WARNING 2026-04-22 23:56:06,118 log 7360 12020 Not Found: /notifications/mark-read/34/
+WARNING 2026-04-22 23:56:06,118 log 7360 12020 "POST /notifications/mark-read/34/ HTTP/1.1" 404 6475
+INFO 2026-04-23 00:08:46,371 autoreload 11856 5360 Watching for file changes with StatReloader
+INFO 2026-04-23 00:08:53,986 log 11856 4352 "GET /accounts/profile/ HTTP/1.1" 200 32370
+WARNING 2026-04-23 00:08:59,647 log 11856 4352 Not Found: /notifications/mark-read/35/
+WARNING 2026-04-23 00:08:59,648 log 11856 4352 "POST /notifications/mark-read/35/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:09:01,734 log 11856 4352 Not Found: /notifications/mark-read/35/
+WARNING 2026-04-23 00:09:01,734 log 11856 4352 "POST /notifications/mark-read/35/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:09:03,661 log 11856 4352 Not Found: /notifications/mark-read/34/
+WARNING 2026-04-23 00:09:03,662 log 11856 4352 "POST /notifications/mark-read/34/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:09:04,213 log 11856 4352 Not Found: /notifications/mark-read/34/
+WARNING 2026-04-23 00:09:04,214 log 11856 4352 "POST /notifications/mark-read/34/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:09:04,469 log 11856 4352 Not Found: /notifications/mark-read/34/
+WARNING 2026-04-23 00:09:04,470 log 11856 4352 "POST /notifications/mark-read/34/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:09:05,642 log 11856 4352 Not Found: /notifications/mark-all-read/
+WARNING 2026-04-23 00:09:05,642 log 11856 4352 "POST /notifications/mark-all-read/ HTTP/1.1" 404 6478
+WARNING 2026-04-23 00:09:05,988 log 11856 4352 Not Found: /notifications/mark-all-read/
+WARNING 2026-04-23 00:09:05,988 log 11856 4352 "POST /notifications/mark-all-read/ HTTP/1.1" 404 6478
+WARNING 2026-04-23 00:09:06,241 log 11856 4352 Not Found: /notifications/mark-all-read/
+WARNING 2026-04-23 00:09:06,241 log 11856 4352 "POST /notifications/mark-all-read/ HTTP/1.1" 404 6478
+WARNING 2026-04-23 00:09:08,427 log 11856 4352 Not Found: /notifications/mark-read/33/
+WARNING 2026-04-23 00:09:08,427 log 11856 4352 "POST /notifications/mark-read/33/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:09:08,717 log 11856 4352 Not Found: /notifications/mark-read/33/
+WARNING 2026-04-23 00:09:08,717 log 11856 4352 "POST /notifications/mark-read/33/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:09:09,861 log 11856 4352 Not Found: /notifications/mark-read/32/
+WARNING 2026-04-23 00:09:09,862 log 11856 4352 "POST /notifications/mark-read/32/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:09:10,116 log 11856 4352 Not Found: /notifications/mark-read/32/
+WARNING 2026-04-23 00:09:10,116 log 11856 4352 "POST /notifications/mark-read/32/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:09:10,405 log 11856 4352 Not Found: /notifications/mark-read/32/
+WARNING 2026-04-23 00:09:10,405 log 11856 4352 "POST /notifications/mark-read/32/ HTTP/1.1" 404 6475
+INFO 2026-04-23 00:15:59,753 autoreload 13580 12368 Watching for file changes with StatReloader
+INFO 2026-04-23 00:16:11,072 log 13580 13816 "GET /accounts/profile/ HTTP/1.1" 200 32370
+INFO 2026-04-23 00:16:13,064 log 13580 13816 "GET / HTTP/1.1" 200 5720
+INFO 2026-04-23 00:16:17,753 log 13580 13816 "GET /accounts/profile/ HTTP/1.1" 200 32370
+WARNING 2026-04-23 00:16:22,143 log 13580 13816 Not Found: /notifications/mark-read/35/
+WARNING 2026-04-23 00:16:22,144 log 13580 13816 "POST /notifications/mark-read/35/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:16:24,247 log 13580 13816 Not Found: /notifications/mark-read/35/
+WARNING 2026-04-23 00:16:24,247 log 13580 13816 "POST /notifications/mark-read/35/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:16:24,967 log 13580 13816 Not Found: /notifications/mark-read/35/
+WARNING 2026-04-23 00:16:24,968 log 13580 13816 "POST /notifications/mark-read/35/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:16:25,286 log 13580 13816 Not Found: /notifications/mark-read/35/
+WARNING 2026-04-23 00:16:25,287 log 13580 13816 "POST /notifications/mark-read/35/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:16:25,573 log 13580 13816 Not Found: /notifications/mark-read/35/
+WARNING 2026-04-23 00:16:25,573 log 13580 13816 "POST /notifications/mark-read/35/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:16:25,840 log 13580 13816 Not Found: /notifications/mark-read/35/
+WARNING 2026-04-23 00:16:25,840 log 13580 13816 "POST /notifications/mark-read/35/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:16:26,910 log 13580 13816 Not Found: /notifications/mark-read/34/
+WARNING 2026-04-23 00:16:26,910 log 13580 13816 "POST /notifications/mark-read/34/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:16:27,206 log 13580 13816 Not Found: /notifications/mark-read/34/
+WARNING 2026-04-23 00:16:27,206 log 13580 13816 "POST /notifications/mark-read/34/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:16:27,534 log 13580 13816 Not Found: /notifications/mark-read/34/
+WARNING 2026-04-23 00:16:27,535 log 13580 13816 "POST /notifications/mark-read/34/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:16:27,806 log 13580 13816 Not Found: /notifications/mark-read/34/
+WARNING 2026-04-23 00:16:27,806 log 13580 13816 "POST /notifications/mark-read/34/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:16:28,766 log 13580 13816 Not Found: /notifications/mark-read/33/
+WARNING 2026-04-23 00:16:28,766 log 13580 13816 "POST /notifications/mark-read/33/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:16:29,270 log 13580 13816 Not Found: /notifications/mark-read/33/
+WARNING 2026-04-23 00:16:29,270 log 13580 13816 "POST /notifications/mark-read/33/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:16:29,573 log 13580 13816 Not Found: /notifications/mark-read/33/
+WARNING 2026-04-23 00:16:29,573 log 13580 13816 "POST /notifications/mark-read/33/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:16:29,822 log 13580 13816 Not Found: /notifications/mark-read/33/
+WARNING 2026-04-23 00:16:29,822 log 13580 13816 "POST /notifications/mark-read/33/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:16:30,070 log 13580 13816 Not Found: /notifications/mark-read/33/
+WARNING 2026-04-23 00:16:30,070 log 13580 13816 "POST /notifications/mark-read/33/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:16:30,436 log 13580 13816 Not Found: /notifications/mark-read/33/
+WARNING 2026-04-23 00:16:30,436 log 13580 13816 "POST /notifications/mark-read/33/ HTTP/1.1" 404 6475
+INFO 2026-04-23 00:23:02,847 autoreload 11984 9744 Watching for file changes with StatReloader
+INFO 2026-04-23 00:23:09,610 log 11984 12024 "GET /accounts/profile/ HTTP/1.1" 200 32370
+WARNING 2026-04-23 00:23:13,753 log 11984 12024 Not Found: /notifications/mark-read/35/
+WARNING 2026-04-23 00:23:13,754 log 11984 12024 "POST /notifications/mark-read/35/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:23:15,262 log 11984 12024 Not Found: /notifications/mark-read/35/
+WARNING 2026-04-23 00:23:15,263 log 11984 12024 "POST /notifications/mark-read/35/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:23:15,520 log 11984 12024 Not Found: /notifications/mark-read/35/
+WARNING 2026-04-23 00:23:15,520 log 11984 12024 "POST /notifications/mark-read/35/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:23:15,785 log 11984 12024 Not Found: /notifications/mark-read/35/
+WARNING 2026-04-23 00:23:15,785 log 11984 12024 "POST /notifications/mark-read/35/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:23:16,560 log 11984 12024 Not Found: /notifications/mark-all-read/
+WARNING 2026-04-23 00:23:16,561 log 11984 12024 "POST /notifications/mark-all-read/ HTTP/1.1" 404 6478
+WARNING 2026-04-23 00:23:16,844 log 11984 12024 Not Found: /notifications/mark-all-read/
+WARNING 2026-04-23 00:23:16,844 log 11984 12024 "POST /notifications/mark-all-read/ HTTP/1.1" 404 6478
+WARNING 2026-04-23 00:23:17,128 log 11984 12024 Not Found: /notifications/mark-all-read/
+WARNING 2026-04-23 00:23:17,128 log 11984 12024 "POST /notifications/mark-all-read/ HTTP/1.1" 404 6478
+WARNING 2026-04-23 00:23:18,151 log 11984 12024 Not Found: /notifications/mark-read/34/
+WARNING 2026-04-23 00:23:18,151 log 11984 12024 "POST /notifications/mark-read/34/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:23:18,414 log 11984 12024 Not Found: /notifications/mark-read/34/
+WARNING 2026-04-23 00:23:18,414 log 11984 12024 "POST /notifications/mark-read/34/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:23:18,710 log 11984 12024 Not Found: /notifications/mark-read/34/
+WARNING 2026-04-23 00:23:18,710 log 11984 12024 "POST /notifications/mark-read/34/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:23:19,489 log 11984 12024 Not Found: /notifications/mark-read/33/
+WARNING 2026-04-23 00:23:19,489 log 11984 12024 "POST /notifications/mark-read/33/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:23:19,758 log 11984 12024 Not Found: /notifications/mark-read/33/
+WARNING 2026-04-23 00:23:19,759 log 11984 12024 "POST /notifications/mark-read/33/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:23:20,921 log 11984 12024 Not Found: /notifications/mark-read/32/
+WARNING 2026-04-23 00:23:20,921 log 11984 12024 "POST /notifications/mark-read/32/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:23:21,236 log 11984 12024 Not Found: /notifications/mark-read/32/
+WARNING 2026-04-23 00:23:21,236 log 11984 12024 "POST /notifications/mark-read/32/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:23:21,487 log 11984 12024 Not Found: /notifications/mark-read/32/
+WARNING 2026-04-23 00:23:21,487 log 11984 12024 "POST /notifications/mark-read/32/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:23:27,638 log 11984 12024 Not Found: /notifications/mark-read/32/
+WARNING 2026-04-23 00:23:27,638 log 11984 12024 "POST /notifications/mark-read/32/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:23:27,937 log 11984 12024 Not Found: /notifications/mark-read/32/
+WARNING 2026-04-23 00:23:27,937 log 11984 12024 "POST /notifications/mark-read/32/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:23:28,255 log 11984 12024 Not Found: /notifications/mark-read/32/
+WARNING 2026-04-23 00:23:28,255 log 11984 12024 "POST /notifications/mark-read/32/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:23:28,554 log 11984 12024 Not Found: /notifications/mark-read/32/
+WARNING 2026-04-23 00:23:28,554 log 11984 12024 "POST /notifications/mark-read/32/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:23:29,487 log 11984 12024 Not Found: /notifications/mark-read/32/
+WARNING 2026-04-23 00:23:29,487 log 11984 12024 "POST /notifications/mark-read/32/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:23:31,193 log 11984 12024 Not Found: /notifications/mark-read/32/
+WARNING 2026-04-23 00:23:31,193 log 11984 12024 "POST /notifications/mark-read/32/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:23:31,759 log 11984 12024 Not Found: /notifications/mark-read/32/
+WARNING 2026-04-23 00:23:31,759 log 11984 12024 "POST /notifications/mark-read/32/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:23:32,015 log 11984 12024 Not Found: /notifications/mark-read/32/
+WARNING 2026-04-23 00:23:32,016 log 11984 12024 "POST /notifications/mark-read/32/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:23:32,319 log 11984 12024 Not Found: /notifications/mark-read/32/
+WARNING 2026-04-23 00:23:32,319 log 11984 12024 "POST /notifications/mark-read/32/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:23:32,579 log 11984 12024 Not Found: /notifications/mark-read/32/
+WARNING 2026-04-23 00:23:32,579 log 11984 12024 "POST /notifications/mark-read/32/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:23:32,838 log 11984 12024 Not Found: /notifications/mark-read/32/
+WARNING 2026-04-23 00:23:32,838 log 11984 12024 "POST /notifications/mark-read/32/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:23:33,383 log 11984 12024 Not Found: /notifications/mark-read/32/
+WARNING 2026-04-23 00:23:33,383 log 11984 12024 "POST /notifications/mark-read/32/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:23:33,926 log 11984 12024 Not Found: /notifications/mark-read/32/
+WARNING 2026-04-23 00:23:33,926 log 11984 12024 "POST /notifications/mark-read/32/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:23:34,191 log 11984 12024 Not Found: /notifications/mark-read/32/
+WARNING 2026-04-23 00:23:34,192 log 11984 12024 "POST /notifications/mark-read/32/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:23:34,477 log 11984 12024 Not Found: /notifications/mark-read/32/
+WARNING 2026-04-23 00:23:34,477 log 11984 12024 "POST /notifications/mark-read/32/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:23:36,120 log 11984 12024 Not Found: /notifications/mark-all-read/
+WARNING 2026-04-23 00:23:36,120 log 11984 12024 "POST /notifications/mark-all-read/ HTTP/1.1" 404 6478
+WARNING 2026-04-23 00:23:36,423 log 11984 12024 Not Found: /notifications/mark-all-read/
+WARNING 2026-04-23 00:23:36,423 log 11984 12024 "POST /notifications/mark-all-read/ HTTP/1.1" 404 6478
+WARNING 2026-04-23 00:23:36,718 log 11984 12024 Not Found: /notifications/mark-all-read/
+WARNING 2026-04-23 00:23:36,719 log 11984 12024 "POST /notifications/mark-all-read/ HTTP/1.1" 404 6478
+WARNING 2026-04-23 00:23:38,047 log 11984 12024 Not Found: /notifications/mark-all-read/
+WARNING 2026-04-23 00:23:38,048 log 11984 12024 "POST /notifications/mark-all-read/ HTTP/1.1" 404 6478
+INFO 2026-04-23 00:27:43,772 autoreload 12224 13716 Watching for file changes with StatReloader
+WARNING 2026-04-23 00:27:51,940 log 12224 14016 Not Found: /notifications/mark-read/35/
+WARNING 2026-04-23 00:27:51,940 log 12224 14016 "POST /notifications/mark-read/35/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:27:53,581 log 12224 14016 Not Found: /notifications/mark-read/35/
+WARNING 2026-04-23 00:27:53,581 log 12224 14016 "POST /notifications/mark-read/35/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:27:53,956 log 12224 14016 Not Found: /notifications/mark-read/35/
+WARNING 2026-04-23 00:27:53,956 log 12224 14016 "POST /notifications/mark-read/35/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:27:54,238 log 12224 14016 Not Found: /notifications/mark-read/35/
+WARNING 2026-04-23 00:27:54,238 log 12224 14016 "POST /notifications/mark-read/35/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:27:54,519 log 12224 14016 Not Found: /notifications/mark-read/35/
+WARNING 2026-04-23 00:27:54,519 log 12224 14016 "POST /notifications/mark-read/35/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:27:55,567 log 12224 14016 Not Found: /notifications/mark-read/34/
+WARNING 2026-04-23 00:27:55,567 log 12224 14016 "POST /notifications/mark-read/34/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:27:55,862 log 12224 14016 Not Found: /notifications/mark-read/34/
+WARNING 2026-04-23 00:27:55,863 log 12224 14016 "POST /notifications/mark-read/34/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:27:56,156 log 12224 14016 Not Found: /notifications/mark-read/34/
+WARNING 2026-04-23 00:27:56,156 log 12224 14016 "POST /notifications/mark-read/34/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:27:56,444 log 12224 14016 Not Found: /notifications/mark-read/34/
+WARNING 2026-04-23 00:27:56,444 log 12224 14016 "POST /notifications/mark-read/34/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:27:57,463 log 12224 14016 Not Found: /notifications/mark-read/33/
+WARNING 2026-04-23 00:27:57,463 log 12224 14016 "POST /notifications/mark-read/33/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:27:57,778 log 12224 14016 Not Found: /notifications/mark-read/33/
+WARNING 2026-04-23 00:27:57,778 log 12224 14016 "POST /notifications/mark-read/33/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:27:58,023 log 12224 14016 Not Found: /notifications/mark-read/33/
+WARNING 2026-04-23 00:27:58,023 log 12224 14016 "POST /notifications/mark-read/33/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:30:16,487 log 12224 14016 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-04-23 00:30:16,487 log 12224 14016 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4690
+WARNING 2026-04-23 00:30:20,065 log 12224 14016 Not Found: /notifications/mark-read/34/
+WARNING 2026-04-23 00:30:20,065 log 12224 14016 "POST /notifications/mark-read/34/ HTTP/1.1" 404 6475
+WARNING 2026-04-23 00:30:27,825 log 12224 14016 Not Found: /notifications/mark-read/33/
+WARNING 2026-04-23 00:30:27,825 log 12224 14016 "POST /notifications/mark-read/33/ HTTP/1.1" 404 6475
+INFO 2026-04-23 00:34:06,466 log 12224 11336 "GET /accounts/profile/ HTTP/1.1" 302 0
+INFO 2026-04-23 00:34:06,476 log 12224 11336 "GET /accounts/login/?next=/accounts/profile/ HTTP/1.1" 200 4518
+INFO 2026-04-23 00:34:06,504 log 12224 11336 "GET /static/css/style.css HTTP/1.1" 200 1568
+INFO 2026-04-23 00:34:06,515 log 12224 11280 "GET /static/js/main.js HTTP/1.1" 200 3346
+INFO 2026-04-23 00:34:15,057 log 12224 11280 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2026-04-23 00:34:15,106 log 12224 11280 "GET / HTTP/1.1" 200 6022
+INFO 2026-04-23 00:34:15,116 log 12224 11280 "GET /static/css/index.css HTTP/1.1" 200 1636
+INFO 2026-04-23 00:34:15,135 log 12224 11336 "GET /static/js/index.js HTTP/1.1" 200 1468
+INFO 2026-04-23 00:34:19,985 log 12224 11336 "GET /accounts/profile/ HTTP/1.1" 200 32360
+INFO 2026-04-23 00:34:23,451 log 12224 11336 "POST /notifications/35/read/ HTTP/1.1" 302 0
+INFO 2026-04-23 00:34:23,468 log 12224 11336 "GET /notifications/ HTTP/1.1" 200 9030
+INFO 2026-04-23 00:34:23,492 log 12224 11336 "GET /accounts/profile/ HTTP/1.1" 200 31704
+INFO 2026-04-23 00:34:30,942 log 12224 11336 "POST /notifications/34/read/ HTTP/1.1" 302 0
+INFO 2026-04-23 00:34:30,971 log 12224 11336 "GET /notifications/ HTTP/1.1" 200 9009
+INFO 2026-04-23 00:34:30,996 log 12224 11336 "GET /accounts/profile/ HTTP/1.1" 200 31048
+INFO 2026-04-23 00:34:36,442 log 12224 11336 "POST /notifications/33/read/ HTTP/1.1" 302 0
+INFO 2026-04-23 00:34:36,442 log 12224 11336 "GET /notifications/ HTTP/1.1" 200 8988
+INFO 2026-04-23 00:34:36,483 log 12224 11336 "GET /accounts/profile/ HTTP/1.1" 200 30392
+INFO 2026-04-23 00:34:40,742 log 12224 11336 "POST /notifications/32/read/ HTTP/1.1" 302 0
+INFO 2026-04-23 00:34:40,761 log 12224 11336 "GET /notifications/ HTTP/1.1" 200 8967
+INFO 2026-04-23 00:34:40,783 log 12224 11336 "GET /accounts/profile/ HTTP/1.1" 200 29736
+INFO 2026-04-23 00:35:14,046 log 12224 11336 "POST /accounts/logout/ HTTP/1.1" 302 0
+INFO 2026-04-23 00:35:14,051 log 12224 11336 "GET /accounts/login/ HTTP/1.1" 200 4830
+INFO 2026-04-23 00:35:32,265 log 12224 12256 "GET /accounts/profile/ HTTP/1.1" 200 29736
+WARNING 2026-04-23 00:35:32,316 log 12224 12256 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-04-23 00:35:32,316 log 12224 12256 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4690
+INFO 2026-04-23 00:40:14,382 autoreload 12224 13716 E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\accounts\views.py changed, reloading.
+INFO 2026-04-23 00:40:15,505 autoreload 8556 13072 Watching for file changes with StatReloader
+INFO 2026-04-23 00:44:36,437 autoreload 8556 13072 E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\accounts\views.py changed, reloading.
+INFO 2026-04-23 00:44:37,805 autoreload 11592 13332 Watching for file changes with StatReloader
+INFO 2026-04-23 00:46:03,874 autoreload 11592 13332 E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\accounts\views.py changed, reloading.
+INFO 2026-04-23 00:46:04,906 autoreload 5068 11448 Watching for file changes with StatReloader
+INFO 2026-04-23 00:50:02,056 log 5068 12980 "GET /accounts/profile/ HTTP/1.1" 302 0
+INFO 2026-04-23 00:50:02,073 log 5068 12980 "GET /accounts/login/?next=/accounts/profile/ HTTP/1.1" 200 4518
+INFO 2026-04-23 00:50:02,073 log 5068 12980 "GET /static/css/style.css HTTP/1.1" 200 1568
+INFO 2026-04-23 00:50:02,089 log 5068 1988 "GET /static/js/main.js HTTP/1.1" 200 3346
+INFO 2026-04-23 00:50:07,572 log 5068 1988 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2026-04-23 00:50:07,614 log 5068 1988 "GET / HTTP/1.1" 200 6022
+INFO 2026-04-23 00:50:07,622 log 5068 12980 "GET /static/js/index.js HTTP/1.1" 200 1468
+INFO 2026-04-23 00:50:07,622 log 5068 1988 "GET /static/css/index.css HTTP/1.1" 200 1636
+INFO 2026-04-23 00:50:12,930 log 5068 12980 "GET /accounts/profile/ HTTP/1.1" 200 29757
+INFO 2026-04-23 00:50:36,231 log 5068 13208 "GET /accounts/profile/ HTTP/1.1" 200 29757
+WARNING 2026-04-23 00:50:36,274 log 5068 13208 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-04-23 00:50:36,275 log 5068 13208 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4690
+INFO 2026-04-23 00:51:10,808 log 5068 13208 "GET /accounts/profile/change-password/ HTTP/1.1" 200 5930
+WARNING 2026-04-23 00:51:10,878 log 5068 13208 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-04-23 00:51:10,879 log 5068 13208 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4690
+WARNING 2026-04-23 00:51:36,220 log 5068 13208 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-04-23 00:51:36,220 log 5068 13208 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4690
+INFO 2026-04-23 00:51:41,675 log 5068 13208 "GET /accounts/password-reset/ HTTP/1.1" 200 5221
+WARNING 2026-04-23 00:51:41,714 log 5068 13208 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-04-23 00:51:41,715 log 5068 13208 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4690
+INFO 2026-04-23 00:51:47,925 log 5068 13208 "POST /accounts/password-reset/ HTTP/1.1" 302 0
+INFO 2026-04-23 00:51:47,929 log 5068 13208 "GET /accounts/password-reset/done/ HTTP/1.1" 200 3356
+WARNING 2026-04-23 00:51:47,989 log 5068 13208 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-04-23 00:51:47,990 log 5068 13208 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4690
+INFO 2026-04-23 00:52:02,825 log 5068 13208 "GET / HTTP/1.1" 200 5720
+WARNING 2026-04-23 00:52:02,864 log 5068 13208 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-04-23 00:52:02,865 log 5068 13208 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4690
+INFO 2026-04-23 16:57:24,429 autoreload 6604 8508 Watching for file changes with StatReloader
+INFO 2026-04-23 16:57:33,927 log 6604 13032 "GET / HTTP/1.1" 302 0
+INFO 2026-04-23 16:57:34,024 log 6604 13032 "GET /accounts/login/?next=/ HTTP/1.1" 200 4518
+WARNING 2026-04-23 16:57:34,263 log 6604 13032 Not Found: /favicon.ico
+WARNING 2026-04-23 16:57:34,263 log 6604 13032 "GET /favicon.ico HTTP/1.1" 404 4579
+INFO 2026-04-23 16:57:52,418 log 6604 3308 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2026-04-23 16:57:52,558 log 6604 3308 "GET / HTTP/1.1" 200 5982
+INFO 2026-04-23 16:57:52,587 log 6604 3308 "GET /static/css/index.css HTTP/1.1" 304 0
+INFO 2026-04-23 16:58:07,901 log 6604 3308 "GET / HTTP/1.1" 200 5688
+INFO 2026-04-23 16:58:18,700 log 6604 3308 "GET /admin/ HTTP/1.1" 200 20875
+INFO 2026-04-23 16:58:18,708 log 6604 3308 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2026-04-23 16:58:18,708 log 6604 5920 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2026-04-23 16:58:18,708 log 6604 14236 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2026-04-23 16:58:18,708 log 6604 12388 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2026-04-23 16:58:18,714 log 6604 9720 "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2026-04-23 16:58:18,714 log 6604 11980 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2026-04-23 16:58:18,717 log 6604 11980 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2026-04-23 16:58:18,724 log 6604 12388 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 304 0
+INFO 2026-04-23 16:58:18,724 log 6604 9720 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2026-04-23 16:58:18,724 log 6604 11980 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2026-04-23 16:58:23,335 log 6604 9720 "GET /admin/notifications/notification/ HTTP/1.1" 200 58535
+INFO 2026-04-23 16:58:23,352 log 6604 3308 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2026-04-23 16:58:23,352 log 6604 9720 "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2026-04-23 16:58:23,359 log 6604 14236 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+WARNING 2026-04-23 16:58:23,361 log 6604 5920 "GET /static/admin/js/notifications.js HTTP/1.1" 404 2002
+WARNING 2026-04-23 16:58:23,361 log 6604 12388 "GET /static/admin/css/notifications.css HTTP/1.1" 404 2008
+INFO 2026-04-23 16:58:23,364 log 6604 3308 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2026-04-23 16:58:23,365 log 6604 9720 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2026-04-23 16:58:23,369 log 6604 3308 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2026-04-23 16:58:23,370 log 6604 14236 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2026-04-23 16:58:23,371 log 6604 9720 "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+INFO 2026-04-23 16:58:23,372 log 6604 8552 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2026-04-23 16:58:23,373 log 6604 4388 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2026-04-23 16:58:23,376 log 6604 4388 "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2026-04-23 16:58:23,403 log 6604 11980 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-23 16:58:23,417 log 6604 11980 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+INFO 2026-04-23 16:58:23,417 log 6604 4388 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+INFO 2026-04-23 16:58:23,419 log 6604 4388 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 304 0
+WARNING 2026-04-23 16:58:48,110 log 6604 4388 Not Found: /tasks/12/
+WARNING 2026-04-23 16:58:48,110 log 6604 4388 "GET /tasks/12/ HTTP/1.1" 404 3949
+WARNING 2026-04-23 17:03:13,114 log 6604 4388 Not Found: /tasks/12/
+WARNING 2026-04-23 17:03:13,114 log 6604 4388 "GET /tasks/12/ HTTP/1.1" 404 3949
+INFO 2026-04-23 17:05:05,700 log 6604 4388 "GET /tasks/11/ HTTP/1.1" 200 8829
+INFO 2026-04-23 17:19:18,702 autoreload 6604 8508 E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\tasks\apps.py changed, reloading.
+INFO 2026-04-23 17:19:19,796 autoreload 5976 12900 Watching for file changes with StatReloader
+INFO 2026-04-23 17:20:42,194 autoreload 5976 12900 E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\tasks\apps.py changed, reloading.
+INFO 2026-04-23 17:20:42,897 autoreload 2760 4684 Watching for file changes with StatReloader
+INFO 2026-04-23 17:21:09,925 autoreload 2760 4684 E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\tasks\apps.py changed, reloading.
+INFO 2026-04-23 17:21:10,925 autoreload 11824 13152 Watching for file changes with StatReloader
+INFO 2026-04-23 17:22:00,171 autoreload 7424 500 Watching for file changes with StatReloader
+WARNING 2026-04-23 17:22:14,577 log 7424 12820 Not Found: /tasks/12/
+WARNING 2026-04-23 17:22:14,578 log 7424 12820 "GET /tasks/12/ HTTP/1.1" 404 3949
+INFO 2026-04-23 17:24:05,179 log 7424 12820 "POST /admin/notifications/notification/ HTTP/1.1" 200 17009
+WARNING 2026-04-23 17:24:05,183 log 7424 12820 "GET /static/admin/css/notifications.css HTTP/1.1" 404 2008
+WARNING 2026-04-23 17:24:05,183 log 7424 11536 "GET /static/admin/js/notifications.js HTTP/1.1" 404 2002
+INFO 2026-04-23 17:24:05,183 log 7424 13252 "GET /static/admin/js/cancel.js HTTP/1.1" 304 0
+INFO 2026-04-23 17:24:06,865 log 7424 13252 "POST /admin/notifications/notification/ HTTP/1.1" 302 0
+INFO 2026-04-23 17:24:06,922 log 7424 13252 "GET /admin/notifications/notification/ HTTP/1.1" 200 58649
+WARNING 2026-04-23 17:24:06,941 log 7424 4892 "GET /static/admin/css/notifications.css HTTP/1.1" 404 2008
+WARNING 2026-04-23 17:24:06,941 log 7424 9624 "GET /static/admin/js/notifications.js HTTP/1.1" 404 2002
+INFO 2026-04-23 17:24:06,950 log 7424 13252 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-23 17:24:06,963 log 7424 13252 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+INFO 2026-04-23 17:24:10,050 log 7424 13252 "GET /tasks/11/ HTTP/1.1" 200 8829
+INFO 2026-04-23 17:24:16,512 log 7424 13252 "GET /contracts/15/ HTTP/1.1" 200 4655
+INFO 2026-04-23 17:25:00,647 log 7424 13252 "GET /admin/auth/group/ HTTP/1.1" 200 17189
+INFO 2026-04-23 17:25:00,702 log 7424 13252 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-23 17:25:04,109 log 7424 13252 "GET /admin/clients/client/ HTTP/1.1" 200 53029
+INFO 2026-04-23 17:25:04,118 log 7424 13252 "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+INFO 2026-04-23 17:25:04,122 log 7424 13252 "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+INFO 2026-04-23 17:25:04,130 log 7424 5664 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-23 17:25:06,543 log 7424 5664 "GET /admin/tasks/taskcomment/ HTTP/1.1" 200 36390
+INFO 2026-04-23 17:25:06,552 log 7424 5664 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-23 17:25:08,721 log 7424 5664 "GET /admin/tasks/task/8/change/ HTTP/1.1" 200 41270
+INFO 2026-04-23 17:25:08,734 log 7424 13252 "GET /static/admin/js/calendar.js HTTP/1.1" 304 0
+INFO 2026-04-23 17:25:08,735 log 7424 5512 "GET /static/admin/js/inlines.js HTTP/1.1" 304 0
+INFO 2026-04-23 17:25:08,735 log 7424 11456 "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 304 0
+INFO 2026-04-23 17:25:08,737 log 7424 14212 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2026-04-23 17:25:08,741 log 7424 14212 "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2026-04-23 17:25:08,747 log 7424 5664 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-23 17:25:08,785 log 7424 5664 "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 304 0
+INFO 2026-04-23 17:25:08,802 log 7424 5664 "GET /static/admin/img/inline-delete.svg HTTP/1.1" 304 0
+INFO 2026-04-23 17:25:19,025 log 7424 5664 "GET /admin/analytics/report/ HTTP/1.1" 200 26133
+INFO 2026-04-23 17:25:19,035 log 7424 5664 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-23 17:25:25,945 log 7424 5664 "GET /admin/analytics/report/4/change/ HTTP/1.1" 200 24534
+INFO 2026-04-23 17:25:25,952 log 7424 5664 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-23 17:25:48,470 log 7424 5664 "GET /admin/analytics/report/ HTTP/1.1" 200 26133
+INFO 2026-04-23 17:25:51,205 log 7424 5664 "GET /admin/analytics/report/3/change/ HTTP/1.1" 200 24560
+INFO 2026-04-23 17:25:51,220 log 7424 5664 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-23 17:25:55,502 log 7424 5664 "GET /admin/analytics/report/ HTTP/1.1" 200 26133
+INFO 2026-04-23 17:26:36,988 log 7424 5664 "GET /tasks/?status=overdue HTTP/1.1" 200 11044
+INFO 2026-04-23 17:26:37,026 log 7424 5664 "GET /static/css/task_list.css HTTP/1.1" 304 0
+INFO 2026-04-23 17:26:49,149 log 7424 5664 "POST /accounts/logout/ HTTP/1.1" 302 0
+INFO 2026-04-23 17:26:49,155 log 7424 5664 "GET /accounts/login/ HTTP/1.1" 200 4830
+INFO 2026-04-23 17:26:56,799 log 7424 5664 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2026-04-23 17:26:56,821 log 7424 5664 "GET / HTTP/1.1" 200 6022
+INFO 2026-04-23 17:28:30,021 log 7424 5664 "GET /tasks/?status=overdue HTTP/1.1" 200 11060
+INFO 2026-04-23 17:28:32,636 log 7424 5664 "GET /tasks/create/ HTTP/1.1" 200 13309
+INFO 2026-04-23 17:28:40,525 log 7424 5664 "GET /contracts/ HTTP/1.1" 200 13197
+INFO 2026-04-23 17:35:53,607 basehttp 7424 2908 - Broken pipe from ('127.0.0.1', 55436)
+INFO 2026-04-23 17:35:53,661 log 7424 9384 "GET / HTTP/1.1" 200 5720
+INFO 2026-04-23 17:36:11,353 log 7424 9384 "GET /contracts/ HTTP/1.1" 200 13197
+INFO 2026-04-23 17:36:19,511 log 7424 9384 "GET /tasks/?status=overdue HTTP/1.1" 200 11060
+INFO 2026-04-23 17:36:22,018 log 7424 9384 "GET /tasks/create/ HTTP/1.1" 200 13309
+INFO 2026-04-23 17:36:34,376 log 7424 9384 "GET /tasks/?search=&status=&priority=&assigned_to= HTTP/1.1" 200 34105

@@ -97,6 +97,9 @@
                             </label>
                             <input type="date" class="form-control" id="id_birth_date"
                                    name="birth_date" value="{{ profile_form.birth_date.value|date:'Y-m-d'|default:profile.birth_date|date:'Y-m-d' }}">
+                            {% if profile_form.birth_date.errors %}
+                                <div class="text-danger small">{{ profile_form.birth_date.errors }}</div>
+                            {% endif %}
                         </div>
 
                         <div class="mb-3">

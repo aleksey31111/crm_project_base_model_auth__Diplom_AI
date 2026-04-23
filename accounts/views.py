@@ -20,6 +20,9 @@ from .forms import (
 )
 from .models import User, UserProfile
 from core.decorators import admin_required, manager_required
+from tasks.models import Task
+from notifications.models import Notification
+from django.contrib.admin.models import LogEntry
 
 
 
@@ -97,14 +100,34 @@ def logout_view(request):
     return redirect('accounts:login')
 
 
+# @login_required
+# def profile_view(request):
+#     """
+#     Просмотр профиля пользователя.
+#     """
+#     return render(request, 'accounts/profile.html', {
+#         'user': request.user,
+#         'profile': request.user.profile
+#     })
+
+
+
+# accounts/views.py
 @login_required
 def profile_view(request):
-    """
-    Просмотр профиля пользователя.
-    """
+    # ... существующий код ...
+    tasks = Task.objects.filter(assigned_to=request.user).exclude(status='completed')[:5]
+    notifications = Notification.objects.filter(user=request.user).order_by('-created_at')[:5]
+    unread_count = Notification.objects.filter(user=request.user, is_read=False).count()  # <-- добавить
+    activities = LogEntry.objects.filter(user=request.user).order_by('-action_time')[:10]
+
     return render(request, 'accounts/profile.html', {
         'user': request.user,
-        'profile': request.user.profile
+        'profile': request.user.profile,
+        'tasks': tasks,
+        'notifications': notifications,
+        'unread_count': unread_count,        # <-- передать
+        'activities': activities,
     })
 
 

@@ -7,6 +7,7 @@ from django.db.models import Count, Sum
 from django.http import HttpResponse
 import csv
 from .models import Client
+from django.utils.safestring import mark_safe
 
 
 @admin.register(Client)
@@ -70,8 +71,8 @@ class ClientAdmin(admin.ModelAdmin):
             count = obj.contracts.count()
         if count > 0:
             url = reverse('admin:contracts_contract_changelist') + f'?client__id={obj.id}'
-            return format_html('<a href="{}" style="font-weight: bold;">{}</a>', url, count)
-        return format_html('<span style="color: gray;">0</span>')
+            return mark_safe(f'<a href="{url}" style="font-weight: bold;">{count}</a>')
+        return mark_safe('<span style="color: gray;">0</span>')
     contract_count_display.short_description = 'Кол-во контрактов'
 
     def total_contract_amount_display(self, obj):

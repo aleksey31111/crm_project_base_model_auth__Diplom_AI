@@ -8,6 +8,7 @@ from django.utils import timezone
 from django.urls import reverse
 from django.http import HttpResponseRedirect
 from .models import Notification
+from django.utils.safestring import mark_safe
 
 
 @admin.register(Notification)
@@ -123,44 +124,34 @@ class NotificationAdmin(admin.ModelAdmin):
     message_preview.short_description = 'Сообщение'
 
     def is_read_badge(self, obj):
-        """Бейдж статуса прочтения"""
         if obj.is_read:
-            return format_html(
+            return mark_safe(
                 '<span style="background-color: #28a745; color: white; padding: 2px 8px; '
                 'border-radius: 12px; font-size: 11px;">✓ Прочитано</span>'
             )
-        return format_html(
-            '<span style="background-color: #ffc107; color: #333; padding: 2px 8px; '
-            'border-radius: 12px; font-size: 11px;">● Не прочитано</span>'
-        )
+        else:
+            return mark_safe(
+                '<span style="background-color: #ffc107; color: #333; padding: 2px 8px; '
+                'border-radius: 12px; font-size: 11px;">● Не прочитано</span>'
+            )
 
     is_read_badge.short_description = 'Статус'
     is_read_badge.admin_order_field = 'is_read'
 
     def actions_buttons(self, obj):
-        """Кнопки действий"""
         buttons = []
-
         if not obj.is_read:
             url = reverse('admin:notifications_notification_mark_read', args=[obj.id])
             buttons.append(
-                format_html(
-                    '<a class="button" href="{}" style="margin-right: 5px; background: #28a745; color: white; padding: 4px 8px; text-decoration: none; border-radius: 4px;">✓ Прочитать</a>',
-                    url
-                )
+                f'<a class="button" href="{url}" style="margin-right: 5px; background: #28a745; color: white; padding: 4px 8px; text-decoration: none; border-radius: 4px;">✓ Прочитать</a>'
             )
-
         if obj.link:
             buttons.append(
-                format_html(
-                    '<a class="button" href="{}" target="_blank" style="background: #17a2b8; color: white; padding: 4px 8px; text-decoration: none; border-radius: 4px;">🔗 Перейти</a>',
-                    obj.link
-                )
+                f'<a class="button" href="{obj.link}" target="_blank" style="background: #17a2b8; color: white; padding: 4px 8px; text-decoration: none; border-radius: 4px;">🔗 Перейти</a>'
             )
+        return mark_safe(''.join(buttons))
 
-        return format_html(''.join(buttons))
 
-    actions_buttons.short_description = 'Действия'
 
     def mark_as_read(self, request, queryset):
         """Отметить выбранные уведомления как прочитанные"""

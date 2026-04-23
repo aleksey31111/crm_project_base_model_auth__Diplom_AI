@@ -170,7 +170,7 @@ class CustomUserChangeForm(UserChangeForm):
         model = User
         fields = ('first_name', 'last_name', 'email', 'phone', 'avatar',
                   'position', 'department', 'hire_date', 'employee_id',
-                  'email_notifications', 'role')
+                  'email_notifications')  # role удалён
 
         widgets = {
             'first_name': forms.TextInput(attrs={'class': 'form-control'}),
@@ -192,16 +192,14 @@ class UserProfileForm(forms.ModelForm):
     Форма редактирования профиля пользователя (доп. информация).
     """
 
+    birth_date = forms.DateField(required=False, widget=forms.DateInput(attrs={'type': 'date'}))
+
     class Meta:
         model = UserProfile
         fields = ('birth_date', 'emergency_contact', 'emergency_phone',
                   'telegram', 'linkedin')
 
         widgets = {
-            'birth_date': forms.DateInput(attrs={
-                'class': 'form-control',
-                'type': 'date'
-            }),
             'emergency_contact': forms.TextInput(attrs={'class': 'form-control'}),
             'emergency_phone': forms.TextInput(attrs={'class': 'form-control'}),
             'telegram': forms.TextInput(attrs={'class': 'form-control'}),

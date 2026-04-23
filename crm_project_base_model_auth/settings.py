@@ -15,7 +15,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 from datetime import timedelta
 load_dotenv()
-
+TELEGRAM_BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN', '')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -60,6 +60,8 @@ INSTALLED_APPS = [
     'analytics.apps.AnalyticsConfig',
     'notifications.apps.NotificationsConfig',
     'logs.apps.LogsConfig',          # <-- добавить эту строку
+    'telegram_bot',  # <-- Вот так
+
 ]
 
 MIDDLEWARE = [
@@ -228,6 +230,7 @@ SESSION_COOKIE_AGE = 1209600  # 2 Weeks in seconds.
 SESSION_SAVE_EVERY_REQUEST = True
 
 # Security settings (for development only - adjust for production)
+CSRF_TRUSTED_ORIGINS = ['http://localhost:8000', 'http://127.0.0.1:8000']
 SESSION_COOKIE_SECURE = False
 CSRF_COOKIE_SECURE = False
 SECURE_SSL_REDIRECT = False

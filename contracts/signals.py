@@ -4,6 +4,24 @@ from django.db.models.signals import post_save, post_delete
 from django.dispatch import receiver
 from django.db import models
 from .models import Payment, Contract
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+from contracts.models import Payment
+from notifications.models import Notification
+from tasks.models import extract_mentions
+
+@receiver(post_save, sender=Payment)
+def notify_mentions_in_payment_comment(sender, instance, created, **kwargs):
+    if created and instance.comment:
+        mentioned_users = extract_mentions(instance.comment)
+        for user in mentioned_users:
+            Notification.objects.create(
+                user=user,
+                type='info',
+                title='Вас упомянули в комментарии к платежу',
+                message=f'{instance.created_by.username} упомянул вас в платеже по контракту {instance.contract.number}: {instance.comment[:100]}',
+                link=f'/contracts/{instance.contract.id}/'
+            )
 
 def update_contract_payment_status(contract):
     """Обновляет оплаченную сумму и статус оплаты контракта на основе УСПЕШНЫХ платежей"""
