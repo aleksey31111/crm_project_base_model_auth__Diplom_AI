@@ -18,23 +18,56 @@
     </div>
 </div>
 <script>
-    document.getElementById('payButton').onclick = function() {
-        fetch('{% url "contracts:yookassa_webhook" %}', {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({
-                event: 'payment.succeeded',
-                object: { id: '{{ contract.yookassa_payment_id }}', status: 'succeeded' }
-            })
-        })
-        .then(res => res.json())
-        .then(data => {
-            document.getElementById('result').innerHTML = '<div class="alert alert-success">Оплата успешно проведена! Вы будете перенаправлены...</div>';
-            setTimeout(() => { window.location.href = '{% url "contracts:contract_detail" contract.id %}?payment_status=succeeded'; }, 1500);
-        })
-        .catch(err => {
-            document.getElementById('result').innerHTML = '<div class="alert alert-danger">Ошибка, попробуйте ещё раз.</div>';
-        });
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+
+    document.getElementById('payButton').onclick = async function() {
+        this.disabled = true;
+        document.getElementById('result').innerHTML = '<div class="alert alert-info">Обработка...</div>';
+        const yookassaId = '{{ contract.yookassa_payment_id }}';
+        if (!yookassaId) {
+            document.getElementById('result').innerHTML = '<div class="alert alert-danger">Не найден идентификатор платежа. Обновите страницу.</div>';
+            this.disabled = false;
+            return;
+        }
+        try {
+            const response = await fetch('{% url "contracts:yookassa_webhook" %}', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': getCookie('csrftoken')
+                },
+                body: JSON.stringify({
+                    event: 'payment.succeeded',
+                    object: { id: yookassaId, status: 'succeeded' }
+                })
+            });
+            if (response.ok) {
+                document.getElementById('result').innerHTML = '<div class="alert alert-success">Оплата успешно проведена! Вы будете перенаправлены...</div>';
+                setTimeout(() => {
+                    window.location.href = '{% url "contracts:contract_detail" contract.id %}?payment_status=succeeded';
+                }, 1500);
+            } else {
+                const errData = await response.json();
+                document.getElementById('result').innerHTML = '<div class="alert alert-danger">Ошибка подтверждения: ' + (errData.error || 'попробуйте позже') + '</div>';
+                this.disabled = false;
+            }
+        } catch (err) {
+            document.getElementById('result').innerHTML = '<div class="alert alert-danger">Ошибка сети.</div>';
+            this.disabled = false;
+        }
     };
 </script>
 {% endblock %}

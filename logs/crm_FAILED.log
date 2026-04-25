@@ -2484,3 +2484,2590 @@ INFO 2026-04-23 17:36:11,353 log 7424 9384 "GET /contracts/ HTTP/1.1" 200 13197
 INFO 2026-04-23 17:36:19,511 log 7424 9384 "GET /tasks/?status=overdue HTTP/1.1" 200 11060
 INFO 2026-04-23 17:36:22,018 log 7424 9384 "GET /tasks/create/ HTTP/1.1" 200 13309
 INFO 2026-04-23 17:36:34,376 log 7424 9384 "GET /tasks/?search=&status=&priority=&assigned_to= HTTP/1.1" 200 34105
+WARNING 2026-04-23 22:17:59,209 log 10 136732586431232 Not Found: /favicon.ico
+ERROR 2026-04-23 22:34:26,472 log 10 139433827631872 Internal Server Error: /contracts/7/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 221, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/defaulttags.py", line 333, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/defaulttags.py", line 511, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/urls/base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/urls/resolvers.py", line 842, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'fake_payment_page' not found. 'fake_payment_page' is not a valid view function or pattern name.
+ERROR 2026-04-23 22:34:37,454 log 10 139433827631872 Internal Server Error: /contracts/4/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 221, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/defaulttags.py", line 333, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/defaulttags.py", line 511, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/urls/base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/urls/resolvers.py", line 842, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'fake_payment_page' not found. 'fake_payment_page' is not a valid view function or pattern name.
+ERROR 2026-04-23 22:35:01,128 log 10 139433827631872 Internal Server Error: /contracts/2/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 221, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/defaulttags.py", line 333, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/defaulttags.py", line 511, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/urls/base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/urls/resolvers.py", line 842, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'fake_payment_page' not found. 'fake_payment_page' is not a valid view function or pattern name.
+ERROR 2026-04-23 22:35:11,294 log 10 139433827631872 Internal Server Error: /contracts/7/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 221, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/defaulttags.py", line 333, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/defaulttags.py", line 511, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/urls/base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/urls/resolvers.py", line 842, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'fake_payment_page' not found. 'fake_payment_page' is not a valid view function or pattern name.
+INFO 2026-04-23 22:39:00,606 autoreload 14376 5988 Watching for file changes with StatReloader
+INFO 2026-04-23 22:39:07,265 log 14376 15260 "GET / HTTP/1.1" 302 0
+INFO 2026-04-23 22:39:07,296 log 14376 15260 "GET /accounts/login/?next=/ HTTP/1.1" 200 4518
+WARNING 2026-04-23 22:39:07,429 log 14376 15260 Not Found: /favicon.ico
+WARNING 2026-04-23 22:39:07,429 log 14376 15260 "GET /favicon.ico HTTP/1.1" 404 4579
+INFO 2026-04-23 22:39:23,714 log 14376 15260 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2026-04-23 22:39:23,848 log 14376 15260 "GET / HTTP/1.1" 200 6022
+INFO 2026-04-23 22:39:23,856 log 14376 15260 "GET /static/js/index.js HTTP/1.1" 304 0
+INFO 2026-04-23 22:39:31,200 log 14376 15260 "GET /clients/ HTTP/1.1" 200 17620
+INFO 2026-04-23 22:39:49,199 log 14376 15260 "GET /clients/8/ HTTP/1.1" 200 10150
+INFO 2026-04-23 22:39:55,019 log 14376 15260 "GET /clients/5/ HTTP/1.1" 200 15221
+INFO 2026-04-23 22:40:01,683 log 14376 15260 "GET /clients/3/ HTTP/1.1" 200 15914
+INFO 2026-04-23 22:40:08,698 log 14376 15260 "GET /contracts/ HTTP/1.1" 200 13963
+INFO 2026-04-23 22:40:10,548 log 14376 15260 "GET /contracts/13/ HTTP/1.1" 200 4728
+INFO 2026-04-23 22:40:14,799 log 14376 15260 "GET /contracts/4/ HTTP/1.1" 200 4667
+INFO 2026-04-23 22:40:19,546 log 14376 15260 "GET /contracts/10/ HTTP/1.1" 200 4602
+ERROR 2026-04-23 22:59:13,818 log 10 133610707522304 Internal Server Error: /contracts/7/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 221, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/defaulttags.py", line 333, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/defaulttags.py", line 511, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/urls/base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/urls/resolvers.py", line 842, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'fake_payment_page' not found. 'fake_payment_page' is not a valid view function or pattern name.
+ERROR 2026-04-23 22:59:24,888 log 10 133610707522304 Internal Server Error: /contracts/7/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 221, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/defaulttags.py", line 333, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/defaulttags.py", line 511, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/urls/base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/urls/resolvers.py", line 842, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'fake_payment_page' not found. 'fake_payment_page' is not a valid view function or pattern name.
+ERROR 2026-04-23 22:59:30,928 log 10 133610707522304 Internal Server Error: /contracts/3/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 221, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/defaulttags.py", line 333, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/defaulttags.py", line 511, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/urls/base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/urls/resolvers.py", line 842, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'fake_payment_page' not found. 'fake_payment_page' is not a valid view function or pattern name.
+ERROR 2026-04-23 22:59:48,196 log 10 133610707522304 Internal Server Error: /contracts/3/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 221, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/defaulttags.py", line 333, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/defaulttags.py", line 511, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/urls/base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/urls/resolvers.py", line 842, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'fake_payment_page' not found. 'fake_payment_page' is not a valid view function or pattern name.
+ERROR 2026-04-23 23:00:17,949 log 10 133610707522304 Internal Server Error: /contracts/5/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 221, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/defaulttags.py", line 333, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/defaulttags.py", line 511, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/urls/base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/urls/resolvers.py", line 842, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'fake_payment_page' not found. 'fake_payment_page' is not a valid view function or pattern name.
+WARNING 2026-04-23 23:20:58,314 log 10 139578315113216 Forbidden (Permission denied): /contracts/7/payments/add/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/views/generic/base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/contracts/views.py", line 316, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/contrib/auth/mixins.py", line 74, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/contrib/auth/mixins.py", line 109, in dispatch
+    return self.handle_no_permission()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/contrib/auth/mixins.py", line 49, in handle_no_permission
+    raise PermissionDenied(self.get_permission_denied_message())
+django.core.exceptions.PermissionDenied
+INFO 2026-04-23 23:22:28,788 autoreload 5984 14620 Watching for file changes with StatReloader
+INFO 2026-04-23 23:22:32,268 log 5984 9388 "GET / HTTP/1.1" 200 5728
+INFO 2026-04-23 23:22:36,132 log 5984 9388 "GET /contracts/ HTTP/1.1" 200 13963
+INFO 2026-04-23 23:22:38,611 log 5984 9388 "GET /contracts/15/payments/ HTTP/1.1" 200 3756
+ERROR 2026-04-23 23:22:41,133 log 5984 9388 Internal Server Error: /contracts/15/payments/add/
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\base.py", line 221, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\defaulttags.py", line 511, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\urls\resolvers.py", line 842, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'contract_payments' with arguments '('',)' not found. 1 pattern(s) tried: ['contracts/(?P<pk>[0-9]+)/payments/\\Z']
+ERROR 2026-04-23 23:22:41,149 log 5984 9388 "GET /contracts/15/payments/add/ HTTP/1.1" 500 158317
+ERROR 2026-04-23 23:22:56,618 log 5984 9388 Internal Server Error: /contracts/15/payments/add/
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\base.py", line 221, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\template\defaulttags.py", line 511, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\urls\resolvers.py", line 842, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'contract_payments' with arguments '('',)' not found. 1 pattern(s) tried: ['contracts/(?P<pk>[0-9]+)/payments/\\Z']
+ERROR 2026-04-23 23:22:56,618 log 5984 9388 "GET /contracts/15/payments/add/ HTTP/1.1" 500 158317
+INFO 2026-04-23 23:23:23,739 log 5984 9388 "GET /contracts/16/payments/ HTTP/1.1" 200 3759
+INFO 2026-04-23 23:24:12,787 log 5984 9388 "GET /contracts/16/payments/ HTTP/1.1" 200 3759
+INFO 2026-04-23 23:28:58,070 autoreload 5984 14620 E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\contracts\views.py changed, reloading.
+INFO 2026-04-23 23:28:59,292 autoreload 12004 14372 Watching for file changes with StatReloader
+INFO 2026-04-23 23:29:53,636 autoreload 12004 14372 E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\contracts\views.py changed, reloading.
+INFO 2026-04-23 23:29:54,733 autoreload 7444 5948 Watching for file changes with StatReloader
+INFO 2026-04-23 23:30:52,430 autoreload 7444 5948 E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\contracts\views.py changed, reloading.
+INFO 2026-04-23 23:30:53,597 autoreload 15240 13896 Watching for file changes with StatReloader
+INFO 2026-04-23 23:31:51,243 autoreload 15240 13896 E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\contracts\views.py changed, reloading.
+INFO 2026-04-23 23:31:52,413 autoreload 14332 6940 Watching for file changes with StatReloader
+INFO 2026-04-23 23:33:25,549 autoreload 6860 12212 Watching for file changes with StatReloader
+INFO 2026-04-23 23:33:29,733 log 6860 6120 "GET /contracts/15/payments/add/ HTTP/1.1" 200 4722
+INFO 2026-04-23 23:34:06,839 log 6860 6120 "POST /contracts/15/payments/add/ HTTP/1.1" 302 0
+INFO 2026-04-23 23:34:06,853 log 6860 6120 "GET /contracts/15/payments/ HTTP/1.1" 200 4065
+INFO 2026-04-23 23:34:24,854 log 6860 6120 "GET /contracts/15/payments/add/ HTTP/1.1" 200 4722
+INFO 2026-04-23 23:35:18,384 log 6860 6120 "POST /contracts/15/payments/add/ HTTP/1.1" 302 0
+INFO 2026-04-23 23:35:18,392 log 6860 6120 "GET /contracts/15/payments/ HTTP/1.1" 200 4065
+INFO 2026-04-23 23:37:10,861 log 6860 6120 "GET / HTTP/1.1" 200 5728
+INFO 2026-04-23 23:37:13,660 log 6860 6120 "GET /contracts/ HTTP/1.1" 200 13963
+INFO 2026-04-23 23:37:33,735 log 6860 6120 "GET /contracts/16/ HTTP/1.1" 200 4831
+INFO 2026-04-23 23:37:51,867 log 6860 6120 "GET /contracts/ HTTP/1.1" 200 13963
+INFO 2026-04-23 23:37:54,333 log 6860 6120 "GET /contracts/15/ HTTP/1.1" 200 4655
+INFO 2026-04-23 23:38:07,056 log 6860 6120 "GET /contracts/15/payments/ HTTP/1.1" 200 3756
+INFO 2026-04-23 23:38:09,748 log 6860 6120 "GET /contracts/15/payments/add/ HTTP/1.1" 200 4722
+INFO 2026-04-23 23:39:32,078 log 6860 6120 "POST /contracts/15/payments/add/ HTTP/1.1" 302 0
+INFO 2026-04-23 23:39:32,092 log 6860 6120 "GET /contracts/15/payments/ HTTP/1.1" 200 4065
+INFO 2026-04-23 23:39:39,302 log 6860 6120 "GET / HTTP/1.1" 200 5728
+INFO 2026-04-23 23:39:41,005 log 6860 6120 "GET /contracts/ HTTP/1.1" 200 13963
+INFO 2026-04-23 23:39:46,982 log 6860 6120 "GET /contracts/16/ HTTP/1.1" 200 4831
+INFO 2026-04-23 23:39:49,653 log 6860 6120 "GET /contracts/fake-payment/16/?amount=800000,00 HTTP/1.1" 200 4827
+WARNING 2026-04-23 23:39:59,600 log 6860 6120 Not Found: /contracts/webhook/yookassa/
+WARNING 2026-04-23 23:39:59,600 log 6860 6120 "POST /contracts/webhook/yookassa/ HTTP/1.1" 404 30
+INFO 2026-04-23 23:40:01,153 log 6860 6120 "GET /contracts/16/?payment_status=succeeded HTTP/1.1" 200 4831
+INFO 2026-04-23 23:40:12,791 log 6860 6120 "GET /contracts/fake-payment/16/?amount=800000,00 HTTP/1.1" 200 4827
+WARNING 2026-04-23 23:40:15,434 log 6860 6120 Not Found: /contracts/webhook/yookassa/
+WARNING 2026-04-23 23:40:15,434 log 6860 6120 "POST /contracts/webhook/yookassa/ HTTP/1.1" 404 30
+INFO 2026-04-23 23:40:17,018 log 6860 6120 "GET /contracts/16/?payment_status=succeeded HTTP/1.1" 200 4831
+INFO 2026-04-23 23:40:38,123 log 6860 6120 "GET /contracts/fake-payment/16/?amount=800000,00 HTTP/1.1" 200 4827
+WARNING 2026-04-23 23:40:44,719 log 6860 6120 Not Found: /contracts/webhook/yookassa/
+WARNING 2026-04-23 23:40:44,719 log 6860 6120 "POST /contracts/webhook/yookassa/ HTTP/1.1" 404 30
+INFO 2026-04-23 23:40:46,294 log 6860 6120 "GET /contracts/16/?payment_status=succeeded HTTP/1.1" 200 4831
+INFO 2026-04-23 23:40:51,724 log 6860 6120 "GET /contracts/fake-payment/16/?amount=800000,00 HTTP/1.1" 200 4827
+WARNING 2026-04-23 23:40:54,603 log 6860 6120 Not Found: /contracts/webhook/yookassa/
+WARNING 2026-04-23 23:40:54,603 log 6860 6120 "POST /contracts/webhook/yookassa/ HTTP/1.1" 404 30
+INFO 2026-04-23 23:40:56,187 log 6860 6120 "GET /contracts/16/?payment_status=succeeded HTTP/1.1" 200 4831
+INFO 2026-04-23 23:44:39,067 basehttp 6860 6120 - Broken pipe from ('127.0.0.1', 58278)
+INFO 2026-04-23 23:44:39,130 basehttp 6860 5504 - Broken pipe from ('127.0.0.1', 58337)
+INFO 2026-04-23 23:44:39,142 log 6860 14120 "GET / HTTP/1.1" 200 5728
+INFO 2026-04-23 23:44:41,035 log 6860 14120 "GET /contracts/ HTTP/1.1" 200 13963
+INFO 2026-04-23 23:44:43,694 log 6860 14120 "GET /contracts/9/ HTTP/1.1" 200 4577
+INFO 2026-04-23 23:45:04,832 log 6860 14120 "GET /contracts/6/ HTTP/1.1" 200 4558
+INFO 2026-04-23 23:45:16,400 log 6860 14120 "GET /contracts/1/ HTTP/1.1" 200 4585
+INFO 2026-04-23 23:45:24,438 log 6860 14120 "GET /contracts/15/ HTTP/1.1" 200 4655
+INFO 2026-04-23 23:45:35,477 log 6860 14120 "GET /contracts/15/payments/ HTTP/1.1" 200 3756
+INFO 2026-04-23 23:45:40,920 log 6860 14120 "GET /contracts/15/payments/add/ HTTP/1.1" 200 4722
+INFO 2026-04-23 23:46:31,956 log 6860 14120 "POST /contracts/15/payments/add/ HTTP/1.1" 302 0
+INFO 2026-04-23 23:46:31,964 log 6860 14120 "GET /contracts/15/payments/ HTTP/1.1" 200 4065
+INFO 2026-04-23 23:46:41,575 log 6860 14120 "GET /contracts/15/ HTTP/1.1" 200 4655
+INFO 2026-04-23 23:54:10,822 log 6860 6464 "GET / HTTP/1.1" 200 5728
+INFO 2026-04-23 23:54:14,956 log 6860 6464 "GET /contracts/ HTTP/1.1" 200 13963
+INFO 2026-04-23 23:54:26,851 log 6860 6464 "GET /analytics/ HTTP/1.1" 200 6194
+INFO 2026-04-23 23:54:27,046 log 6860 10080 "GET /analytics/api/chart-data/?type=tasks_status HTTP/1.1" 200 122
+INFO 2026-04-23 23:54:27,056 log 6860 6464 "GET /analytics/api/chart-data/?type=revenue HTTP/1.1" 200 231
+INFO 2026-04-23 23:54:54,756 log 6860 6464 "GET / HTTP/1.1" 200 5728
+INFO 2026-04-23 23:54:56,706 log 6860 6464 "GET /contracts/ HTTP/1.1" 200 13963
+INFO 2026-04-23 23:55:00,230 log 6860 6464 "GET /contracts/13/ HTTP/1.1" 200 4728
+INFO 2026-04-23 23:55:05,870 log 6860 6464 "GET /contracts/16/ HTTP/1.1" 200 4831
+INFO 2026-04-23 23:55:07,436 log 6860 6464 "GET /contracts/fake-payment/16/?amount=800000,00 HTTP/1.1" 200 4827
+WARNING 2026-04-23 23:55:11,598 log 6860 6464 Not Found: /contracts/webhook/yookassa/
+WARNING 2026-04-23 23:55:11,598 log 6860 6464 "POST /contracts/webhook/yookassa/ HTTP/1.1" 404 30
+INFO 2026-04-23 23:55:13,173 log 6860 6464 "GET /contracts/16/?payment_status=succeeded HTTP/1.1" 200 4831
+INFO 2026-04-23 23:55:22,500 log 6860 6464 "GET /contracts/fake-payment/16/?amount=800000,00 HTTP/1.1" 200 4827
+WARNING 2026-04-23 23:55:24,265 log 6860 6464 Not Found: /contracts/webhook/yookassa/
+WARNING 2026-04-23 23:55:24,265 log 6860 6464 "POST /contracts/webhook/yookassa/ HTTP/1.1" 404 30
+INFO 2026-04-23 23:55:25,828 log 6860 6464 "GET /contracts/16/?payment_status=succeeded HTTP/1.1" 200 4831
+INFO 2026-04-23 23:55:28,458 log 6860 6464 "GET / HTTP/1.1" 200 5728
+INFO 2026-04-23 23:55:35,605 log 6860 6464 "GET /analytics/ HTTP/1.1" 200 6194
+INFO 2026-04-23 23:55:35,806 log 6860 10080 "GET /analytics/api/chart-data/?type=tasks_status HTTP/1.1" 200 122
+INFO 2026-04-23 23:55:35,817 log 6860 6464 "GET /analytics/api/chart-data/?type=revenue HTTP/1.1" 200 231
+INFO 2026-04-23 23:55:50,650 log 6860 6464 "GET / HTTP/1.1" 200 5728
+INFO 2026-04-23 23:55:52,132 log 6860 6464 "GET /contracts/ HTTP/1.1" 200 13963
+INFO 2026-04-23 23:55:53,558 log 6860 6464 "GET /contracts/16/ HTTP/1.1" 200 4831
+INFO 2026-04-23 23:55:55,005 log 6860 6464 "GET /contracts/fake-payment/16/?amount=800000,00 HTTP/1.1" 200 4827
+WARNING 2026-04-23 23:55:56,782 log 6860 6464 Not Found: /contracts/webhook/yookassa/
+WARNING 2026-04-23 23:55:56,782 log 6860 6464 "POST /contracts/webhook/yookassa/ HTTP/1.1" 404 30
+INFO 2026-04-23 23:55:58,359 log 6860 6464 "GET /contracts/16/?payment_status=succeeded HTTP/1.1" 200 4831
+INFO 2026-04-23 23:56:01,067 log 6860 6464 "GET / HTTP/1.1" 200 5728
+INFO 2026-04-23 23:56:04,819 log 6860 6464 "GET /analytics/ HTTP/1.1" 200 6194
+INFO 2026-04-23 23:56:04,853 log 6860 10080 "GET /analytics/api/chart-data/?type=tasks_status HTTP/1.1" 200 122
+INFO 2026-04-23 23:56:04,867 log 6860 6464 "GET /analytics/api/chart-data/?type=revenue HTTP/1.1" 200 231
+INFO 2026-04-23 23:56:29,810 log 6860 6464 "GET / HTTP/1.1" 200 5728
+INFO 2026-04-23 23:56:33,642 log 6860 6464 "GET /analytics/ HTTP/1.1" 200 6194
+INFO 2026-04-23 23:56:33,851 log 6860 10080 "GET /analytics/api/chart-data/?type=tasks_status HTTP/1.1" 200 122
+INFO 2026-04-23 23:56:33,866 log 6860 6464 "GET /analytics/api/chart-data/?type=revenue HTTP/1.1" 200 231
+INFO 2026-04-23 23:56:36,659 log 6860 6464 "GET / HTTP/1.1" 200 5728
+INFO 2026-04-23 23:56:38,902 log 6860 6464 "GET / HTTP/1.1" 200 5728
+INFO 2026-04-23 23:56:41,191 log 6860 6464 "GET / HTTP/1.1" 200 5728
+INFO 2026-04-23 23:56:42,163 log 6860 6464 "GET / HTTP/1.1" 200 5728
+INFO 2026-04-23 23:56:42,606 log 6860 6464 "GET / HTTP/1.1" 200 5728
+INFO 2026-04-23 23:56:42,867 log 6860 6464 "GET / HTTP/1.1" 200 5728
+INFO 2026-04-23 23:56:42,962 log 6860 6464 "GET / HTTP/1.1" 200 5728
+INFO 2026-04-23 23:56:51,043 log 6860 6464 "GET /analytics/ HTTP/1.1" 200 6194
+INFO 2026-04-23 23:56:51,137 log 6860 10080 "GET /analytics/api/chart-data/?type=tasks_status HTTP/1.1" 200 122
+INFO 2026-04-23 23:56:51,160 log 6860 6464 "GET /analytics/api/chart-data/?type=revenue HTTP/1.1" 200 231
+INFO 2026-04-24 00:21:06,429 autoreload 6860 12212 E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\contracts\signals.py changed, reloading.
+INFO 2026-04-24 00:21:07,631 autoreload 6516 14944 Watching for file changes with StatReloader
+INFO 2026-04-24 00:21:37,344 autoreload 7756 6740 Watching for file changes with StatReloader
+INFO 2026-04-24 00:21:46,260 log 7756 9116 "GET /analytics/ HTTP/1.1" 200 6194
+INFO 2026-04-24 00:21:46,468 log 7756 14984 "GET /analytics/api/chart-data/?type=tasks_status HTTP/1.1" 200 122
+INFO 2026-04-24 00:21:46,481 log 7756 9116 "GET /analytics/api/chart-data/?type=revenue HTTP/1.1" 200 231
+INFO 2026-04-24 00:22:14,524 log 7756 9116 "GET / HTTP/1.1" 200 5728
+INFO 2026-04-24 00:22:16,376 log 7756 9116 "GET / HTTP/1.1" 200 5728
+INFO 2026-04-24 00:22:19,616 log 7756 9116 "GET /contracts/ HTTP/1.1" 200 13964
+INFO 2026-04-24 00:22:21,339 log 7756 9116 "GET /contracts/16/ HTTP/1.1" 200 4831
+INFO 2026-04-24 00:22:26,574 log 7756 9116 "GET /contracts/fake-payment/16/?amount=800000,00 HTTP/1.1" 200 4827
+WARNING 2026-04-24 00:22:28,306 log 7756 9116 Not Found: /contracts/webhook/yookassa/
+WARNING 2026-04-24 00:22:28,306 log 7756 9116 "POST /contracts/webhook/yookassa/ HTTP/1.1" 404 30
+INFO 2026-04-24 00:22:29,875 log 7756 9116 "GET /contracts/16/?payment_status=succeeded HTTP/1.1" 200 4831
+INFO 2026-04-24 00:22:35,614 log 7756 9116 "GET / HTTP/1.1" 200 5728
+INFO 2026-04-24 00:22:38,283 log 7756 9116 "GET /analytics/ HTTP/1.1" 200 6194
+INFO 2026-04-24 00:22:38,486 log 7756 14984 "GET /analytics/api/chart-data/?type=tasks_status HTTP/1.1" 200 122
+INFO 2026-04-24 00:22:38,509 log 7756 9116 "GET /analytics/api/chart-data/?type=revenue HTTP/1.1" 200 231
+INFO 2026-04-24 00:22:55,746 log 7756 9116 "GET /analytics/ HTTP/1.1" 200 6194
+INFO 2026-04-24 00:22:55,842 log 7756 14984 "GET /analytics/api/chart-data/?type=tasks_status HTTP/1.1" 200 122
+INFO 2026-04-24 00:22:55,850 log 7756 9116 "GET /analytics/api/chart-data/?type=revenue HTTP/1.1" 200 231
+INFO 2026-04-24 00:22:57,495 log 7756 9116 "GET /analytics/ HTTP/1.1" 200 6194
+INFO 2026-04-24 00:22:57,593 log 7756 14984 "GET /analytics/api/chart-data/?type=tasks_status HTTP/1.1" 200 122
+INFO 2026-04-24 00:22:57,606 log 7756 9116 "GET /analytics/api/chart-data/?type=revenue HTTP/1.1" 200 231
+INFO 2026-04-24 00:22:58,310 log 7756 9116 "GET /analytics/ HTTP/1.1" 200 6194
+INFO 2026-04-24 00:22:58,428 log 7756 14984 "GET /analytics/api/chart-data/?type=tasks_status HTTP/1.1" 200 122
+INFO 2026-04-24 00:22:58,443 log 7756 9116 "GET /analytics/api/chart-data/?type=revenue HTTP/1.1" 200 231
+INFO 2026-04-24 00:22:58,922 log 7756 9116 "GET /analytics/ HTTP/1.1" 200 6194
+INFO 2026-04-24 00:22:59,044 log 7756 14984 "GET /analytics/api/chart-data/?type=tasks_status HTTP/1.1" 200 122
+INFO 2026-04-24 00:22:59,055 log 7756 9116 "GET /analytics/api/chart-data/?type=revenue HTTP/1.1" 200 231
+INFO 2026-04-24 00:23:12,524 log 7756 9116 "GET /analytics/ HTTP/1.1" 200 6194
+INFO 2026-04-24 00:23:12,651 log 7756 14984 "GET /analytics/api/chart-data/?type=tasks_status HTTP/1.1" 200 122
+INFO 2026-04-24 00:23:12,664 log 7756 9116 "GET /analytics/api/chart-data/?type=revenue HTTP/1.1" 200 231
+INFO 2026-04-24 00:27:14,890 autoreload 7756 6740 E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\contracts\views.py changed, reloading.
+INFO 2026-04-24 00:27:16,211 autoreload 4772 15716 Watching for file changes with StatReloader
+INFO 2026-04-24 00:27:26,331 log 4772 6268 "GET / HTTP/1.1" 200 5728
+INFO 2026-04-24 00:27:28,176 log 4772 6268 "GET /contracts/ HTTP/1.1" 200 13964
+INFO 2026-04-24 00:27:29,869 log 4772 6268 "GET /contracts/16/ HTTP/1.1" 200 4831
+INFO 2026-04-24 00:27:31,726 log 4772 6268 "GET /contracts/fake-payment/16/?amount=800000,00 HTTP/1.1" 200 4827
+WARNING 2026-04-24 00:27:33,861 log 4772 6268 Not Found: /contracts/webhook/yookassa/
+WARNING 2026-04-24 00:27:33,861 log 4772 6268 "POST /contracts/webhook/yookassa/ HTTP/1.1" 404 30
+INFO 2026-04-24 00:27:35,435 log 4772 6268 "GET /contracts/16/?payment_status=succeeded HTTP/1.1" 200 4831
+INFO 2026-04-24 00:29:21,594 autoreload 4772 15716 E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\contracts\signals.py changed, reloading.
+INFO 2026-04-24 00:29:22,810 autoreload 15556 11380 Watching for file changes with StatReloader
+INFO 2026-04-24 00:29:24,611 log 15556 9104 "GET /contracts/fake-payment/16/?amount=800000,00 HTTP/1.1" 200 4827
+WARNING 2026-04-24 00:29:26,616 log 15556 9104 Not Found: /contracts/webhook/yookassa/
+WARNING 2026-04-24 00:29:26,616 log 15556 9104 "POST /contracts/webhook/yookassa/ HTTP/1.1" 404 30
+INFO 2026-04-24 00:29:28,162 log 15556 9104 "GET /contracts/16/?payment_status=succeeded HTTP/1.1" 200 4831
+INFO 2026-04-24 00:29:37,519 log 15556 9104 "GET /contracts/16/payments/ HTTP/1.1" 200 3759
+INFO 2026-04-24 00:29:39,583 log 15556 9104 "GET /contracts/16/payments/add/ HTTP/1.1" 200 4722
+INFO 2026-04-24 00:30:05,896 log 15556 9104 "POST /contracts/16/payments/add/ HTTP/1.1" 302 0
+INFO 2026-04-24 00:30:05,901 log 15556 9104 "GET /contracts/16/payments/ HTTP/1.1" 200 4068
+INFO 2026-04-24 00:32:50,876 autoreload 15556 11380 E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\contracts\views.py changed, reloading.
+INFO 2026-04-24 00:32:52,042 autoreload 16120 11344 Watching for file changes with StatReloader
+INFO 2026-04-24 00:34:48,969 autoreload 16120 11344 E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\contracts\signals.py changed, reloading.
+INFO 2026-04-24 00:34:50,131 autoreload 6360 8036 Watching for file changes with StatReloader
+INFO 2026-04-24 00:35:01,395 autoreload 6360 8036 E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\contracts\signals.py changed, reloading.
+INFO 2026-04-24 00:35:02,509 autoreload 16128 14556 Watching for file changes with StatReloader
+INFO 2026-04-24 00:35:55,179 log 16128 15412 "GET / HTTP/1.1" 200 5728
+INFO 2026-04-24 00:35:58,673 log 16128 15412 "GET /contracts/ HTTP/1.1" 200 13964
+INFO 2026-04-24 00:36:19,618 log 16128 15412 "GET /contracts/16/ HTTP/1.1" 200 4831
+INFO 2026-04-24 00:36:22,647 log 16128 15412 "GET /contracts/fake-payment/16/?amount=800000,00 HTTP/1.1" 200 4827
+WARNING 2026-04-24 00:36:24,079 log 16128 15412 Not Found: /contracts/webhook/yookassa/
+WARNING 2026-04-24 00:36:24,079 log 16128 15412 "POST /contracts/webhook/yookassa/ HTTP/1.1" 404 30
+INFO 2026-04-24 00:36:25,631 log 16128 15412 "GET /contracts/16/?payment_status=succeeded HTTP/1.1" 200 4831
+INFO 2026-04-24 00:36:33,914 log 16128 15412 "GET /contracts/16/payments/ HTTP/1.1" 200 4153
+INFO 2026-04-24 00:36:41,905 log 16128 15412 "GET /contracts/16/payments/add/ HTTP/1.1" 200 4722
+INFO 2026-04-24 00:37:08,592 log 16128 15412 "POST /contracts/16/payments/add/ HTTP/1.1" 302 0
+INFO 2026-04-24 00:37:08,597 log 16128 15412 "GET /contracts/16/payments/ HTTP/1.1" 200 4939
+INFO 2026-04-24 00:37:18,996 log 16128 15412 "GET / HTTP/1.1" 200 5728
+INFO 2026-04-24 00:37:23,104 log 16128 15412 "GET /contracts/ HTTP/1.1" 200 13964
+INFO 2026-04-24 00:37:34,938 log 16128 15412 "GET /contracts/16/ HTTP/1.1" 200 4831
+INFO 2026-04-24 17:02:06,131 autoreload 11244 5080 Watching for file changes with StatReloader
+INFO 2026-04-24 17:02:12,677 log 11244 15296 "GET / HTTP/1.1" 302 0
+INFO 2026-04-24 17:02:12,757 log 11244 1884 "GET /accounts/login/?next=/ HTTP/1.1" 200 4518
+WARNING 2026-04-24 17:02:13,055 log 11244 1884 Not Found: /favicon.ico
+WARNING 2026-04-24 17:02:13,060 log 11244 1884 "GET /favicon.ico HTTP/1.1" 404 4579
+INFO 2026-04-24 17:02:18,375 log 11244 3160 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2026-04-24 17:02:18,491 log 11244 3160 "GET / HTTP/1.1" 200 6022
+INFO 2026-04-24 17:02:18,530 log 11244 3160 "GET /static/css/index.css HTTP/1.1" 304 0
+INFO 2026-04-24 17:02:21,594 log 11244 3160 "GET /contracts/ HTTP/1.1" 200 13964
+INFO 2026-04-24 17:02:31,103 log 11244 3160 "GET /contracts/14/ HTTP/1.1" 200 4661
+INFO 2026-04-24 17:02:37,032 log 11244 3160 "GET /contracts/14/payments/ HTTP/1.1" 200 3756
+INFO 2026-04-24 17:02:44,225 log 11244 3160 "GET /contracts/14/payments/add/ HTTP/1.1" 200 4722
+INFO 2026-04-24 17:03:50,992 log 11244 3160 "POST /contracts/14/payments/add/ HTTP/1.1" 302 0
+INFO 2026-04-24 17:03:51,007 log 11244 3160 "GET /contracts/14/payments/ HTTP/1.1" 200 4521
+INFO 2026-04-24 17:04:09,251 log 11244 3160 "GET /contracts/14/ HTTP/1.1" 200 4661
+INFO 2026-04-24 17:04:19,817 log 11244 3160 "GET / HTTP/1.1" 200 5728
+INFO 2026-04-24 17:04:21,592 log 11244 3160 "GET /contracts/ HTTP/1.1" 200 13964
+INFO 2026-04-24 17:04:28,876 log 11244 3160 "GET /contracts/14/ HTTP/1.1" 200 4661
+INFO 2026-04-24 17:04:48,840 log 11244 3160 "GET /contracts/14/edit/ HTTP/1.1" 200 5584
+ERROR 2026-04-24 17:06:21,914 log 11244 3160 Internal Server Error: /contracts/14/edit/
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 1003, in connect_check_health
+    sock = self._connect()
+           ^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 1479, in _connect
+    for res in socket.getaddrinfo(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Aleksey\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 976, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 130, in reconnect_on_error
+    yield
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 180, in _consume_from
+    self._pubsub.subscribe(key)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\client.py", line 1265, in subscribe
+    ret_val = self.execute_command("SUBSCRIBE", *new_channels.keys())
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\client.py", line 1023, in execute_command
+    self.connection = self.connection_pool.get_connection()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\utils.py", line 236, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 3041, in get_connection
+    connection.connect()
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 976, in connect
+    self.retry.call_with_retry(
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\retry.py", line 132, in call_with_retry
+    raise error
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\retry.py", line 120, in call_with_retry
+    return do()
+           ^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 977, in <lambda>
+    lambda: self.connect_check_health(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 1025, in connect_check_health
+    raise e
+redis.exceptions.ConnectionError: Error 11001 connecting to redis:6379. getaddrinfo failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 1003, in connect_check_health
+    sock = self._connect()
+           ^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 1479, in _connect
+    for res in socket.getaddrinfo(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Aleksey\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 976, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 133, in reconnect_on_error
+    self._ensure(self._reconnect_pubsub, ())
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 428, in ensure
+    return retry_over_time(
+           ^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\kombu\utils\functional.py", line 318, in retry_over_time
+    return fun(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 109, in _reconnect_pubsub
+    metas = self.backend.client.mget(self.subscribed_to)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\commands\core.py", line 2241, in mget
+    return self.execute_command("MGET", *args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\client.py", line 716, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\client.py", line 722, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\utils.py", line 236, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 3041, in get_connection
+    connection.connect()
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 976, in connect
+    self.retry.call_with_retry(
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\retry.py", line 132, in call_with_retry
+    raise error
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\retry.py", line 120, in call_with_retry
+    return do()
+           ^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 977, in <lambda>
+    lambda: self.connect_check_health(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 1025, in connect_check_health
+    raise e
+redis.exceptions.ConnectionError: Error 11001 connecting to redis:6379. getaddrinfo failed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\views\generic\base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\auth\mixins.py", line 74, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\views\generic\base.py", line 145, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\views\generic\edit.py", line 206, in post
+    return super().post(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\views\generic\edit.py", line 151, in post
+    return self.form_valid(form)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\contracts\views.py", line 286, in form_valid
+    send_contract_created_email.delay(self.object.id)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\app\task.py", line 444, in delay
+    return self.apply_async(args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\app\task.py", line 608, in apply_async
+    return app.send_task(
+           ^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\app\base.py", line 946, in send_task
+    self.backend.on_task_call(P, task_id)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 417, in on_task_call
+    self.result_consumer.consume_from(task_id)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 172, in consume_from
+    return self.start(task_id)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 150, in start
+    self._consume_from(initial_task_id)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 179, in _consume_from
+    with self.reconnect_on_error():
+  File "C:\Users\Aleksey\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 136, in reconnect_on_error
+    raise RuntimeError(E_RETRY_LIMIT_EXCEEDED) from e
+RuntimeError: 
+Retry limit exceeded while trying to reconnect to the Celery redis result store backend. The Celery application must be restarted.
+
+INFO 2026-04-24 17:06:21,976 basehttp 11244 3160 - Broken pipe from ('127.0.0.1', 59541)
+ERROR 2026-04-24 17:06:25,015 log 11244 14576 Internal Server Error: /contracts/14/edit/
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 1003, in connect_check_health
+    sock = self._connect()
+           ^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 1479, in _connect
+    for res in socket.getaddrinfo(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Aleksey\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 976, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 130, in reconnect_on_error
+    yield
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 180, in _consume_from
+    self._pubsub.subscribe(key)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\client.py", line 1265, in subscribe
+    ret_val = self.execute_command("SUBSCRIBE", *new_channels.keys())
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\client.py", line 1023, in execute_command
+    self.connection = self.connection_pool.get_connection()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\utils.py", line 236, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 3041, in get_connection
+    connection.connect()
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 976, in connect
+    self.retry.call_with_retry(
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\retry.py", line 132, in call_with_retry
+    raise error
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\retry.py", line 120, in call_with_retry
+    return do()
+           ^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 977, in <lambda>
+    lambda: self.connect_check_health(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 1025, in connect_check_health
+    raise e
+redis.exceptions.ConnectionError: Error 11001 connecting to redis:6379. getaddrinfo failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 1003, in connect_check_health
+    sock = self._connect()
+           ^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 1479, in _connect
+    for res in socket.getaddrinfo(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Aleksey\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 976, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 133, in reconnect_on_error
+    self._ensure(self._reconnect_pubsub, ())
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 428, in ensure
+    return retry_over_time(
+           ^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\kombu\utils\functional.py", line 318, in retry_over_time
+    return fun(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 109, in _reconnect_pubsub
+    metas = self.backend.client.mget(self.subscribed_to)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\commands\core.py", line 2241, in mget
+    return self.execute_command("MGET", *args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\client.py", line 716, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\client.py", line 722, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\utils.py", line 236, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 3041, in get_connection
+    connection.connect()
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 976, in connect
+    self.retry.call_with_retry(
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\retry.py", line 132, in call_with_retry
+    raise error
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\retry.py", line 120, in call_with_retry
+    return do()
+           ^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 977, in <lambda>
+    lambda: self.connect_check_health(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 1025, in connect_check_health
+    raise e
+redis.exceptions.ConnectionError: Error 11001 connecting to redis:6379. getaddrinfo failed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\views\generic\base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\auth\mixins.py", line 74, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\views\generic\base.py", line 145, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\views\generic\edit.py", line 206, in post
+    return super().post(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\views\generic\edit.py", line 151, in post
+    return self.form_valid(form)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\contracts\views.py", line 286, in form_valid
+    send_contract_created_email.delay(self.object.id)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\app\task.py", line 444, in delay
+    return self.apply_async(args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\app\task.py", line 608, in apply_async
+    return app.send_task(
+           ^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\app\base.py", line 946, in send_task
+    self.backend.on_task_call(P, task_id)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 417, in on_task_call
+    self.result_consumer.consume_from(task_id)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 172, in consume_from
+    return self.start(task_id)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 150, in start
+    self._consume_from(initial_task_id)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 179, in _consume_from
+    with self.reconnect_on_error():
+  File "C:\Users\Aleksey\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 136, in reconnect_on_error
+    raise RuntimeError(E_RETRY_LIMIT_EXCEEDED) from e
+RuntimeError: 
+Retry limit exceeded while trying to reconnect to the Celery redis result store backend. The Celery application must be restarted.
+
+INFO 2026-04-24 17:06:25,045 basehttp 11244 14576 - Broken pipe from ('127.0.0.1', 59703)
+ERROR 2026-04-24 17:06:38,910 log 11244 9384 Internal Server Error: /contracts/14/edit/
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 1003, in connect_check_health
+    sock = self._connect()
+           ^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 1479, in _connect
+    for res in socket.getaddrinfo(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Aleksey\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 976, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 130, in reconnect_on_error
+    yield
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 180, in _consume_from
+    self._pubsub.subscribe(key)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\client.py", line 1265, in subscribe
+    ret_val = self.execute_command("SUBSCRIBE", *new_channels.keys())
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\client.py", line 1023, in execute_command
+    self.connection = self.connection_pool.get_connection()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\utils.py", line 236, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 3041, in get_connection
+    connection.connect()
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 976, in connect
+    self.retry.call_with_retry(
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\retry.py", line 132, in call_with_retry
+    raise error
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\retry.py", line 120, in call_with_retry
+    return do()
+           ^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 977, in <lambda>
+    lambda: self.connect_check_health(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 1025, in connect_check_health
+    raise e
+redis.exceptions.ConnectionError: Error 11001 connecting to redis:6379. getaddrinfo failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 1003, in connect_check_health
+    sock = self._connect()
+           ^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 1479, in _connect
+    for res in socket.getaddrinfo(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Aleksey\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 976, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 133, in reconnect_on_error
+    self._ensure(self._reconnect_pubsub, ())
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 428, in ensure
+    return retry_over_time(
+           ^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\kombu\utils\functional.py", line 318, in retry_over_time
+    return fun(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 109, in _reconnect_pubsub
+    metas = self.backend.client.mget(self.subscribed_to)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\commands\core.py", line 2241, in mget
+    return self.execute_command("MGET", *args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\client.py", line 716, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\client.py", line 722, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\utils.py", line 236, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 3041, in get_connection
+    connection.connect()
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 976, in connect
+    self.retry.call_with_retry(
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\retry.py", line 132, in call_with_retry
+    raise error
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\retry.py", line 120, in call_with_retry
+    return do()
+           ^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 977, in <lambda>
+    lambda: self.connect_check_health(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 1025, in connect_check_health
+    raise e
+redis.exceptions.ConnectionError: Error 11001 connecting to redis:6379. getaddrinfo failed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\views\generic\base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\auth\mixins.py", line 74, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\views\generic\base.py", line 145, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\views\generic\edit.py", line 206, in post
+    return super().post(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\views\generic\edit.py", line 151, in post
+    return self.form_valid(form)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\contracts\views.py", line 286, in form_valid
+    send_contract_created_email.delay(self.object.id)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\app\task.py", line 444, in delay
+    return self.apply_async(args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\app\task.py", line 608, in apply_async
+    return app.send_task(
+           ^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\app\base.py", line 946, in send_task
+    self.backend.on_task_call(P, task_id)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 417, in on_task_call
+    self.result_consumer.consume_from(task_id)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 172, in consume_from
+    return self.start(task_id)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 150, in start
+    self._consume_from(initial_task_id)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 179, in _consume_from
+    with self.reconnect_on_error():
+  File "C:\Users\Aleksey\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 136, in reconnect_on_error
+    raise RuntimeError(E_RETRY_LIMIT_EXCEEDED) from e
+RuntimeError: 
+Retry limit exceeded while trying to reconnect to the Celery redis result store backend. The Celery application must be restarted.
+
+INFO 2026-04-24 17:06:38,913 basehttp 11244 9384 - Broken pipe from ('127.0.0.1', 59705)
+ERROR 2026-04-24 17:06:41,841 log 11244 3260 Internal Server Error: /contracts/14/edit/
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 1003, in connect_check_health
+    sock = self._connect()
+           ^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 1479, in _connect
+    for res in socket.getaddrinfo(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Aleksey\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 976, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 130, in reconnect_on_error
+    yield
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 180, in _consume_from
+    self._pubsub.subscribe(key)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\client.py", line 1265, in subscribe
+    ret_val = self.execute_command("SUBSCRIBE", *new_channels.keys())
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\client.py", line 1023, in execute_command
+    self.connection = self.connection_pool.get_connection()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\utils.py", line 236, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 3041, in get_connection
+    connection.connect()
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 976, in connect
+    self.retry.call_with_retry(
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\retry.py", line 132, in call_with_retry
+    raise error
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\retry.py", line 120, in call_with_retry
+    return do()
+           ^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 977, in <lambda>
+    lambda: self.connect_check_health(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 1025, in connect_check_health
+    raise e
+redis.exceptions.ConnectionError: Error 11001 connecting to redis:6379. getaddrinfo failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 1003, in connect_check_health
+    sock = self._connect()
+           ^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 1479, in _connect
+    for res in socket.getaddrinfo(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Aleksey\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 976, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 133, in reconnect_on_error
+    self._ensure(self._reconnect_pubsub, ())
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 428, in ensure
+    return retry_over_time(
+           ^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\kombu\utils\functional.py", line 318, in retry_over_time
+    return fun(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 109, in _reconnect_pubsub
+    metas = self.backend.client.mget(self.subscribed_to)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\commands\core.py", line 2241, in mget
+    return self.execute_command("MGET", *args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\client.py", line 716, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\client.py", line 722, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\utils.py", line 236, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 3041, in get_connection
+    connection.connect()
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 976, in connect
+    self.retry.call_with_retry(
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\retry.py", line 132, in call_with_retry
+    raise error
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\retry.py", line 120, in call_with_retry
+    return do()
+           ^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 977, in <lambda>
+    lambda: self.connect_check_health(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 1025, in connect_check_health
+    raise e
+redis.exceptions.ConnectionError: Error 11001 connecting to redis:6379. getaddrinfo failed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\views\generic\base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\auth\mixins.py", line 74, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\views\generic\base.py", line 145, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\views\generic\edit.py", line 206, in post
+    return super().post(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\views\generic\edit.py", line 151, in post
+    return self.form_valid(form)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\contracts\views.py", line 286, in form_valid
+    send_contract_created_email.delay(self.object.id)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\app\task.py", line 444, in delay
+    return self.apply_async(args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\app\task.py", line 608, in apply_async
+    return app.send_task(
+           ^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\app\base.py", line 946, in send_task
+    self.backend.on_task_call(P, task_id)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 417, in on_task_call
+    self.result_consumer.consume_from(task_id)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 172, in consume_from
+    return self.start(task_id)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 150, in start
+    self._consume_from(initial_task_id)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 179, in _consume_from
+    with self.reconnect_on_error():
+  File "C:\Users\Aleksey\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 136, in reconnect_on_error
+    raise RuntimeError(E_RETRY_LIMIT_EXCEEDED) from e
+RuntimeError: 
+Retry limit exceeded while trying to reconnect to the Celery redis result store backend. The Celery application must be restarted.
+
+INFO 2026-04-24 17:06:41,845 basehttp 11244 3260 - Broken pipe from ('127.0.0.1', 59711)
+ERROR 2026-04-24 17:06:43,149 log 11244 760 Internal Server Error: /contracts/14/edit/
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 1003, in connect_check_health
+    sock = self._connect()
+           ^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 1479, in _connect
+    for res in socket.getaddrinfo(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Aleksey\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 976, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 130, in reconnect_on_error
+    yield
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 180, in _consume_from
+    self._pubsub.subscribe(key)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\client.py", line 1265, in subscribe
+    ret_val = self.execute_command("SUBSCRIBE", *new_channels.keys())
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\client.py", line 1023, in execute_command
+    self.connection = self.connection_pool.get_connection()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\utils.py", line 236, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 3041, in get_connection
+    connection.connect()
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 976, in connect
+    self.retry.call_with_retry(
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\retry.py", line 132, in call_with_retry
+    raise error
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\retry.py", line 120, in call_with_retry
+    return do()
+           ^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 977, in <lambda>
+    lambda: self.connect_check_health(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 1025, in connect_check_health
+    raise e
+redis.exceptions.ConnectionError: Error 11001 connecting to redis:6379. getaddrinfo failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 1003, in connect_check_health
+    sock = self._connect()
+           ^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 1479, in _connect
+    for res in socket.getaddrinfo(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Aleksey\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 976, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 133, in reconnect_on_error
+    self._ensure(self._reconnect_pubsub, ())
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 428, in ensure
+    return retry_over_time(
+           ^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\kombu\utils\functional.py", line 318, in retry_over_time
+    return fun(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 109, in _reconnect_pubsub
+    metas = self.backend.client.mget(self.subscribed_to)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\commands\core.py", line 2241, in mget
+    return self.execute_command("MGET", *args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\client.py", line 716, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\client.py", line 722, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\utils.py", line 236, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 3041, in get_connection
+    connection.connect()
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 976, in connect
+    self.retry.call_with_retry(
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\retry.py", line 132, in call_with_retry
+    raise error
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\retry.py", line 120, in call_with_retry
+    return do()
+           ^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 977, in <lambda>
+    lambda: self.connect_check_health(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 1025, in connect_check_health
+    raise e
+redis.exceptions.ConnectionError: Error 11001 connecting to redis:6379. getaddrinfo failed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\views\generic\base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\auth\mixins.py", line 74, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\views\generic\base.py", line 145, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\views\generic\edit.py", line 206, in post
+    return super().post(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\views\generic\edit.py", line 151, in post
+    return self.form_valid(form)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\contracts\views.py", line 286, in form_valid
+    send_contract_created_email.delay(self.object.id)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\app\task.py", line 444, in delay
+    return self.apply_async(args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\app\task.py", line 608, in apply_async
+    return app.send_task(
+           ^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\app\base.py", line 946, in send_task
+    self.backend.on_task_call(P, task_id)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 417, in on_task_call
+    self.result_consumer.consume_from(task_id)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 172, in consume_from
+    return self.start(task_id)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 150, in start
+    self._consume_from(initial_task_id)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 179, in _consume_from
+    with self.reconnect_on_error():
+  File "C:\Users\Aleksey\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 136, in reconnect_on_error
+    raise RuntimeError(E_RETRY_LIMIT_EXCEEDED) from e
+RuntimeError: 
+Retry limit exceeded while trying to reconnect to the Celery redis result store backend. The Celery application must be restarted.
+
+INFO 2026-04-24 17:06:43,154 basehttp 11244 760 - Broken pipe from ('127.0.0.1', 59713)
+ERROR 2026-04-24 17:06:43,359 log 11244 14588 Internal Server Error: /contracts/14/edit/
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 1003, in connect_check_health
+    sock = self._connect()
+           ^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 1479, in _connect
+    for res in socket.getaddrinfo(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Aleksey\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 976, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 130, in reconnect_on_error
+    yield
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 180, in _consume_from
+    self._pubsub.subscribe(key)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\client.py", line 1265, in subscribe
+    ret_val = self.execute_command("SUBSCRIBE", *new_channels.keys())
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\client.py", line 1023, in execute_command
+    self.connection = self.connection_pool.get_connection()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\utils.py", line 236, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 3041, in get_connection
+    connection.connect()
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 976, in connect
+    self.retry.call_with_retry(
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\retry.py", line 132, in call_with_retry
+    raise error
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\retry.py", line 120, in call_with_retry
+    return do()
+           ^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 977, in <lambda>
+    lambda: self.connect_check_health(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 1025, in connect_check_health
+    raise e
+redis.exceptions.ConnectionError: Error 11001 connecting to redis:6379. getaddrinfo failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 1003, in connect_check_health
+    sock = self._connect()
+           ^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 1479, in _connect
+    for res in socket.getaddrinfo(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Aleksey\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 976, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 133, in reconnect_on_error
+    self._ensure(self._reconnect_pubsub, ())
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 428, in ensure
+    return retry_over_time(
+           ^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\kombu\utils\functional.py", line 318, in retry_over_time
+    return fun(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 109, in _reconnect_pubsub
+    metas = self.backend.client.mget(self.subscribed_to)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\commands\core.py", line 2241, in mget
+    return self.execute_command("MGET", *args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\client.py", line 716, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\client.py", line 722, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\utils.py", line 236, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 3041, in get_connection
+    connection.connect()
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 976, in connect
+    self.retry.call_with_retry(
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\retry.py", line 132, in call_with_retry
+    raise error
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\retry.py", line 120, in call_with_retry
+    return do()
+           ^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 977, in <lambda>
+    lambda: self.connect_check_health(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\redis\connection.py", line 1025, in connect_check_health
+    raise e
+redis.exceptions.ConnectionError: Error 11001 connecting to redis:6379. getaddrinfo failed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\views\generic\base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\auth\mixins.py", line 74, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\views\generic\base.py", line 145, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\views\generic\edit.py", line 206, in post
+    return super().post(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\views\generic\edit.py", line 151, in post
+    return self.form_valid(form)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\contracts\views.py", line 286, in form_valid
+    send_contract_created_email.delay(self.object.id)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\app\task.py", line 444, in delay
+    return self.apply_async(args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\app\task.py", line 608, in apply_async
+    return app.send_task(
+           ^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\app\base.py", line 946, in send_task
+    self.backend.on_task_call(P, task_id)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 417, in on_task_call
+    self.result_consumer.consume_from(task_id)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 172, in consume_from
+    return self.start(task_id)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 150, in start
+    self._consume_from(initial_task_id)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 179, in _consume_from
+    with self.reconnect_on_error():
+  File "C:\Users\Aleksey\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\celery\backends\redis.py", line 136, in reconnect_on_error
+    raise RuntimeError(E_RETRY_LIMIT_EXCEEDED) from e
+RuntimeError: 
+Retry limit exceeded while trying to reconnect to the Celery redis result store backend. The Celery application must be restarted.
+
+ERROR 2026-04-24 17:06:43,362 log 11244 14588 "POST /contracts/14/edit/ HTTP/1.1" 500 290571
+INFO 2026-04-24 18:10:00,466 autoreload 8648 14092 Watching for file changes with StatReloader
+INFO 2026-04-24 18:10:08,695 log 8648 7996 "GET / HTTP/1.1" 302 0
+INFO 2026-04-24 18:10:08,789 log 8648 7996 "GET /accounts/login/?next=/ HTTP/1.1" 200 4518
+WARNING 2026-04-24 18:10:08,932 log 8648 7996 Not Found: /favicon.ico
+WARNING 2026-04-24 18:10:08,933 log 8648 7996 "GET /favicon.ico HTTP/1.1" 404 4579
+INFO 2026-04-24 18:10:24,641 log 8648 7996 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2026-04-24 18:10:24,817 log 8648 7996 "GET / HTTP/1.1" 200 6022
+INFO 2026-04-24 18:10:27,209 log 8648 7996 "GET /contracts/ HTTP/1.1" 200 13970
+INFO 2026-04-24 18:10:31,352 log 8648 7996 "GET /contracts/16/ HTTP/1.1" 200 4831
+INFO 2026-04-24 18:10:34,927 log 8648 7996 "GET /contracts/fake-payment/16/?amount=800000,00 HTTP/1.1" 200 4827
+WARNING 2026-04-24 18:10:37,191 log 8648 7996 Not Found: /contracts/webhook/yookassa/
+WARNING 2026-04-24 18:10:37,191 log 8648 7996 "POST /contracts/webhook/yookassa/ HTTP/1.1" 404 30
+INFO 2026-04-24 18:10:38,759 log 8648 7996 "GET /contracts/16/?payment_status=succeeded HTTP/1.1" 200 4831
+INFO 2026-04-24 18:20:40,366 autoreload 8648 14092 E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\contracts\views.py changed, reloading.
+INFO 2026-04-24 18:20:41,485 autoreload 13832 11540 Watching for file changes with StatReloader
+INFO 2026-04-24 18:21:29,910 autoreload 13832 11540 E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\contracts\views.py changed, reloading.
+INFO 2026-04-24 18:21:31,034 autoreload 304 5628 Watching for file changes with StatReloader
+INFO 2026-04-24 18:43:52,332 autoreload 4120 14120 Watching for file changes with StatReloader
+INFO 2026-04-24 18:43:58,453 log 4120 13268 "GET /contracts/16/?payment_status=succeeded HTTP/1.1" 200 4831
+INFO 2026-04-24 18:44:02,627 log 4120 13268 "GET / HTTP/1.1" 200 5728
+INFO 2026-04-24 18:44:04,634 log 4120 13268 "GET /contracts/ HTTP/1.1" 200 13970
+INFO 2026-04-24 18:44:09,506 log 4120 13268 "GET /contracts/16/ HTTP/1.1" 200 4831
+INFO 2026-04-24 18:44:13,314 log 4120 13268 "GET /contracts/fake-payment/16/?amount=800000,00 HTTP/1.1" 200 5031
+INFO 2026-04-24 18:44:15,946 views 4120 13268 Webhook received. Body: b'{"event":"payment.succeeded","object":{"id":"fake_70cde87e28","status":"succeeded"}}'
+INFO 2026-04-24 18:44:15,946 views 4120 13268 Processing payment fake_70cde87e28, status=succeeded
+ERROR 2026-04-24 18:44:15,946 views 4120 13268 Payment with yookassa_id fake_70cde87e28 not found
+WARNING 2026-04-24 18:44:15,961 log 4120 13268 Not Found: /contracts/webhook/yookassa/
+WARNING 2026-04-24 18:44:15,961 log 4120 13268 "POST /contracts/webhook/yookassa/ HTTP/1.1" 404 30
+INFO 2026-04-24 18:44:17,544 log 4120 13268 "GET /contracts/16/?payment_status=succeeded HTTP/1.1" 200 4831
+INFO 2026-04-24 18:51:03,299 autoreload 4120 14120 E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\contracts\viewsets.py changed, reloading.
+INFO 2026-04-24 18:51:04,504 autoreload 11464 12544 Watching for file changes with StatReloader
+INFO 2026-04-24 18:51:59,714 autoreload 11464 12544 E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\contracts\viewsets.py changed, reloading.
+INFO 2026-04-24 18:52:00,877 autoreload 2968 4496 Watching for file changes with StatReloader
+INFO 2026-04-24 18:53:34,843 autoreload 2968 4496 E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\contracts\viewsets.py changed, reloading.
+INFO 2026-04-24 18:53:36,056 autoreload 11248 13656 Watching for file changes with StatReloader
+INFO 2026-04-24 19:04:59,355 autoreload 2932 3544 Watching for file changes with StatReloader
+INFO 2026-04-24 19:05:04,603 log 2932 14360 "GET / HTTP/1.1" 200 5728
+INFO 2026-04-24 19:05:06,531 log 2932 14360 "GET /contracts/ HTTP/1.1" 200 13970
+INFO 2026-04-24 19:05:08,444 log 2932 14360 "GET /contracts/16/ HTTP/1.1" 200 4666
+INFO 2026-04-24 19:05:17,229 log 2932 14360 "GET /contracts/16/payments/ HTTP/1.1" 200 4630
+INFO 2026-04-24 19:05:26,270 log 2932 14360 "GET /contracts/16/payments/add/ HTTP/1.1" 200 4722
+INFO 2026-04-24 19:06:19,405 log 2932 14360 "POST /contracts/16/payments/add/ HTTP/1.1" 302 0
+INFO 2026-04-24 19:06:19,405 log 2932 14360 "GET /contracts/16/payments/ HTTP/1.1" 200 5483
+INFO 2026-04-24 19:38:34,878 log 2932 4728 "GET /contracts/16/payments/ HTTP/1.1" 200 5689
+INFO 2026-04-24 19:38:36,707 log 2932 4728 "GET /contracts/16/payments/ HTTP/1.1" 200 5689
+INFO 2026-04-24 19:38:37,363 log 2932 4728 "GET /contracts/16/payments/ HTTP/1.1" 200 5689
+INFO 2026-04-24 19:38:37,645 log 2932 4728 "GET /contracts/16/payments/ HTTP/1.1" 200 5689
+INFO 2026-04-24 19:38:37,931 log 2932 4728 "GET /contracts/16/payments/ HTTP/1.1" 200 5689
+INFO 2026-04-24 19:38:38,230 log 2932 4728 "GET /contracts/16/payments/ HTTP/1.1" 200 5689
+INFO 2026-04-24 19:38:39,546 log 2932 4728 "GET / HTTP/1.1" 200 5728
+INFO 2026-04-24 19:38:41,099 log 2932 4728 "GET /contracts/ HTTP/1.1" 200 13970
+INFO 2026-04-24 19:38:42,879 log 2932 4728 "GET /contracts/14/ HTTP/1.1" 200 4667
+INFO 2026-04-24 19:38:45,402 log 2932 4728 "GET /contracts/14/ HTTP/1.1" 200 4667
+INFO 2026-04-24 19:38:46,121 log 2932 4728 "GET /contracts/14/ HTTP/1.1" 200 4667
+INFO 2026-04-24 19:38:46,425 log 2932 4728 "GET /contracts/14/ HTTP/1.1" 200 4667
+INFO 2026-04-24 19:38:50,096 log 2932 4728 "GET /contracts/16/ HTTP/1.1" 200 4831
+INFO 2026-04-24 19:38:57,232 log 2932 4728 "GET /contracts/6/ HTTP/1.1" 200 4558
+INFO 2026-04-24 19:39:01,486 log 2932 4728 "GET /contracts/9/ HTTP/1.1" 200 4577
+INFO 2026-04-24 19:39:07,484 log 2932 4728 "GET /contracts/4/ HTTP/1.1" 200 4667
+INFO 2026-04-24 19:39:12,542 log 2932 4728 "GET /contracts/16/ HTTP/1.1" 200 4831
+INFO 2026-04-24 19:39:31,734 log 2932 4728 "GET /contracts/fake-payment/16/?amount=800000,00 HTTP/1.1" 200 5031
+INFO 2026-04-24 19:39:33,738 views 2932 4728 Webhook received. Body: b'{"event":"payment.succeeded","object":{"id":"fake_b3e44c93b8","status":"succeeded"}}'
+INFO 2026-04-24 19:39:33,738 views 2932 4728 Processing payment fake_b3e44c93b8, status=succeeded
+INFO 2026-04-24 19:39:33,754 views 2932 4728 Contract Ä-007/2025 paid_amount unchanged
+INFO 2026-04-24 19:39:33,771 log 2932 4728 "POST /contracts/webhook/yookassa/ HTTP/1.1" 200 16
+INFO 2026-04-24 19:39:35,329 log 2932 4728 "GET /contracts/16/?payment_status=succeeded HTTP/1.1" 200 4585
+INFO 2026-04-24 19:39:53,047 log 2932 4728 "GET / HTTP/1.1" 200 5728
+INFO 2026-04-24 19:39:54,653 log 2932 4728 "GET /contracts/ HTTP/1.1" 200 13965
+INFO 2026-04-24 19:40:00,951 log 2932 4728 "GET /contracts/10/ HTTP/1.1" 200 4602
+INFO 2026-04-24 19:40:05,463 log 2932 4728 "GET /contracts/10/payments/ HTTP/1.1" 200 3753
+INFO 2026-04-24 19:40:12,330 log 2932 4728 "GET /contracts/10/payments/add/ HTTP/1.1" 200 4722
+INFO 2026-04-24 19:41:43,236 log 2932 4728 "POST /contracts/10/payments/add/ HTTP/1.1" 302 0
+INFO 2026-04-24 19:41:43,243 log 2932 4728 "GET /contracts/10/payments/ HTTP/1.1" 200 4534
+INFO 2026-04-24 22:26:58,970 autoreload 2932 3544 E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\contracts\views.py changed, reloading.
+INFO 2026-04-24 22:27:00,142 autoreload 15132 14656 Watching for file changes with StatReloader
+INFO 2026-04-24 22:28:01,159 autoreload 7592 9140 Watching for file changes with StatReloader
+INFO 2026-04-24 22:28:12,640 log 7592 6152 "GET / HTTP/1.1" 200 5728
+INFO 2026-04-24 22:28:14,833 log 7592 6152 "GET /contracts/ HTTP/1.1" 200 13965
+INFO 2026-04-24 22:28:21,387 log 7592 6152 "GET /contracts/10/ HTTP/1.1" 200 4827
+INFO 2026-04-24 22:28:24,357 log 7592 6152 "GET /contracts/fake-payment/10/?amount=1000,00 HTTP/1.1" 200 7826
+INFO 2026-04-24 22:28:35,581 log 7592 6152 "GET / HTTP/1.1" 200 5728
+INFO 2026-04-24 22:28:37,066 log 7592 6152 "GET /contracts/ HTTP/1.1" 200 13965
+INFO 2026-04-24 22:28:49,173 log 7592 6152 "GET /contracts/2/ HTTP/1.1" 200 4988
+INFO 2026-04-24 22:28:54,392 log 7592 6152 "GET /contracts/fake-payment/2/?amount=250000,00 HTTP/1.1" 200 7828
+INFO 2026-04-24 22:38:39,827 autoreload 11500 4668 Watching for file changes with StatReloader
+INFO 2026-04-24 22:38:50,484 log 11500 13848 "GET / HTTP/1.1" 200 5728
+INFO 2026-04-24 22:38:52,175 log 11500 13848 "GET /contracts/ HTTP/1.1" 200 13965
+INFO 2026-04-24 22:38:58,715 log 11500 13848 "GET /contracts/3/ HTTP/1.1" 200 4869
+INFO 2026-04-24 22:39:04,983 log 11500 13848 "GET /contracts/fake-payment/3/?amount=750000,00 HTTP/1.1" 200 7828
+INFO 2026-04-24 22:45:43,804 autoreload 14908 14180 Watching for file changes with StatReloader
+INFO 2026-04-24 22:45:52,448 log 14908 14164 "GET / HTTP/1.1" 200 5728
+INFO 2026-04-24 22:45:55,897 log 14908 14164 "GET /contracts/ HTTP/1.1" 200 13965
+INFO 2026-04-24 22:46:01,152 log 14908 14164 "GET /contracts/3/ HTTP/1.1" 200 4869
+INFO 2026-04-24 22:46:03,004 log 14908 14164 "GET /contracts/fake-payment/3/?amount=750000,00 HTTP/1.1" 200 6368
+INFO 2026-04-24 22:46:06,406 views 14908 14164 Webhook received. Body: b'{"event":"payment.succeeded","object":{"id":"fake_bb4d77168f","status":"succeeded"}}'
+INFO 2026-04-24 22:46:06,407 views 14908 14164 Processing payment fake_bb4d77168f, status=succeeded
+INFO 2026-04-24 22:46:06,427 log 14908 14164 "POST /contracts/webhook/yookassa/ HTTP/1.1" 200 16
+INFO 2026-04-24 22:46:08,005 log 14908 14164 "GET /contracts/3/?payment_status=succeeded HTTP/1.1" 200 4562
+INFO 2026-04-24 22:46:17,423 log 14908 14164 "GET / HTTP/1.1" 200 5727
+INFO 2026-04-24 22:46:20,479 log 14908 14164 "GET /contracts/ HTTP/1.1" 200 13960
+INFO 2026-04-24 22:46:25,130 log 14908 14164 "GET / HTTP/1.1" 200 5727
+INFO 2026-04-24 22:46:27,662 log 14908 14164 "GET /analytics/ HTTP/1.1" 200 6194
+INFO 2026-04-24 22:46:28,432 log 14908 14164 "GET /analytics/api/chart-data/?type=tasks_status HTTP/1.1" 200 122
+INFO 2026-04-24 22:46:28,447 log 14908 15200 "GET /analytics/api/chart-data/?type=revenue HTTP/1.1" 200 231
+INFO 2026-04-24 22:46:36,942 log 14908 15200 "GET / HTTP/1.1" 200 5727
+INFO 2026-04-24 22:46:39,918 log 14908 15200 "GET /contracts/ HTTP/1.1" 200 13960
+INFO 2026-04-24 22:46:44,562 log 14908 15200 "GET /contracts/4/ HTTP/1.1" 200 4999
+INFO 2026-04-24 22:46:46,106 log 14908 15200 "GET /contracts/fake-payment/4/?amount=150000,00 HTTP/1.1" 200 6368
+INFO 2026-04-24 22:46:48,962 views 14908 15200 Webhook received. Body: b'{"event":"payment.succeeded","object":{"id":"fake_f24486317a","status":"succeeded"}}'
+INFO 2026-04-24 22:46:48,962 views 14908 15200 Processing payment fake_f24486317a, status=succeeded
+INFO 2026-04-24 22:46:48,978 log 14908 15200 "POST /contracts/webhook/yookassa/ HTTP/1.1" 200 16
+INFO 2026-04-24 22:46:50,536 log 14908 15200 "GET /contracts/4/?payment_status=succeeded HTTP/1.1" 200 4580
+INFO 2026-04-24 22:46:56,811 log 14908 15200 "GET / HTTP/1.1" 200 5727
+INFO 2026-04-24 22:46:59,303 log 14908 15200 "GET /analytics/ HTTP/1.1" 200 6194
+INFO 2026-04-24 22:47:00,069 log 14908 14164 "GET /analytics/api/chart-data/?type=tasks_status HTTP/1.1" 200 122
+INFO 2026-04-24 22:47:00,082 log 14908 15200 "GET /analytics/api/chart-data/?type=revenue HTTP/1.1" 200 231
+INFO 2026-04-24 22:47:16,782 log 14908 15200 "GET / HTTP/1.1" 200 5727
+INFO 2026-04-24 22:47:20,173 log 14908 15200 "GET / HTTP/1.1" 200 5727
+INFO 2026-04-24 22:47:22,832 log 14908 15200 "GET /analytics/ HTTP/1.1" 200 6194
+INFO 2026-04-24 22:47:23,136 log 14908 14164 "GET /analytics/api/chart-data/?type=tasks_status HTTP/1.1" 200 122
+INFO 2026-04-24 22:47:23,149 log 14908 15200 "GET /analytics/api/chart-data/?type=revenue HTTP/1.1" 200 231
+INFO 2026-04-24 22:49:26,183 log 14908 15200 "GET / HTTP/1.1" 200 5727
+INFO 2026-04-24 22:49:26,988 log 14908 15200 "GET / HTTP/1.1" 200 5727
+INFO 2026-04-24 22:49:28,750 log 14908 15200 "GET /contracts/ HTTP/1.1" 200 13949
+INFO 2026-04-24 22:49:36,214 log 14908 15200 "GET /contracts/10/ HTTP/1.1" 200 4827
+INFO 2026-04-24 22:49:49,184 log 14908 15200 "GET /contracts/10/payments/ HTTP/1.1" 200 4225
+INFO 2026-04-24 22:49:54,028 log 14908 15200 "GET /contracts/10/payments/add/ HTTP/1.1" 200 4722
+INFO 2026-04-24 22:51:07,954 log 14908 15200 "POST /contracts/10/payments/add/ HTTP/1.1" 302 0
+INFO 2026-04-24 22:51:07,954 log 14908 15200 "GET /contracts/10/payments/ HTTP/1.1" 200 5084
+INFO 2026-04-24 22:51:20,779 log 14908 15200 "GET /contracts/10/ HTTP/1.1" 200 4827
+INFO 2026-04-24 22:51:30,414 log 14908 15200 "GET /contracts/fake-payment/10/?amount=1000,00 HTTP/1.1" 200 6365
+INFO 2026-04-24 22:51:38,074 log 14908 15200 "GET /contracts/10/payments/ HTTP/1.1" 200 5288
+INFO 2026-04-24 22:58:58,067 autoreload 14908 14180 E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\contracts\views.py changed, reloading.
+INFO 2026-04-24 22:58:59,207 autoreload 14340 14644 Watching for file changes with StatReloader
+INFO 2026-04-24 23:00:39,738 autoreload 14340 14644 E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\contracts\views.py changed, reloading.
+INFO 2026-04-24 23:00:41,070 autoreload 11416 5000 Watching for file changes with StatReloader
+INFO 2026-04-24 23:03:39,416 autoreload 9400 5616 Watching for file changes with StatReloader
+INFO 2026-04-24 23:03:48,462 log 9400 12284 "GET / HTTP/1.1" 200 5727
+INFO 2026-04-24 23:03:50,597 log 9400 12284 "GET /contracts/ HTTP/1.1" 200 13949
+INFO 2026-04-24 23:03:59,405 log 9400 12284 "GET /contracts/5/ HTTP/1.1" 200 4970
+INFO 2026-04-24 23:04:04,536 log 9400 12284 "GET /contracts/fake-payment/5/?amount=1000000,00 HTTP/1.1" 200 6369
+INFO 2026-04-24 23:04:05,897 views 9400 12284 Webhook received. Body: b'{"event":"payment.succeeded","object":{"id":"fake_9ccc240fde","status":"succeeded"}}'
+INFO 2026-04-24 23:04:05,897 views 9400 12284 Processing payment fake_9ccc240fde, status=succeeded
+INFO 2026-04-24 23:04:05,930 log 9400 12284 "POST /contracts/webhook/yookassa/ HTTP/1.1" 200 16
+INFO 2026-04-24 23:04:07,490 log 9400 12284 "GET /contracts/5/?payment_status=succeeded HTTP/1.1" 200 4549
+INFO 2026-04-24 23:04:11,450 log 9400 12284 "GET / HTTP/1.1" 200 5728
+INFO 2026-04-24 23:04:15,105 log 9400 12284 "GET /contracts/ HTTP/1.1" 200 13938
+INFO 2026-04-24 23:04:21,453 log 9400 12284 "GET /contracts/2/ HTTP/1.1" 200 4988
+INFO 2026-04-24 23:04:25,333 log 9400 12284 "GET /contracts/2/payments/ HTTP/1.1" 200 4640
+INFO 2026-04-24 23:04:28,461 log 9400 12284 "GET /contracts/2/ HTTP/1.1" 200 4988
+INFO 2026-04-24 23:04:33,836 log 9400 12284 "GET /contracts/2/payments/ HTTP/1.1" 200 4640
+INFO 2026-04-24 23:04:36,061 log 9400 12284 "GET /contracts/2/payments/add/ HTTP/1.1" 200 4721
+INFO 2026-04-24 23:05:36,117 log 9400 12284 "POST /contracts/2/payments/add/ HTTP/1.1" 302 0
+INFO 2026-04-24 23:05:36,117 log 9400 12284 "GET /contracts/2/payments/ HTTP/1.1" 200 5497
+INFO 2026-04-24 23:06:00,037 log 9400 12284 "GET /contracts/2/ HTTP/1.1" 200 4569
+INFO 2026-04-24 23:06:04,624 log 9400 12284 "GET / HTTP/1.1" 200 5728
+INFO 2026-04-24 23:06:08,233 log 9400 12284 "GET /analytics/ HTTP/1.1" 200 6194
+INFO 2026-04-24 23:06:08,341 log 9400 11420 "GET /analytics/api/chart-data/?type=tasks_status HTTP/1.1" 200 122
+INFO 2026-04-24 23:06:08,352 log 9400 12284 "GET /analytics/api/chart-data/?type=revenue HTTP/1.1" 200 231
+INFO 2026-04-24 23:06:12,825 log 9400 12284 "GET / HTTP/1.1" 200 5728
+INFO 2026-04-24 23:06:14,033 log 9400 12284 "GET /contracts/ HTTP/1.1" 200 13927
+INFO 2026-04-24 23:23:15,770 basehttp 9400 7816 - Broken pipe from ('127.0.0.1', 52911)
+INFO 2026-04-24 23:23:15,798 log 9400 4704 "GET /contracts/export/? HTTP/1.1" 200 2942
+INFO 2026-04-24 23:24:28,616 log 9400 4704 "GET /contracts/10/ HTTP/1.1" 200 4827
+INFO 2026-04-24 23:24:32,326 log 9400 4704 "GET /contracts/fake-payment/10/?amount=1000,00 HTTP/1.1" 200 6365
+INFO 2026-04-24 23:24:34,356 views 9400 4704 Webhook received. Body: b'{"event":"payment.succeeded","object":{"id":"fake_1a37acd9da","status":"succeeded"}}'
+INFO 2026-04-24 23:24:34,356 views 9400 4704 Processing payment fake_1a37acd9da, status=succeeded
+INFO 2026-04-24 23:24:34,388 log 9400 4704 "POST /contracts/webhook/yookassa/ HTTP/1.1" 200 16
+INFO 2026-04-24 23:24:35,955 log 9400 4704 "GET /contracts/10/?payment_status=succeeded HTTP/1.1" 200 4607
+INFO 2026-04-24 23:24:53,171 log 9400 4704 "GET / HTTP/1.1" 200 5728
+INFO 2026-04-24 23:24:55,192 log 9400 4704 "GET /contracts/ HTTP/1.1" 200 13932
+INFO 2026-04-24 23:25:06,174 log 9400 4704 "GET /contracts/10/ HTTP/1.1" 200 4607
+INFO 2026-04-24 23:25:13,828 log 9400 4704 "GET /contracts/10/payments/ HTTP/1.1" 200 5291
+INFO 2026-04-24 23:25:33,971 log 9400 4704 "GET / HTTP/1.1" 200 5728
+INFO 2026-04-24 23:25:35,947 log 9400 4704 "GET /contracts/ HTTP/1.1" 200 13932
+INFO 2026-04-24 23:25:41,358 log 9400 4704 "GET /contracts/14/ HTTP/1.1" 200 4667
+INFO 2026-04-24 23:25:49,477 log 9400 4704 "GET /contracts/4/ HTTP/1.1" 200 4580
+INFO 2026-04-24 23:25:53,826 log 9400 4704 "GET /contracts/4/ HTTP/1.1" 200 4580
+INFO 2026-04-24 23:25:55,606 log 9400 4704 "GET / HTTP/1.1" 200 5728
+INFO 2026-04-24 23:27:11,542 log 9400 4704 "GET /contracts/ HTTP/1.1" 200 13932
+INFO 2026-04-24 23:27:19,003 log 9400 4704 "GET / HTTP/1.1" 200 5728
+INFO 2026-04-24 23:27:21,337 log 9400 4704 "GET / HTTP/1.1" 200 5728
+INFO 2026-04-24 23:27:25,209 log 9400 4704 "GET /analytics/ HTTP/1.1" 200 6194
+INFO 2026-04-24 23:27:25,364 log 9400 11816 "GET /analytics/api/chart-data/?type=tasks_status HTTP/1.1" 200 122
+INFO 2026-04-24 23:27:25,379 log 9400 4704 "GET /analytics/api/chart-data/?type=revenue HTTP/1.1" 200 231
+INFO 2026-04-25 11:21:33,764 autoreload 8652 13136 Watching for file changes with StatReloader
+INFO 2026-04-25 11:21:38,967 log 8652 12412 "GET / HTTP/1.1" 302 0
+INFO 2026-04-25 11:21:39,060 log 8652 12412 "GET /accounts/login/?next=/ HTTP/1.1" 200 4518
+WARNING 2026-04-25 11:21:39,262 log 8652 12412 Not Found: /favicon.ico
+WARNING 2026-04-25 11:21:39,262 log 8652 12412 "GET /favicon.ico HTTP/1.1" 404 4579
+INFO 2026-04-25 11:21:44,505 log 8652 13392 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2026-04-25 11:21:44,660 log 8652 13392 "GET / HTTP/1.1" 200 6022
+INFO 2026-04-25 11:21:44,704 log 8652 13392 "GET /static/js/index.js HTTP/1.1" 304 0
+INFO 2026-04-25 11:22:02,419 log 8652 13392 "GET /admin/ HTTP/1.1" 200 20951
+INFO 2026-04-25 11:22:02,429 log 8652 13396 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2026-04-25 11:22:02,429 log 8652 13392 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2026-04-25 11:22:02,430 log 8652 14184 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2026-04-25 11:22:02,432 log 8652 14192 "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2026-04-25 11:22:02,432 log 8652 14188 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2026-04-25 11:22:02,433 log 8652 14196 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2026-04-25 11:22:02,435 log 8652 14196 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2026-04-25 11:22:02,441 log 8652 14188 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2026-04-25 11:22:02,442 log 8652 14196 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2026-04-25 11:22:02,442 log 8652 14192 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 304 0
+INFO 2026-04-25 11:22:07,111 log 8652 14196 "GET /admin/telegram_bot/telegramuser/ HTTP/1.1" 200 18128
+INFO 2026-04-25 11:22:07,126 log 8652 14188 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2026-04-25 11:22:07,127 log 8652 14196 "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2026-04-25 11:22:07,127 log 8652 13396 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2026-04-25 11:22:07,127 log 8652 14184 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2026-04-25 11:22:07,128 log 8652 13392 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2026-04-25 11:22:07,133 log 8652 14196 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2026-04-25 11:22:07,134 log 8652 14188 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2026-04-25 11:22:07,135 log 8652 13396 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2026-04-25 11:22:07,135 log 8652 14184 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2026-04-25 11:22:07,138 log 8652 14184 "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+INFO 2026-04-25 11:22:07,143 log 8652 14184 "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2026-04-25 11:22:07,176 log 8652 14192 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-25 11:22:07,187 log 8652 14192 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+INFO 2026-04-25 11:22:07,187 log 8652 14184 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+INFO 2026-04-25 11:22:14,482 log 8652 14184 "GET /admin/telegram_bot/telegramuser/add/ HTTP/1.1" 200 20544
+INFO 2026-04-25 11:22:14,491 log 8652 14184 "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+INFO 2026-04-25 11:22:14,491 log 8652 13396 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2026-04-25 11:22:14,496 log 8652 13396 "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+INFO 2026-04-25 11:22:14,496 log 8652 14184 "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2026-04-25 11:22:14,503 log 8652 14192 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-25 11:33:20,803 log 8652 1716 "GET /admin/accounts/user/ HTTP/1.1" 200 34945
+INFO 2026-04-25 11:33:20,823 basehttp 8652 12532 - Broken pipe from ('127.0.0.1', 50441)
+INFO 2026-04-25 11:33:20,839 log 8652 1716 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-25 11:33:20,856 log 8652 1716 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 304 0
+INFO 2026-04-25 11:36:12,507 log 8652 1716 "GET /admin/telegram_bot/telegramuser/ HTTP/1.1" 200 18128
+INFO 2026-04-25 11:36:12,524 log 8652 1716 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-25 11:36:16,192 log 8652 1716 "GET /admin/telegram_bot/telegramuser/add/ HTTP/1.1" 200 20544
+INFO 2026-04-25 11:36:16,208 log 8652 1716 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-25 11:36:41,623 log 8652 1716 "POST /admin/telegram_bot/telegramuser/add/ HTTP/1.1" 302 0
+INFO 2026-04-25 11:36:41,645 log 8652 1716 "GET /admin/telegram_bot/telegramuser/ HTTP/1.1" 200 20630
+INFO 2026-04-25 11:36:41,652 log 8652 7136 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+INFO 2026-04-25 11:36:41,662 log 8652 1716 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-25 11:37:00,693 log 8652 1716 "GET /admin/telegram_bot/telegramuser/? HTTP/1.1" 200 20381
+INFO 2026-04-25 11:37:00,711 log 8652 1716 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-25 11:37:10,300 log 8652 1716 "GET /admin/telegram_bot/telegramuser/add/ HTTP/1.1" 200 20544
+INFO 2026-04-25 11:37:10,318 log 8652 1716 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-25 11:37:26,261 log 8652 1716 "POST /admin/telegram_bot/telegramuser/add/ HTTP/1.1" 200 20891
+INFO 2026-04-25 11:37:26,278 log 8652 1716 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-25 11:37:40,081 log 8652 1716 "POST /admin/telegram_bot/telegramuser/add/ HTTP/1.1" 302 0
+INFO 2026-04-25 11:37:40,101 log 8652 1716 "GET /admin/telegram_bot/telegramuser/ HTTP/1.1" 200 21186
+INFO 2026-04-25 11:37:40,121 log 8652 1716 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-25 11:37:48,590 log 8652 1716 "GET /admin/notifications/notification/ HTTP/1.1" 200 62056
+WARNING 2026-04-25 11:37:48,607 log 8652 1716 "GET /static/admin/css/notifications.css HTTP/1.1" 404 2008
+WARNING 2026-04-25 11:37:48,608 log 8652 11436 "GET /static/admin/js/notifications.js HTTP/1.1" 404 2002
+INFO 2026-04-25 11:37:48,616 log 8652 7136 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-25 11:37:56,597 log 8652 7136 "GET /admin/notifications/notification/add/ HTTP/1.1" 200 25459
+WARNING 2026-04-25 11:37:56,613 log 8652 7136 "GET /static/admin/css/notifications.css HTTP/1.1" 404 2008
+WARNING 2026-04-25 11:37:56,614 log 8652 13072 "GET /static/admin/js/notifications.js HTTP/1.1" 404 2002
+INFO 2026-04-25 11:37:56,622 log 8652 1144 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-25 11:39:07,881 log 8652 1144 "POST /admin/notifications/notification/add/ HTTP/1.1" 302 0
+INFO 2026-04-25 11:39:07,921 log 8652 1144 "GET /admin/notifications/notification/ HTTP/1.1" 200 61979
+WARNING 2026-04-25 11:39:07,939 log 8652 1144 "GET /static/admin/css/notifications.css HTTP/1.1" 404 2008
+WARNING 2026-04-25 11:39:07,939 log 8652 12564 "GET /static/admin/js/notifications.js HTTP/1.1" 404 2002
+INFO 2026-04-25 11:39:07,948 log 8652 2668 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-25 11:39:25,030 log 8652 2668 "GET /admin/telegram_bot/telegramuser/ HTTP/1.1" 200 20938
+INFO 2026-04-25 11:39:25,048 log 8652 2668 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-25 11:39:52,246 log 8652 2668 "GET / HTTP/1.1" 200 5728
+INFO 2026-04-25 11:39:58,698 log 8652 2668 "POST /accounts/logout/ HTTP/1.1" 302 0
+INFO 2026-04-25 11:39:58,704 log 8652 2668 "GET /accounts/login/ HTTP/1.1" 200 4830
+INFO 2026-04-25 11:40:14,696 log 8652 2668 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2026-04-25 11:40:14,717 log 8652 2668 "GET / HTTP/1.1" 200 6062
+INFO 2026-04-25 11:40:24,134 log 8652 2668 "GET /accounts/profile/ HTTP/1.1" 200 34350
+WARNING 2026-04-25 11:54:19,375 log 8652 5456 Forbidden (Permission denied): /admin/notifications/notification/add/
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\options.py", line 711, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\sites.py", line 247, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\options.py", line 1943, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\options.py", line 1799, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\options.py", line 1818, in _changeform_view
+    raise PermissionDenied
+django.core.exceptions.PermissionDenied
+WARNING 2026-04-25 11:54:24,138 log 8652 5456 "GET /admin/notifications/notification/add/ HTTP/1.1" 403 135
+WARNING 2026-04-25 11:54:27,917 log 8652 5456 Forbidden (Permission denied): /admin/telegram_bot/telegramuser/
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\options.py", line 711, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\sites.py", line 247, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\options.py", line 1980, in changelist_view
+    raise PermissionDenied
+django.core.exceptions.PermissionDenied
+WARNING 2026-04-25 11:54:27,926 log 8652 5456 "GET /admin/telegram_bot/telegramuser/ HTTP/1.1" 403 135
+WARNING 2026-04-25 11:54:57,904 log 8652 5456 Forbidden (Permission denied): /admin/notifications/notification/
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\options.py", line 711, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\sites.py", line 247, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\admin\options.py", line 1980, in changelist_view
+    raise PermissionDenied
+django.core.exceptions.PermissionDenied
+WARNING 2026-04-25 11:54:57,911 log 8652 5456 "GET /admin/notifications/notification/ HTTP/1.1" 403 135
+WARNING 2026-04-25 11:55:08,421 log 8652 5456 Forbidden (CSRF token from POST incorrect.): /admin/telegram_bot/telegramuser/add/
+WARNING 2026-04-25 11:55:08,430 log 8652 5456 "POST /admin/telegram_bot/telegramuser/add/ HTTP/1.1" 403 2545
+INFO 2026-04-25 11:55:29,775 log 8652 5456 "POST /notifications/55/read/ HTTP/1.1" 200 17
+INFO 2026-04-25 11:55:29,803 log 8652 5456 "GET /accounts/profile/ HTTP/1.1" 200 33694
+INFO 2026-04-25 11:56:05,363 log 8652 5456 "POST /accounts/logout/ HTTP/1.1" 302 0
+INFO 2026-04-25 11:56:05,369 log 8652 5456 "GET /accounts/login/ HTTP/1.1" 200 4830
+INFO 2026-04-25 11:56:23,698 log 8652 5456 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2026-04-25 11:56:23,717 log 8652 5456 "GET / HTTP/1.1" 200 6022
+WARNING 2026-04-25 11:56:30,971 log 8652 5456 Forbidden (CSRF token from POST incorrect.): /admin/telegram_bot/telegramuser/add/
+WARNING 2026-04-25 11:56:30,980 log 8652 5456 "POST /admin/telegram_bot/telegramuser/add/ HTTP/1.1" 403 2545
+INFO 2026-04-25 11:56:41,326 log 8652 5456 "GET /admin/ HTTP/1.1" 200 20876
+INFO 2026-04-25 11:56:44,995 log 8652 5456 "GET /admin/telegram_bot/telegramuser/ HTTP/1.1" 200 20938
+INFO 2026-04-25 11:56:45,019 log 8652 5456 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-25 11:56:55,813 log 8652 5456 "GET /admin/notifications/notification/ HTTP/1.1" 200 61493
+WARNING 2026-04-25 11:56:55,834 log 8652 11732 "GET /static/admin/css/notifications.css HTTP/1.1" 404 2008
+WARNING 2026-04-25 11:56:55,835 log 8652 12532 "GET /static/admin/js/notifications.js HTTP/1.1" 404 2002
+INFO 2026-04-25 11:56:55,845 log 8652 5456 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-25 11:57:29,702 log 8652 5456 "GET /admin/notifications/notification/55/change/ HTTP/1.1" 200 25349
+WARNING 2026-04-25 11:57:29,715 log 8652 5456 "GET /static/admin/css/notifications.css HTTP/1.1" 404 2008
+WARNING 2026-04-25 11:57:29,720 log 8652 3328 "GET /static/admin/js/notifications.js HTTP/1.1" 404 2002
+INFO 2026-04-25 11:57:29,729 log 8652 9472 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-25 12:06:09,915 log 8652 12252 "GET /admin/telegram_bot/telegramuser/ HTTP/1.1" 200 20938
+INFO 2026-04-25 12:06:09,952 log 8652 12252 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-25 12:06:13,541 log 8652 12252 "GET /admin/telegram_bot/telegramuser/1/change/ HTTP/1.1" 200 20772
+INFO 2026-04-25 12:06:13,559 log 8652 12252 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-25 12:06:33,921 log 8652 12252 "GET /admin/accounts/user/4/change/?_to_field=id HTTP/1.1" 200 58582
+INFO 2026-04-25 12:06:33,933 log 8652 6352 "GET /static/admin/js/calendar.js HTTP/1.1" 304 0
+INFO 2026-04-25 12:06:33,935 log 8652 12568 "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 304 0
+INFO 2026-04-25 12:06:33,939 log 8652 12404 "GET /static/admin/js/SelectBox.js HTTP/1.1" 304 0
+INFO 2026-04-25 12:06:33,940 log 8652 11816 "GET /static/admin/js/inlines.js HTTP/1.1" 304 0
+INFO 2026-04-25 12:06:33,941 log 8652 10676 "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 304 0
+INFO 2026-04-25 12:06:33,949 log 8652 12252 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-25 12:06:33,986 log 8652 12252 "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 304 0
+INFO 2026-04-25 12:06:33,986 log 8652 10676 "GET /static/admin/img/selector-icons.svg HTTP/1.1" 304 0
+INFO 2026-04-25 12:06:52,606 log 8652 10676 "GET /admin/telegram_bot/telegramuser/1/change/ HTTP/1.1" 200 20772
+INFO 2026-04-25 12:06:56,646 log 8652 10676 "GET /admin/accounts/user/4/change/?_to_field=id&_popup=1 HTTP/1.1" 200 45324
+INFO 2026-04-25 12:06:56,662 log 8652 10676 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-25 12:07:24,569 log 8652 10676 "GET /admin/telegram_bot/telegramuser/ HTTP/1.1" 200 20938
+INFO 2026-04-25 12:09:58,926 log 8652 10676 "POST /admin/telegram_bot/telegramuser/ HTTP/1.1" 200 16994
+INFO 2026-04-25 12:09:58,933 log 8652 10676 "GET /static/admin/js/cancel.js HTTP/1.1" 304 0
+INFO 2026-04-25 12:10:00,613 log 8652 10676 "POST /admin/telegram_bot/telegramuser/ HTTP/1.1" 302 0
+INFO 2026-04-25 12:10:00,637 log 8652 10676 "GET /admin/telegram_bot/telegramuser/ HTTP/1.1" 200 18300
+INFO 2026-04-25 12:10:00,660 log 8652 10676 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-25 12:10:15,362 log 8652 10676 "GET /admin/telegram_bot/telegramuser/add/ HTTP/1.1" 200 20544
+INFO 2026-04-25 12:10:15,378 log 8652 10676 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-25 12:10:34,748 log 8652 10676 "POST /admin/telegram_bot/telegramuser/add/ HTTP/1.1" 302 0
+INFO 2026-04-25 12:10:34,771 log 8652 10676 "GET /admin/telegram_bot/telegramuser/ HTTP/1.1" 200 20618
+INFO 2026-04-25 12:10:34,789 log 8652 10676 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-25 12:10:37,651 log 8652 10676 "GET /admin/telegram_bot/telegramuser/add/ HTTP/1.1" 200 20544
+INFO 2026-04-25 12:10:37,667 log 8652 10676 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-25 12:11:06,531 log 8652 10676 "POST /admin/telegram_bot/telegramuser/add/ HTTP/1.1" 302 0
+INFO 2026-04-25 12:11:06,552 log 8652 10676 "GET /admin/telegram_bot/telegramuser/ HTTP/1.1" 200 21187
+INFO 2026-04-25 12:11:06,570 log 8652 10676 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-25 12:15:16,177 log 8652 10676 "GET /accounts/profile/ HTTP/1.1" 200 34078
+INFO 2026-04-25 12:15:37,129 log 8652 10676 "GET /accounts/profile/ HTTP/1.1" 200 34078
+INFO 2026-04-25 12:35:19,018 log 8652 5324 "GET /accounts/profile/ HTTP/1.1" 200 34078
+INFO 2026-04-25 12:35:49,539 log 8652 5324 "GET /admin/telegram_bot/telegramuser/3/change/ HTTP/1.1" 200 20769
+INFO 2026-04-25 12:35:49,559 log 8652 5324 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-25 12:36:09,854 log 8652 5324 "POST /admin/telegram_bot/telegramuser/3/change/ HTTP/1.1" 302 0
+INFO 2026-04-25 12:36:09,875 log 8652 5324 "GET /admin/telegram_bot/telegramuser/ HTTP/1.1" 200 21203
+INFO 2026-04-25 12:36:09,892 log 8652 5324 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-25 12:36:49,522 log 8652 5324 "GET /accounts/profile/ HTTP/1.1" 200 34078
+ERROR 2026-04-25 12:41:53,987 log 8652 13672 Invalid HTTP_HOST header: 'affection-paltry-humorless.ngrok-free.dev'. You may need to add 'affection-paltry-humorless.ngrok-free.dev' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\utils\deprecation.py", line 308, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\http\request.py", line 206, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'affection-paltry-humorless.ngrok-free.dev'. You may need to add 'affection-paltry-humorless.ngrok-free.dev' to ALLOWED_HOSTS.
+WARNING 2026-04-25 12:41:53,989 log 8652 13672 "POST /telegram/webhook/ HTTP/1.1" 400 74011
+ERROR 2026-04-25 12:41:55,021 log 8652 12516 Invalid HTTP_HOST header: 'affection-paltry-humorless.ngrok-free.dev'. You may need to add 'affection-paltry-humorless.ngrok-free.dev' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\utils\deprecation.py", line 308, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\http\request.py", line 206, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'affection-paltry-humorless.ngrok-free.dev'. You may need to add 'affection-paltry-humorless.ngrok-free.dev' to ALLOWED_HOSTS.
+WARNING 2026-04-25 12:41:55,023 log 8652 12516 "POST /telegram/webhook/ HTTP/1.1" 400 74011
+ERROR 2026-04-25 12:41:58,920 log 8652 14164 Invalid HTTP_HOST header: 'affection-paltry-humorless.ngrok-free.dev'. You may need to add 'affection-paltry-humorless.ngrok-free.dev' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\utils\deprecation.py", line 308, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\http\request.py", line 206, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'affection-paltry-humorless.ngrok-free.dev'. You may need to add 'affection-paltry-humorless.ngrok-free.dev' to ALLOWED_HOSTS.
+WARNING 2026-04-25 12:41:58,923 log 8652 14164 "POST /telegram/webhook/ HTTP/1.1" 400 74011
+ERROR 2026-04-25 12:42:04,470 log 8652 2904 Invalid HTTP_HOST header: 'affection-paltry-humorless.ngrok-free.dev'. You may need to add 'affection-paltry-humorless.ngrok-free.dev' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\utils\deprecation.py", line 308, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\http\request.py", line 206, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'affection-paltry-humorless.ngrok-free.dev'. You may need to add 'affection-paltry-humorless.ngrok-free.dev' to ALLOWED_HOSTS.
+WARNING 2026-04-25 12:42:04,471 log 8652 2904 "POST /telegram/webhook/ HTTP/1.1" 400 74011
+ERROR 2026-04-25 12:42:14,065 log 8652 5004 Invalid HTTP_HOST header: 'affection-paltry-humorless.ngrok-free.dev'. You may need to add 'affection-paltry-humorless.ngrok-free.dev' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\utils\deprecation.py", line 308, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\http\request.py", line 206, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'affection-paltry-humorless.ngrok-free.dev'. You may need to add 'affection-paltry-humorless.ngrok-free.dev' to ALLOWED_HOSTS.
+WARNING 2026-04-25 12:42:14,067 log 8652 5004 "POST /telegram/webhook/ HTTP/1.1" 400 74011
+ERROR 2026-04-25 12:42:31,176 log 8652 11824 Invalid HTTP_HOST header: 'affection-paltry-humorless.ngrok-free.dev'. You may need to add 'affection-paltry-humorless.ngrok-free.dev' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\utils\deprecation.py", line 308, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\http\request.py", line 206, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'affection-paltry-humorless.ngrok-free.dev'. You may need to add 'affection-paltry-humorless.ngrok-free.dev' to ALLOWED_HOSTS.
+WARNING 2026-04-25 12:42:31,176 log 8652 11824 "POST /telegram/webhook/ HTTP/1.1" 400 74011
+ERROR 2026-04-25 12:43:04,208 log 8652 13972 Invalid HTTP_HOST header: 'affection-paltry-humorless.ngrok-free.dev'. You may need to add 'affection-paltry-humorless.ngrok-free.dev' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\utils\deprecation.py", line 308, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\http\request.py", line 206, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'affection-paltry-humorless.ngrok-free.dev'. You may need to add 'affection-paltry-humorless.ngrok-free.dev' to ALLOWED_HOSTS.
+WARNING 2026-04-25 12:43:04,209 log 8652 13972 "POST /telegram/webhook/ HTTP/1.1" 400 74011
+ERROR 2026-04-25 12:44:09,337 log 8652 12348 Invalid HTTP_HOST header: 'affection-paltry-humorless.ngrok-free.dev'. You may need to add 'affection-paltry-humorless.ngrok-free.dev' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\utils\deprecation.py", line 308, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\http\request.py", line 206, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'affection-paltry-humorless.ngrok-free.dev'. You may need to add 'affection-paltry-humorless.ngrok-free.dev' to ALLOWED_HOSTS.
+WARNING 2026-04-25 12:44:09,339 log 8652 12348 "POST /telegram/webhook/ HTTP/1.1" 400 74011
+ERROR 2026-04-25 12:45:20,461 log 8652 2140 Invalid HTTP_HOST header: 'affection-paltry-humorless.ngrok-free.dev'. You may need to add 'affection-paltry-humorless.ngrok-free.dev' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\utils\deprecation.py", line 308, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\http\request.py", line 206, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'affection-paltry-humorless.ngrok-free.dev'. You may need to add 'affection-paltry-humorless.ngrok-free.dev' to ALLOWED_HOSTS.
+WARNING 2026-04-25 12:45:20,464 log 8652 2140 "POST /telegram/webhook/ HTTP/1.1" 400 74011
+INFO 2026-04-25 12:50:26,170 autoreload 13156 11444 Watching for file changes with StatReloader
+INFO 2026-04-25 12:51:08,936 log 13156 12352 "GET /tasks/20/ HTTP/1.1" 200 8417
+INFO 2026-04-25 12:51:22,337 log 13156 12352 "GET /contracts/5/ HTTP/1.1" 200 4549
+INFO 2026-04-25 12:51:31,046 log 13156 12352 "GET /contracts/5/ HTTP/1.1" 200 4549
+INFO 2026-04-25 12:51:55,720 log 13156 12352 "GET /tasks/ HTTP/1.1" 200 53934
+INFO 2026-04-25 12:52:13,496 log 13156 12352 "GET /tasks/20/ HTTP/1.1" 200 8417
+INFO 2026-04-25 12:52:40,053 log 13156 12352 "GET /contracts/5/ HTTP/1.1" 200 4549
+INFO 2026-04-25 12:52:58,147 log 13156 12352 "GET / HTTP/1.1" 200 5728
+INFO 2026-04-25 12:53:03,371 log 13156 12352 "GET /contracts/ HTTP/1.1" 200 13932
+WARNING 2026-04-25 12:56:50,009 log 15036 9008 Not Found: /api/contracts/2/
+WARNING 2026-04-25 12:57:05,687 log 15036 9008 Unauthorized: /api/contracts/
+WARNING 2026-04-25 12:57:09,710 log 15036 9008 Forbidden: /api/contracts/
+INFO 2026-04-25 12:57:11,985 views 15036 9008 Webhook received. Body: b'{"event": "payment.canceled", "object": {"id": "fake_123", "status": "canceled"}}'
+INFO 2026-04-25 12:57:11,986 views 15036 9008 Processing payment fake_123, status=canceled
+INFO 2026-04-25 12:57:14,127 views 15036 9008 Webhook received. Body: b'{"event": "payment.succeeded", "object": {"id": "fake_123", "status": "succeeded"}}'
+INFO 2026-04-25 12:57:14,127 views 15036 9008 Processing payment fake_123, status=succeeded
+INFO 2026-04-25 12:57:16,140 views 15036 9008 Webhook received. Body: b'{"event": "unknown.event", "object": {"id": "fake_123"}}'
+WARNING 2026-04-25 12:57:16,141 log 15036 9008 Bad Request: /contracts/webhook/yookassa/
+INFO 2026-04-25 12:57:18,117 views 15036 9008 Webhook received. Body: b'not json'
+WARNING 2026-04-25 12:57:18,118 log 15036 9008 Bad Request: /contracts/webhook/yookassa/
+INFO 2026-04-25 12:57:20,053 views 15036 9008 Webhook received. Body: b'{"event": "payment.succeeded", "object": {"id": "fake_123", "status": "succeeded"}}'
+INFO 2026-04-25 12:57:20,053 views 15036 9008 Processing payment fake_123, status=succeeded
+INFO 2026-04-25 12:57:22,027 views 15036 9008 Webhook received. Body: b'{"event": "payment.succeeded", "object": {"id": "unknown_id", "status": "succeeded"}}'
+INFO 2026-04-25 12:57:22,027 views 15036 9008 Processing payment unknown_id, status=succeeded
+ERROR 2026-04-25 12:57:22,027 views 15036 9008 Payment with yookassa_id unknown_id not found
+WARNING 2026-04-25 12:57:22,028 log 15036 9008 Not Found: /contracts/webhook/yookassa/
+WARNING 2026-04-25 12:57:24,066 log 15036 9008 Method Not Allowed: /contracts/webhook/yookassa/
+WARNING 2026-04-25 12:57:27,037 log 15036 9008 Bad Request: /api/contracts/1/initiate-payment/
+WARNING 2026-04-25 12:57:29,989 log 15036 9008 Bad Request: /api/contracts/1/initiate-payment/
+WARNING 2026-04-25 12:57:32,933 log 15036 9008 Bad Request: /api/contracts/1/initiate-payment/
+INFO 2026-04-25 12:57:35,817 viewsets 15036 9008 Created fake payment fake_6d88dd7ae8 for contract 1
+INFO 2026-04-25 12:57:38,806 viewsets 15036 9008 Created fake payment fake_7fcafd9642 for contract 1
+WARNING 2026-04-25 12:57:42,779 log 15036 9008 Not Found: /api/contracts/2/initiate-payment/
+WARNING 2026-04-25 12:57:45,699 log 15036 9008 Unauthorized: /api/contracts/1/initiate-payment/
+WARNING 2026-04-25 12:57:48,653 log 15036 9008 Not Found: /api/contracts/1/initiate-payment/
+WARNING 2026-04-25 12:57:57,743 log 15036 9008 Not Found: /api/payments/1/
+INFO 2026-04-25 13:25:59,190 autoreload 1636 8560 Watching for file changes with StatReloader
+INFO 2026-04-25 13:26:14,187 log 1636 14348 "GET /contracts/ HTTP/1.1" 200 13932
+INFO 2026-04-25 13:26:22,381 log 1636 14348 "GET /admin/telegram_bot/telegramuser/ HTTP/1.1" 200 20948
+INFO 2026-04-25 13:26:22,400 log 1636 14348 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+WARNING 2026-04-25 13:27:27,562 log 1636 14348 Unauthorized: /api/clients/
+WARNING 2026-04-25 13:27:27,563 log 1636 14348 "GET /api/clients/ HTTP/1.1" 401 9966
+INFO 2026-04-25 13:27:27,624 log 1636 13412 "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 200 3426
+INFO 2026-04-25 13:27:27,631 log 1636 6772 "GET /static/rest_framework/css/prettify.css HTTP/1.1" 200 817
+INFO 2026-04-25 13:27:27,633 log 1636 14756 "GET /static/rest_framework/css/default.css HTTP/1.1" 200 1152
+INFO 2026-04-25 13:27:27,639 log 1636 14348 "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 200 121457
+INFO 2026-04-25 13:27:27,648 log 1636 13412 "GET /static/rest_framework/js/csrf.js HTTP/1.1" 200 1793
+INFO 2026-04-25 13:27:27,651 log 1636 12372 "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 200 3796
+INFO 2026-04-25 13:27:27,663 log 1636 14348 "GET /static/rest_framework/js/default.js HTTP/1.1" 200 1268
+INFO 2026-04-25 13:27:27,663 log 1636 13412 "GET /static/rest_framework/js/load-ajax-form.js HTTP/1.1" 200 59
+INFO 2026-04-25 13:27:27,680 log 1636 13412 "GET /static/rest_framework/img/grid.png HTTP/1.1" 200 1458
+INFO 2026-04-25 13:27:27,685 log 1636 14756 "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 200 13632
+INFO 2026-04-25 13:27:27,692 log 1636 6772 "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 200 39680
+INFO 2026-04-25 13:27:27,706 log 1636 15352 "GET /static/rest_framework/js/jquery-3.7.1.min.js HTTP/1.1" 200 87533
+WARNING 2026-04-25 13:27:45,328 log 1636 15352 Unauthorized: /api/clients/
+WARNING 2026-04-25 13:27:45,328 log 1636 15352 "GET /api/clients/ HTTP/1.1" 401 9966
+WARNING 2026-04-25 13:27:48,772 log 1636 15352 Unauthorized: /api/clients/
+WARNING 2026-04-25 13:27:48,773 log 1636 15352 "GET /api/clients/ HTTP/1.1" 401 9966
+WARNING 2026-04-25 13:27:50,795 log 1636 15352 Unauthorized: /api/
+WARNING 2026-04-25 13:27:50,796 log 1636 15352 "GET /api/ HTTP/1.1" 401 9805
+WARNING 2026-04-25 13:29:07,710 log 1636 15352 Unauthorized: /api/clients/
+WARNING 2026-04-25 13:29:07,711 log 1636 15352 "GET //api/clients/ HTTP/1.1" 401 9966
+WARNING 2026-04-25 13:29:14,957 log 1636 15352 Unauthorized: /api/clients/
+WARNING 2026-04-25 13:29:14,957 log 1636 15352 "GET /api/clients/ HTTP/1.1" 401 9966
+INFO 2026-04-25 13:29:29,408 log 1636 15352 "GET /admin/telegram_bot/telegramuser/ HTTP/1.1" 200 20948
+INFO 2026-04-25 13:29:29,427 log 1636 15352 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-25 13:29:33,562 log 1636 15352 "POST /admin/logout/ HTTP/1.1" 302 0
+INFO 2026-04-25 13:29:33,567 log 1636 15352 "GET /accounts/login/ HTTP/1.1" 200 4518
+INFO 2026-04-25 13:29:41,607 log 1636 15352 "POST /accounts/logout/ HTTP/1.1" 302 0
+INFO 2026-04-25 13:29:41,612 log 1636 15352 "GET /accounts/login/?next=/accounts/logout/ HTTP/1.1" 200 4518
+WARNING 2026-04-25 13:29:45,598 log 1636 15352 Unauthorized: /api/clients/
+WARNING 2026-04-25 13:29:45,598 log 1636 15352 "GET /api/clients/ HTTP/1.1" 401 9966
+WARNING 2026-04-25 13:29:47,155 log 1636 15352 Unauthorized: /api/clients/
+WARNING 2026-04-25 13:29:47,156 log 1636 15352 "GET /api/clients/ HTTP/1.1" 401 9966
+WARNING 2026-04-25 13:30:25,254 log 1636 15352 Unauthorized: /api/clients/
+WARNING 2026-04-25 13:30:25,254 log 1636 15352 "GET /api/clients/ HTTP/1.1" 401 9966
+WARNING 2026-04-25 13:30:29,165 log 1636 15352 Unauthorized: /api/clients/
+WARNING 2026-04-25 13:30:29,166 log 1636 15352 "GET /api/clients/ HTTP/1.1" 401 9966
+WARNING 2026-04-25 13:30:29,828 log 1636 15352 Unauthorized: /api/clients/
+WARNING 2026-04-25 13:30:29,829 log 1636 15352 "GET /api/clients/ HTTP/1.1" 401 9966
+WARNING 2026-04-25 13:30:30,107 log 1636 15352 Unauthorized: /api/clients/
+WARNING 2026-04-25 13:30:30,107 log 1636 15352 "GET /api/clients/ HTTP/1.1" 401 9966
+WARNING 2026-04-25 13:30:30,353 log 1636 15352 Unauthorized: /api/clients/
+WARNING 2026-04-25 13:30:30,353 log 1636 15352 "GET /api/clients/ HTTP/1.1" 401 9966
+WARNING 2026-04-25 13:30:34,303 log 1636 15352 Unauthorized: /api/clients/
+WARNING 2026-04-25 13:30:34,303 log 1636 15352 "GET /api/clients/ HTTP/1.1" 401 9966
+WARNING 2026-04-25 13:30:39,665 log 1636 15352 Unauthorized: /api/
+WARNING 2026-04-25 13:30:39,665 log 1636 15352 "GET /api/ HTTP/1.1" 401 9805
+WARNING 2026-04-25 13:30:44,645 log 1636 15352 Unauthorized: /api/
+WARNING 2026-04-25 13:30:44,646 log 1636 15352 "GET /api/ HTTP/1.1" 401 9805
+WARNING 2026-04-25 13:31:03,491 log 1636 15352 Unauthorized: /api/clients/
+WARNING 2026-04-25 13:31:03,491 log 1636 15352 "GET /api/clients/ HTTP/1.1" 401 9966
+WARNING 2026-04-25 13:35:58,651 log 1636 4908 Bad Request: /api/token/
+WARNING 2026-04-25 13:35:58,651 log 1636 4908 "POST /api/token/ HTTP/1.1" 400 101
+WARNING 2026-04-25 13:38:07,555 log 1636 6832 Unauthorized: /api/token/
+WARNING 2026-04-25 13:38:07,556 log 1636 6832 "POST /api/token/ HTTP/1.1" 401 116
+INFO 2026-04-25 13:38:21,474 log 1636 8460 "POST /api/token/ HTTP/1.1" 200 489
+WARNING 2026-04-25 13:41:11,733 log 1636 11556 Unauthorized: /api/clients/
+WARNING 2026-04-25 13:41:11,733 log 1636 11556 "GET /api/clients/ HTTP/1.1" 401 9966
+WARNING 2026-04-25 13:41:13,693 log 1636 11556 Unauthorized: /api/clients/
+WARNING 2026-04-25 13:41:13,693 log 1636 11556 "GET /api/clients/ HTTP/1.1" 401 9966
+WARNING 2026-04-25 13:41:14,764 log 1636 11556 Unauthorized: /api/clients/
+WARNING 2026-04-25 13:41:14,764 log 1636 11556 "GET /api/clients/ HTTP/1.1" 401 9966
+WARNING 2026-04-25 13:41:48,627 log 1636 11556 Not Found: /api/clients/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc3MTE3MTAxLCJpYXQiOjE3NzcxMTM1MDEsImp0aSI6IjUwMWQwMmI5MTk5YzRiNjRiNWRlNTgyOWJkNWY0ODNkIiwidXNlcl9pZCI6IjkifQ.cXT0SZFUBdCESAOBR8AwAiyRhw7dwurjBiGECvNSyek
+WARNING 2026-04-25 13:41:48,628 log 1636 11556 "GET /api/clients/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc3MTE3MTAxLCJpYXQiOjE3NzcxMTM1MDEsImp0aSI6IjUwMWQwMmI5MTk5YzRiNjRiNWRlNTgyOWJkNWY0ODNkIiwidXNlcl9pZCI6IjkifQ.cXT0SZFUBdCESAOBR8AwAiyRhw7dwurjBiGECvNSyek HTTP/1.1" 404 9886
+WARNING 2026-04-25 13:41:52,450 log 1636 11556 Unauthorized: /api/clients/
+WARNING 2026-04-25 13:41:52,450 log 1636 11556 "GET /api/clients/ HTTP/1.1" 401 9966
+INFO 2026-04-25 13:44:00,753 log 1636 11556 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2026-04-25 13:44:00,778 log 1636 11556 "GET / HTTP/1.1" 200 6022
+INFO 2026-04-25 13:44:21,459 log 1636 11556 "GET /admin/clients/client/ HTTP/1.1" 200 53029
+INFO 2026-04-25 13:44:21,487 log 1636 11556 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-25 13:45:06,872 log 1636 11556 "GET /admin/clients/client/ HTTP/1.1" 200 53029
+INFO 2026-04-25 13:45:19,890 log 1636 11556 "GET /admin/clients/client/ HTTP/1.1" 200 53029
+INFO 2026-04-25 13:45:31,550 log 1636 11556 "GET /admin/logs/apilog/ HTTP/1.1" 200 48568
+INFO 2026-04-25 13:45:31,568 log 1636 11556 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-25 13:45:43,134 log 1636 11556 "GET /admin/logs/apilog/16/change/ HTTP/1.1" 200 24371
+INFO 2026-04-25 13:45:43,151 log 1636 11556 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-25 13:45:48,450 log 1636 11556 "GET /admin/logs/apilog/ HTTP/1.1" 200 48568
+INFO 2026-04-25 13:45:48,468 log 1636 11556 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-25 13:45:54,587 log 1636 11556 "GET /admin/logs/apilog/34/change/ HTTP/1.1" 200 24002
+INFO 2026-04-25 13:45:54,619 log 1636 11556 "GET /admin/jsi18n/ HTTP/1.1" 200 16820
+INFO 2026-04-25 13:46:00,402 log 1636 11556 "GET /admin/logs/apilog/ HTTP/1.1" 200 48568
+INFO 2026-04-25 13:46:38,878 log 1636 11556 "GET /api/docs/ HTTP/1.1" 200 4640
+INFO 2026-04-25 13:46:39,457 log 1636 11556 "GET /api/schema/ HTTP/1.1" 200 86672
+INFO 2026-04-25 14:13:59,949 log 1636 11780 "GET /api/docs/ HTTP/1.1" 200 4640
+INFO 2026-04-25 14:14:00,214 log 1636 11780 "GET /api/schema/ HTTP/1.1" 200 86672

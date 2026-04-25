@@ -36,10 +36,15 @@
     </div>
 </div>
 
-{% if contract.payment_url and contract.payment_status != 'paid' %}
-    <a href="{% url 'contracts:fake_payment_page' contract.id %}?amount={{ contract.remaining_amount }}" class="btn btn-success">
-        <i class="fas fa-credit-card"></i> Оплатить (тест)
-    </a>
+{% if contract.payment_status != 'paid' %}
+    <div class="mt-3">
+        <a href="{% url 'contracts:fake_payment_page' contract.id %}?amount={{ contract.remaining_amount }}" class="btn btn-success btn-lg">
+            <i class="fas fa-credit-card"></i> Оплатить (тест)
+        </a>
+        {% if contract.payment_status == 'partially_paid' %}
+            <small class="text-muted ms-2">Остаток к оплате: {{ contract.remaining_amount }} ₽</small>
+        {% endif %}
+    </div>
 {% endif %}
 
 {% endblock %}

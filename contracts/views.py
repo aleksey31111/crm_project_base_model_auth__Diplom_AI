@@ -46,21 +46,74 @@ import logging
 from django.shortcuts import render, get_object_or_404
 from .models import Contract
 
-def fake_payment_page(request, contract_id):
-    from .models import Contract
-    contract = get_object_or_404(Contract, id=contract_id)
-    return render(request, 'contracts/fake_payment.html', {'contract': contract})
+from decimal import Decimal
+import uuid
+from datetime import timedelta
+from django.utils import timezone
+from django.contrib import messages
 
+def fake_payment_page(request, contract_id):
+    from .models import Contract, Payment
+
+    contract = get_object_or_404(Contract, id=contract_id)
+
+    # Если контракт уже полностью оплачен – перенаправляем на детали контракта
+    if contract.payment_status == Contract.PaymentStatus.PAID:
+        messages.info(request, 'Контракт уже оплачен.')
+        return redirect('contracts:contract_detail', pk=contract.id)
+
+    # Определяем сумму к оплате (из GET-параметра или остаток)
+    amount_str = request.GET.get('amount')
+    if amount_str:
+        try:
+            amount = Decimal(amount_str.replace(',', '.'))
+        except:
+            amount = contract.remaining_amount
+    else:
+        amount = contract.remaining_amount
+
+    # Если нет активного платежа (или истёк срок) – создаём новый
+    if not contract.yookassa_payment_id or (contract.payment_expires_at and contract.payment_expires_at < timezone.now()):
+        # Генерируем уникальный fake_payment_id
+        while True:
+            fake_payment_id = f"fake_{uuid.uuid4().hex[:10]}"
+            if not Payment.objects.filter(yookassa_id=fake_payment_id).exists():
+                break
+
+        fake_confirmation_url = f"/fake-payment/{contract.id}/?amount={amount}"
+
+        # Обновляем контракт
+        contract.yookassa_payment_id = fake_payment_id
+        contract.payment_url = fake_confirmation_url
+        contract.payment_expires_at = timezone.now() + timedelta(hours=24)
+        contract.save(update_fields=['yookassa_payment_id', 'payment_url', 'payment_expires_at'])
+
+        # Создаём запись платежа
+        Payment.objects.create(
+            contract=contract,
+            amount=amount,
+            payment_date=timezone.now().date(),
+            payment_method='card',
+            comment=f'Учебный платёж. ID: {fake_payment_id}',
+            created_by=request.user if request.user.is_authenticated else None,
+            yookassa_id=fake_payment_id,
+            yookassa_status='pending',
+            confirmation_url=fake_confirmation_url
+        )
+
+    return render(request, 'contracts/fake_payment.html', {'contract': contract})
+# contracts/views.py – только функция yookassa_webhook (остальное без изменений)
+
+import logging
+logger = logging.getLogger(__name__)
 
 @csrf_exempt
 def yookassa_webhook(request):
     if request.method != 'POST':
         return HttpResponse(status=405)
 
-    # Для учебного проекта проверку IP отключаем
-    # if not settings.DEBUG:
-    #     if not is_allowed_ip(request):
-    #         return JsonResponse({'error': 'Forbidden'}, status=403)
+    # Логируем входящий запрос (для отладки)
+    logger.info(f"Webhook received. Body: {request.body}")
 
     try:
         event_data = json.loads(request.body)
@@ -74,19 +127,34 @@ def yookassa_webhook(request):
     payment_id = event_data['object']['id']
     payment_status = event_data['object']['status']
 
+    logger.info(f"Processing payment {payment_id}, status={payment_status}")
+
     try:
         payment = Payment.objects.get(yookassa_id=payment_id)
         contract = payment.contract
     except Payment.DoesNotExist:
+        logger.error(f"Payment with yookassa_id {payment_id} not found")
         return JsonResponse({'error': 'Payment not found'}, status=404)
 
+    # Обновляем статус платежа
     payment.yookassa_status = payment_status
     if payment_status == 'succeeded':
         payment.paid_at = timezone.now()
         payment.save()
-        contract.save()
-        # При желании можно вызвать задачу уведомления:
-        # send_payment_success_notifications.delay(payment.id)
+        # ПРИНУДИТЕЛЬНО пересчитываем оплаченную сумму контракта
+        # from django.db.models import Sum
+        # total_paid = contract.payments.filter(yookassa_status='succeeded').aggregate(total=Sum('amount'))['total'] or 0
+        # if contract.paid_amount != total_paid:
+        #     contract.paid_amount = total_paid
+        #     contract.save()
+        #     logger.info(f"Contract {contract.number} paid_amount updated to {total_paid}")
+        # else:
+        #     logger.info(f"Contract {contract.number} paid_amount unchanged")
+        from django.db.models import Sum
+        total_paid = contract.payments.filter(yookassa_status='succeeded').aggregate(total=Sum('amount'))['total'] or 0
+        if contract.paid_amount != total_paid:
+            contract.paid_amount = total_paid
+            contract.save()
     elif payment_status == 'canceled':
         payment.save()
         contract.payment_url = ''
@@ -96,63 +164,6 @@ def yookassa_webhook(request):
     return JsonResponse({'status': 'ok'})
 
 
-logger = logging.getLogger(__name__)
-
-
-# @csrf_exempt
-# def yookassa_webhook(request):
-#     """
-#     Обработчик уведомлений от ЮKassa.
-#     """
-#     if request.method != 'POST':
-#         return HttpResponse(status=405)
-#
-#     # Получение тела запроса
-#     body = request.body
-#     # Проверка подписи (опционально, для безопасности)
-#     # Можно проверить IP-адрес отправителя или использовать заголовок `HTTP_CONTENT_SIGNATURE`
-#     # Для упрощения пропустим проверку подписи (в реальном проекте обязательно)
-#
-#     try:
-#         event_data = json.loads(body)
-#     except json.JSONDecodeError:
-#         return JsonResponse({'error': 'Invalid JSON'}, status=400)
-#
-#     # Внутри yookassa_webhook:
-#     logger.info(f"Webhook received: {event}, payment_id={payment_id}")
-#     if payment_status == 'succeeded':
-#         logger.info(f"Payment {payment_id} succeeded, updating contract {contract.id}")
-#
-#     # Проверяем, что это уведомление о платеже
-#     if event_data.get('event') not in ['payment.succeeded', 'payment.canceled', 'payment.waiting_for_capture']:
-#         return JsonResponse({'error': 'Unsupported event'}, status=400)
-#
-#     payment_id = event_data['object']['id']
-#     payment_status = event_data['object']['status']
-#
-#     try:
-#         # Находим платёж в нашей системе по yookassa_id
-#         payment = Payment.objects.get(yookassa_id=payment_id)
-#         contract = payment.contract
-#     except Payment.DoesNotExist:
-#         return JsonResponse({'error': 'Payment not found'}, status=404)
-#
-#     # Обновляем статус в нашей модели Payment
-#     payment.yookassa_status = payment_status
-#     if payment_status == 'succeeded':
-#         payment.paid_at = timezone.now()
-#         payment.save()
-#
-#         # Обновляем контракт
-#         #contract.paid_amount += payment.amount
-#         contract.save()  # save() обновит payment_status
-#         # Создаём уведомление менеджеру (опционально)
-#         # Notification.objects.create(...)
-#     elif payment_status == 'canceled':
-#         payment.save()
-#         # Можно удалить ссылку на оплату из контракта, если нужно
-#
-#     return JsonResponse({'status': 'ok'})
 ########################################################################################################################
 ########################################################################################################################
 ########################################################################################################################
@@ -297,12 +308,19 @@ class ContractDeleteView(LoginRequiredMixin, DeleteView):
     success_url = reverse_lazy('contracts:contract_list')
 
 
+# def contract_payments(request, pk):
+#     """
+#     Просмотр и управление оплатами по контракту.
+#     """
+#     contract = get_object_or_404(Contract, pk=pk)
+#     return render(request, 'contracts/contract_payments.html', {'contract': contract})
 def contract_payments(request, pk):
-    """
-    Просмотр и управление оплатами по контракту.
-    """
     contract = get_object_or_404(Contract, pk=pk)
-    return render(request, 'contracts/contract_payments.html', {'contract': contract})
+    payments = contract.payments.all().order_by('-payment_date')  # все платежи
+    return render(request, 'contracts/contract_payments.html', {
+        'contract': contract,
+        'payments': payments,
+    })
 
 
 class PaymentCreateView(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
@@ -315,9 +333,16 @@ class PaymentCreateView(LoginRequiredMixin, PermissionRequiredMixin, CreateView)
         self.contract = get_object_or_404(Contract, pk=kwargs['contract_pk'])
         return super().dispatch(request, *args, **kwargs)
 
+    # ДОБАВЬТЕ ЭТОТ МЕТОД
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['contract'] = self.contract
+        return context
+
     def form_valid(self, form):
         form.instance.contract = self.contract
         form.instance.created_by = self.request.user
+        form.instance.yookassa_status = 'succeeded'  # <-- добавить эту строку
         messages.success(self.request, 'Платёж успешно добавлен.')
         return super().form_valid(form)
 
@@ -330,6 +355,19 @@ class PaymentUpdateView(LoginRequiredMixin, PermissionRequiredMixin, UpdateView)
     template_name = 'contracts/payment_form.html'
     permission_required = 'contracts.can_manage_payments'
 
+    # ДОБАВЬТЕ ЭТОТ МЕТОД
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['contract'] = self.object.contract
+        return context
+
+    def form_valid(self, form):
+        form.instance.contract = self.contract
+        form.instance.created_by = self.request.user
+        form.instance.yookassa_status = 'succeeded'  # <-- добавить эту строку
+        messages.success(self.request, 'Платёж успешно добавлен.')
+        return super().form_valid(form)
+
     def get_success_url(self):
         return reverse_lazy('contracts:contract_payments', kwargs={'pk': self.object.contract.pk})
 
@@ -337,6 +375,11 @@ class PaymentDeleteView(LoginRequiredMixin, PermissionRequiredMixin, DeleteView)
     model = Payment
     permission_required = 'contracts.can_manage_payments'
     template_name = 'contracts/payment_confirm_delete.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['contract'] = self.object.contract
+        return context
 
     def get_success_url(self):
         return reverse_lazy('contracts:contract_payments', kwargs={'pk': self.object.contract.pk})
@@ -400,48 +443,3 @@ def is_allowed_ip(request):
             pass
     return False
 
-# @csrf_exempt
-# def yookassa_webhook(request):
-#     if request.method != 'POST':
-#         return HttpResponse(status=405)
-#
-#     # Проверка IP – в боевом режиме только ЮKassa, в DEBUG разрешаем локальные сети
-#     if not is_allowed_ip(request):
-#         # Логируем попытку несанкционированного доступа
-#         print(f"[WARN] Webhook rejected from IP: {request.META.get('REMOTE_ADDR')}")
-#         return JsonResponse({'error': 'Forbidden'}, status=403)
-#
-#     try:
-#         event_data = json.loads(request.body)
-#     except json.JSONDecodeError:
-#         return JsonResponse({'error': 'Invalid JSON'}, status=400)
-#
-#     event = event_data.get('event')
-#     if event not in ['payment.succeeded', 'payment.canceled', 'payment.waiting_for_capture']:
-#         return JsonResponse({'error': 'Unsupported event'}, status=400)
-#
-#     payment_id = event_data['object']['id']
-#     payment_status = event_data['object']['status']
-#
-#     try:
-#         payment = Payment.objects.get(yookassa_id=payment_id)
-#         contract = payment.contract
-#     except Payment.DoesNotExist:
-#         return JsonResponse({'error': 'Payment not found'}, status=404)
-#
-#     # Обновляем статус платежа
-#     payment.yookassa_status = payment_status
-#     if payment_status == 'succeeded':
-#         payment.paid_at = timezone.now()
-#         payment.save()
-#         contract.save()   # пересчитает paid_amount и payment_status
-#         # Асинхронная отправка уведомлений (см. следующий раздел)
-#         send_payment_success_notifications.delay(payment.id)
-#     elif payment_status == 'canceled':
-#         payment.save()
-#         # Очищаем ссылку на оплату в контракте
-#         contract.payment_url = ''
-#         contract.yookassa_payment_id = ''
-#         contract.save(update_fields=['payment_url', 'yookassa_payment_id'])
-#
-#     return JsonResponse({'status': 'ok'})
