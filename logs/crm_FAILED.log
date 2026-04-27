@@ -5071,3 +5071,383 @@ INFO 2026-04-25 13:46:38,878 log 1636 11556 "GET /api/docs/ HTTP/1.1" 200 4640
 INFO 2026-04-25 13:46:39,457 log 1636 11556 "GET /api/schema/ HTTP/1.1" 200 86672
 INFO 2026-04-25 14:13:59,949 log 1636 11780 "GET /api/docs/ HTTP/1.1" 200 4640
 INFO 2026-04-25 14:14:00,214 log 1636 11780 "GET /api/schema/ HTTP/1.1" 200 86672
+INFO 2026-04-25 15:02:26,976 autoreload 14364 16324 Watching for file changes with StatReloader
+INFO 2026-04-25 15:03:16,811 log 14364 16240 "POST /api/token/ HTTP/1.1" 200 489
+WARNING 2026-04-25 15:03:56,102 log 14364 2852 Unauthorized: /api/clients/
+WARNING 2026-04-25 15:03:56,102 log 14364 2852 "GET /api/clients/ HTTP/1.1" 401 9966
+INFO 2026-04-25 15:20:45,982 log 14364 16136 "GET /api/clients/ HTTP/1.1" 200 7784
+INFO 2026-04-25 15:24:16,549 log 14364 16004 "POST /api/token/ HTTP/1.1" 200 489
+INFO 2026-04-25 15:53:00,579 log 14364 7136 "POST /api/token/ HTTP/1.1" 200 489
+WARNING 2026-04-25 15:54:17,850 log 14364 12528 Unauthorized: /api/clients/
+WARNING 2026-04-25 15:54:17,851 log 14364 12528 "GET /api/clients/ HTTP/1.1" 401 9966
+WARNING 2026-04-25 15:54:31,062 log 14364 12528 Unauthorized: /api/clients/
+WARNING 2026-04-25 15:54:31,062 log 14364 12528 "GET /api/clients/ HTTP/1.1" 401 9966
+WARNING 2026-04-25 15:55:06,737 log 14364 12528 Not Found: /api/clients/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc3MTI1MTgwLCJpYXQiOjE3NzcxMjE1ODAsImp0aSI6ImRjOGNlZjE4NzYyOTQ1ZWRhM2EwOGEyNjAyODFhMjUxIiwidXNlcl9pZCI6IjkifQ.L6qQcAo5xU2bOWvnfJjfVhAOQ-QZXaBfcH0DJtgTMzw
+WARNING 2026-04-25 15:55:06,737 log 14364 12528 "GET /api/clients/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc3MTI1MTgwLCJpYXQiOjE3NzcxMjE1ODAsImp0aSI6ImRjOGNlZjE4NzYyOTQ1ZWRhM2EwOGEyNjAyODFhMjUxIiwidXNlcl9pZCI6IjkifQ.L6qQcAo5xU2bOWvnfJjfVhAOQ-QZXaBfcH0DJtgTMzw HTTP/1.1" 404 9886
+WARNING 2026-04-25 15:55:15,599 log 14364 12528 Unauthorized: /api/clients/
+WARNING 2026-04-25 15:55:15,600 log 14364 12528 "GET /api/clients/ HTTP/1.1" 401 9966
+WARNING 2026-04-25 15:58:44,065 log 14364 12528 Not Found: /api/clients/" -h "authorization: bearer eyjhbgcioijiuzi1niisinr5cci6ikpxvcj9.eyj0b2tlbl90exblijoiywnjzxnziiwizxhwijoxnzc3mti1mtgwlcjpyxqioje3nzcxmje1odasimp0asi6imrjognlzje4nzyyotq1zwrhm2ewogeynjayodfhmjuxiiwidxnlcl9pzci6ijkifq.l6qqcao5xu2bowvnfjjfvhaoq-qzxabfch0djtgtmzw
+WARNING 2026-04-25 15:58:44,066 log 14364 12528 "GET /api/clients/%22%20-h%20%22authorization:%20bearer%20eyjhbgcioijiuzi1niisinr5cci6ikpxvcj9.eyj0b2tlbl90exblijoiywnjzxnziiwizxhwijoxnzc3mti1mtgwlcjpyxqioje3nzcxmje1odasimp0asi6imrjognlzje4nzyyotq1zwrhm2ewogeynjayodfhmjuxiiwidxnlcl9pzci6ijkifq.l6qqcao5xu2bowvnfjjfvhaoq-qzxabfch0djtgtmzw HTTP/1.1" 404 10002
+WARNING 2026-04-25 16:01:44,313 log 14364 12528 Unauthorized: /api/contracts/
+WARNING 2026-04-25 16:01:44,314 log 14364 12528 "GET /api/contracts/ HTTP/1.1" 401 9988
+WARNING 2026-04-26 11:27:29,176 log 10 123311784989440 Not Found: /favicon.ico
+INFO 2026-04-26 11:27:47,041 views 10 123311784989440 Webhook received. Body: b'{"event":"payment.succeeded","object":{"id":"fake_328d0ed92e","status":"succeeded"}}'
+INFO 2026-04-26 11:27:47,041 views 10 123311784989440 Processing payment fake_328d0ed92e, status=succeeded
+ERROR 2026-04-26 11:27:47,055 views 10 123311784989440 Payment with yookassa_id fake_328d0ed92e not found
+WARNING 2026-04-26 11:27:47,069 log 10 123311784989440 Not Found: /contracts/webhook/yookassa/
+INFO 2026-04-26 11:27:53,218 views 10 123311784989440 Webhook received. Body: b'{"event":"payment.succeeded","object":{"id":"fake_328d0ed92e","status":"succeeded"}}'
+INFO 2026-04-26 11:27:53,218 views 10 123311784989440 Processing payment fake_328d0ed92e, status=succeeded
+ERROR 2026-04-26 11:27:53,229 views 10 123311784989440 Payment with yookassa_id fake_328d0ed92e not found
+WARNING 2026-04-26 11:27:53,241 log 10 123311784989440 Not Found: /contracts/webhook/yookassa/
+INFO 2026-04-26 11:27:57,070 views 10 123311784989440 Webhook received. Body: b'{"event":"payment.succeeded","object":{"id":"fake_328d0ed92e","status":"succeeded"}}'
+INFO 2026-04-26 11:27:57,071 views 10 123311784989440 Processing payment fake_328d0ed92e, status=succeeded
+ERROR 2026-04-26 11:27:57,083 views 10 123311784989440 Payment with yookassa_id fake_328d0ed92e not found
+WARNING 2026-04-26 11:27:57,093 log 10 123311784989440 Not Found: /contracts/webhook/yookassa/
+INFO 2026-04-26 11:28:09,864 views 10 123311784989440 Webhook received. Body: b'{"event":"payment.succeeded","object":{"id":"fake_68fbbc76a9","status":"succeeded"}}'
+INFO 2026-04-26 11:28:09,865 views 10 123311784989440 Processing payment fake_68fbbc76a9, status=succeeded
+ERROR 2026-04-26 11:28:09,876 views 10 123311784989440 Payment with yookassa_id fake_68fbbc76a9 not found
+WARNING 2026-04-26 11:28:09,892 log 10 123311784989440 Not Found: /contracts/webhook/yookassa/
+INFO 2026-04-26 11:31:09,969 autoreload 11944 8180 Watching for file changes with StatReloader
+INFO 2026-04-26 11:31:16,545 log 11944 4152 "GET / HTTP/1.1" 302 0
+INFO 2026-04-26 11:31:16,604 log 11944 4152 "GET /accounts/login/?next=/ HTTP/1.1" 200 4518
+INFO 2026-04-26 11:31:16,628 log 11944 4152 "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-04-26 11:31:16,628 log 11944 2068 "GET /static/js/main.js HTTP/1.1" 304 0
+WARNING 2026-04-26 11:31:16,740 log 11944 2068 Not Found: /favicon.ico
+WARNING 2026-04-26 11:31:16,741 log 11944 2068 "GET /favicon.ico HTTP/1.1" 404 4579
+INFO 2026-04-26 11:31:28,013 log 11944 2068 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2026-04-26 11:31:28,137 log 11944 2068 "GET / HTTP/1.1" 200 6070
+INFO 2026-04-26 11:31:28,146 log 11944 2068 "GET /static/css/index.css HTTP/1.1" 304 0
+INFO 2026-04-26 11:31:31,097 log 11944 2068 "GET /contracts/ HTTP/1.1" 200 13952
+INFO 2026-04-26 11:31:47,050 log 11944 2068 "GET /contracts/1/ HTTP/1.1" 200 4605
+INFO 2026-04-26 11:31:50,077 log 11944 2068 "GET /contracts/1/payments/ HTTP/1.1" 200 4191
+WARNING 2026-04-26 11:31:54,206 log 11944 2068 Forbidden (Permission denied): /contracts/1/payments/add/
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\views\generic\base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\contracts\views.py", line 334, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\auth\mixins.py", line 74, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\auth\mixins.py", line 109, in dispatch
+    return self.handle_no_permission()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\auth\mixins.py", line 49, in handle_no_permission
+    raise PermissionDenied(self.get_permission_denied_message())
+django.core.exceptions.PermissionDenied
+WARNING 2026-04-26 11:31:54,315 log 11944 2068 "GET /contracts/1/payments/add/ HTTP/1.1" 403 135
+INFO 2026-04-26 11:32:08,459 log 11944 2068 "GET /contracts/13/ HTTP/1.1" 200 4974
+INFO 2026-04-26 11:32:10,043 log 11944 2068 "GET /contracts/fake-payment/13/?amount=50000,00 HTTP/1.1" 200 6385
+INFO 2026-04-26 11:32:20,071 log 11944 2068 "GET /contracts/15/ HTTP/1.1" 200 4676
+INFO 2026-04-26 11:32:22,400 log 11944 2068 "GET /contracts/15/payments/ HTTP/1.1" 200 6730
+WARNING 2026-04-26 11:32:24,529 log 11944 2068 Forbidden (Permission denied): /contracts/15/payments/add/
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\views\generic\base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\contracts\views.py", line 334, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\auth\mixins.py", line 74, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\auth\mixins.py", line 109, in dispatch
+    return self.handle_no_permission()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\auth\mixins.py", line 49, in handle_no_permission
+    raise PermissionDenied(self.get_permission_denied_message())
+django.core.exceptions.PermissionDenied
+WARNING 2026-04-26 11:32:24,537 log 11944 2068 "GET /contracts/15/payments/add/ HTTP/1.1" 403 135
+INFO 2026-04-26 11:32:38,928 log 11944 2068 "GET /contracts/14/ HTTP/1.1" 200 4687
+INFO 2026-04-26 11:32:41,408 log 11944 2068 "GET /contracts/14/payments/ HTTP/1.1" 200 4236
+WARNING 2026-04-26 11:32:43,685 log 11944 2068 Forbidden (Permission denied): /contracts/14/payments/add/
+Traceback (most recent call last):
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\views\generic\base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\crm_project_base_model_auth\crm_project_base_model_auth\contracts\views.py", line 334, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\auth\mixins.py", line 74, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\auth\mixins.py", line 109, in dispatch
+    return self.handle_no_permission()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PythonCours\Python\newPythonProject\.venv2\Lib\site-packages\django\contrib\auth\mixins.py", line 49, in handle_no_permission
+    raise PermissionDenied(self.get_permission_denied_message())
+django.core.exceptions.PermissionDenied
+WARNING 2026-04-26 11:32:43,693 log 11944 2068 "GET /contracts/14/payments/add/ HTTP/1.1" 403 135
+INFO 2026-04-26 11:32:51,245 log 11944 2068 "GET /contracts/13/ HTTP/1.1" 200 4974
+INFO 2026-04-26 11:32:52,731 log 11944 2068 "GET /contracts/fake-payment/13/?amount=50000,00 HTTP/1.1" 200 6385
+INFO 2026-04-26 11:32:54,735 views 11944 2068 Webhook received. Body: b'{"event":"payment.succeeded","object":{"id":"fake_ba5dad97b6","status":"succeeded"}}'
+INFO 2026-04-26 11:32:54,735 views 11944 2068 Processing payment fake_ba5dad97b6, status=succeeded
+INFO 2026-04-26 11:32:54,769 log 11944 2068 "POST /contracts/webhook/yookassa/ HTTP/1.1" 200 16
+INFO 2026-04-26 11:32:56,297 log 11944 2068 "GET /contracts/13/?payment_status=succeeded HTTP/1.1" 200 4666
+INFO 2026-04-26 11:33:02,155 log 11944 2068 "GET / HTTP/1.1" 200 5768
+INFO 2026-04-26 11:33:03,752 log 11944 2068 "GET /contracts/ HTTP/1.1" 200 13946
+INFO 2026-04-26 11:33:11,771 log 11944 2068 "GET /contracts/export/? HTTP/1.1" 200 2939
+INFO 2026-04-26 12:03:48,299 views 10 128178195116800 Webhook received. Body: b'{"event":"payment.succeeded","object":{"id":"fake_f9ea27c0cb","status":"succeeded"}}'
+INFO 2026-04-26 12:03:48,299 views 10 128178195116800 Processing payment fake_f9ea27c0cb, status=succeeded
+ERROR 2026-04-26 12:03:48,312 views 10 128178195116800 Payment with yookassa_id fake_f9ea27c0cb not found
+WARNING 2026-04-26 12:03:48,351 log 10 128178195116800 Not Found: /contracts/webhook/yookassa/
+INFO 2026-04-26 12:04:44,378 views 10 128178195116800 Webhook received. Body: b'{"event":"payment.succeeded","object":{"id":"fake_f9ea27c0cb","status":"succeeded"}}'
+INFO 2026-04-26 12:04:44,378 views 10 128178195116800 Processing payment fake_f9ea27c0cb, status=succeeded
+ERROR 2026-04-26 12:04:44,394 views 10 128178195116800 Payment with yookassa_id fake_f9ea27c0cb not found
+WARNING 2026-04-26 12:04:44,418 log 10 128178195116800 Not Found: /contracts/webhook/yookassa/
+INFO 2026-04-26 12:11:56,273 views 11 139141194810112 Webhook received. Body: b'{"event":"payment.succeeded","object":{"id":"fake_14956ede58","status":"succeeded"}}'
+INFO 2026-04-26 12:11:56,274 views 11 139141194810112 Processing payment fake_14956ede58, status=succeeded
+ERROR 2026-04-26 12:11:56,284 views 11 139141194810112 Payment with yookassa_id fake_14956ede58 not found
+WARNING 2026-04-26 12:11:56,312 log 11 139141194810112 Not Found: /contracts/webhook/yookassa/
+INFO 2026-04-26 12:15:26,712 views 11 139141194810112 Webhook received. Body: b'{"event":"payment.succeeded","object":{"id":"fake_f9ea27c0cb","status":"succeeded"}}'
+INFO 2026-04-26 12:15:26,713 views 11 139141194810112 Processing payment fake_f9ea27c0cb, status=succeeded
+ERROR 2026-04-26 12:15:26,723 views 11 139141194810112 Payment with yookassa_id fake_f9ea27c0cb not found
+WARNING 2026-04-26 12:15:26,741 log 11 139141194810112 Not Found: /contracts/webhook/yookassa/
+INFO 2026-04-26 12:36:12,659 views 10 124989586092800 Webhook received. Body: b'{"event":"payment.succeeded","object":{"id":"fake_b1a3d0383d","status":"succeeded"}}'
+INFO 2026-04-26 12:36:12,659 views 10 124989586092800 Processing payment fake_b1a3d0383d, status=succeeded
+ERROR 2026-04-26 12:36:12,671 views 10 124989586092800 Payment with yookassa_id fake_b1a3d0383d not found
+WARNING 2026-04-26 12:36:12,685 log 10 124989586092800 Not Found: /contracts/webhook/yookassa/
+INFO 2026-04-26 12:36:15,394 views 10 124989586092800 Webhook received. Body: b'{"event":"payment.succeeded","object":{"id":"fake_b1a3d0383d","status":"succeeded"}}'
+INFO 2026-04-26 12:36:15,395 views 10 124989586092800 Processing payment fake_b1a3d0383d, status=succeeded
+ERROR 2026-04-26 12:36:15,410 views 10 124989586092800 Payment with yookassa_id fake_b1a3d0383d not found
+WARNING 2026-04-26 12:36:15,422 log 10 124989586092800 Not Found: /contracts/webhook/yookassa/
+INFO 2026-04-26 12:36:19,763 views 10 124989586092800 Webhook received. Body: b'{"event":"payment.succeeded","object":{"id":"fake_b1a3d0383d","status":"succeeded"}}'
+INFO 2026-04-26 12:36:19,763 views 10 124989586092800 Processing payment fake_b1a3d0383d, status=succeeded
+ERROR 2026-04-26 12:36:19,775 views 10 124989586092800 Payment with yookassa_id fake_b1a3d0383d not found
+WARNING 2026-04-26 12:36:19,794 log 10 124989586092800 Not Found: /contracts/webhook/yookassa/
+INFO 2026-04-26 12:44:38,324 views 10 126359883879168 Webhook received. Body: b'{"event":"payment.succeeded","object":{"id":"fake_161b2bab7d","status":"succeeded"}}'
+INFO 2026-04-26 12:44:38,325 views 10 126359883879168 Processing payment fake_161b2bab7d, status=succeeded
+INFO 2026-04-26 12:53:09,780 views 10 126359883879168 Webhook received. Body: b'{"event":"payment.succeeded","object":{"id":"fake_5e7c7ce78e","status":"succeeded"}}'
+INFO 2026-04-26 12:53:09,780 views 10 126359883879168 Processing payment fake_5e7c7ce78e, status=succeeded
+ERROR 2026-04-26 12:58:59,805 log 10 126359883879168 Internal Server Error: /accounts/password-reset/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/views/generic/base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/views/generic/base.py", line 145, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/views/generic/edit.py", line 151, in post
+    return self.form_valid(form)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/contrib/auth/views.py", line 234, in form_valid
+    form.save(**opts)
+  File "/usr/local/lib/python3.12/site-packages/django/contrib/auth/forms.py", line 481, in save
+    self.send_mail(
+  File "/usr/local/lib/python3.12/site-packages/django/contrib/auth/forms.py", line 406, in send_mail
+    subject = loader.render_to_string(subject_template_name, context)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: accounts/password_reset_subject.txt
+INFO 2026-04-26 12:59:42,156 views 10 126359883879168 Webhook received. Body: b'{"event":"payment.succeeded","object":{"id":"fake_c2586ee95a","status":"succeeded"}}'
+INFO 2026-04-26 12:59:42,156 views 10 126359883879168 Processing payment fake_c2586ee95a, status=succeeded
+WARNING 2026-04-26 13:01:32,782 log 16668 16724 Not Found: /api/clients/2/
+INFO 2026-04-26 13:01:42,058 autoreload 18372 17832 Watching for file changes with StatReloader
+WARNING 2026-04-26 13:01:44,785 log 16668 16724 Unauthorized: /api/clients/
+INFO 2026-04-26 13:01:45,205 log 18372 11124 "GET / HTTP/1.1" 200 5768
+INFO 2026-04-26 13:01:52,158 log 18372 11124 "POST /accounts/logout/ HTTP/1.1" 302 0
+INFO 2026-04-26 13:01:52,164 log 18372 11124 "GET /accounts/login/ HTTP/1.1" 200 4830
+INFO 2026-04-26 13:02:06,878 log 18372 11124 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2026-04-26 13:02:06,901 log 18372 11124 "GET / HTTP/1.1" 200 6022
+INFO 2026-04-26 13:02:10,244 log 18372 11124 "GET /contracts/ HTTP/1.1" 200 13926
+INFO 2026-04-26 13:03:45,910 autoreload 5492 13668 Watching for file changes with StatReloader
+INFO 2026-04-26 13:03:50,464 log 5492 18064 "GET / HTTP/1.1" 200 5728
+INFO 2026-04-26 13:03:52,340 log 5492 18064 "GET /contracts/ HTTP/1.1" 200 13926
+INFO 2026-04-26 13:03:59,099 log 5492 18064 "GET /contracts/10/ HTTP/1.1" 200 4607
+INFO 2026-04-26 13:04:17,114 log 5492 18064 "GET /tasks/?status=overdue HTTP/1.1" 200 11045
+INFO 2026-04-26 13:04:17,122 log 5492 18064 "GET /static/css/task_list.css HTTP/1.1" 304 0
+INFO 2026-04-26 13:04:25,578 log 5492 18064 "GET /tasks/create/ HTTP/1.1" 200 13406
+INFO 2026-04-26 13:05:09,270 log 5492 18064 "POST /tasks/create/ HTTP/1.1" 302 0
+INFO 2026-04-26 13:05:09,304 log 5492 18064 "GET /tasks/ HTTP/1.1" 200 58963
+INFO 2026-04-26 13:05:14,514 log 5492 18064 "GET /tasks/22/ HTTP/1.1" 200 8057
+INFO 2026-04-26 13:05:23,840 log 5492 18064 "GET / HTTP/1.1" 200 5729
+INFO 2026-04-26 13:05:29,342 log 5492 18064 "GET /clients/ HTTP/1.1" 200 19038
+INFO 2026-04-26 13:05:31,976 log 5492 18064 "GET /clients/5/ HTTP/1.1" 200 15221
+INFO 2026-04-26 13:05:38,740 log 5492 18064 "GET /contracts/5/ HTTP/1.1" 200 4549
+INFO 2026-04-26 13:05:54,335 log 5492 18064 "GET / HTTP/1.1" 200 5729
+INFO 2026-04-26 13:31:20,453 log 5492 9684 "GET / HTTP/1.1" 200 5729
+INFO 2026-04-26 13:31:21,690 log 5492 9684 "GET / HTTP/1.1" 200 5729
+INFO 2026-04-26 13:31:35,306 log 5492 9684 "GET /accounts/profile/ HTTP/1.1" 200 33890
+INFO 2026-04-26 13:31:38,641 log 5492 9684 "GET /accounts/profile/edit/ HTTP/1.1" 200 10466
+INFO 2026-04-26 13:32:32,222 log 5492 9684 "POST /accounts/profile/edit/ HTTP/1.1" 302 0
+INFO 2026-04-26 13:32:32,246 log 5492 9684 "GET /accounts/profile/ HTTP/1.1" 200 34316
+INFO 2026-04-26 13:32:32,307 log 5492 9684 "GET /media/avatars/authorauthor.jpg HTTP/1.1" 200 2387954
+INFO 2026-04-26 13:33:05,257 log 5492 9684 "POST /notifications/62/read/ HTTP/1.1" 200 17
+INFO 2026-04-26 13:33:05,285 log 5492 9684 "GET /accounts/profile/ HTTP/1.1" 200 33349
+INFO 2026-04-26 13:33:05,302 log 5492 9684 "GET /media/avatars/authorauthor.jpg HTTP/1.1" 304 0
+INFO 2026-04-26 13:33:11,106 log 5492 9684 "POST /notifications/56/read/ HTTP/1.1" 200 17
+INFO 2026-04-26 13:33:11,131 log 5492 9684 "GET /accounts/profile/ HTTP/1.1" 200 32693
+INFO 2026-04-26 13:33:11,146 log 5492 9684 "GET /media/avatars/authorauthor.jpg HTTP/1.1" 304 0
+INFO 2026-04-26 13:33:25,456 log 5492 9684 "GET /accounts/password-reset/ HTTP/1.1" 200 5237
+INFO 2026-04-26 13:33:31,999 log 5492 9684 "POST /accounts/password-reset/ HTTP/1.1" 302 0
+INFO 2026-04-26 13:33:32,020 log 5492 9684 "GET /accounts/password-reset/done/ HTTP/1.1" 200 3372
+INFO 2026-04-26 13:34:23,854 log 5492 9684 "GET / HTTP/1.1" 200 5793
+INFO 2026-04-26 13:34:31,384 log 5492 9684 "GET /contracts/ HTTP/1.1" 200 13958
+INFO 2026-04-26 13:34:44,713 log 5492 9684 "GET /contracts/9/ HTTP/1.1" 200 4609
+INFO 2026-04-26 13:34:46,994 log 5492 9684 "GET /contracts/9/payments/ HTTP/1.1" 200 5538
+INFO 2026-04-26 13:34:49,818 log 5492 9684 "GET /contracts/9/payments/add/ HTTP/1.1" 200 4753
+INFO 2026-04-26 13:35:49,999 log 5492 9684 "POST /contracts/9/payments/add/ HTTP/1.1" 302 0
+INFO 2026-04-26 13:35:50,029 log 5492 9684 "GET /contracts/9/payments/ HTTP/1.1" 200 6365
+INFO 2026-04-26 13:36:07,601 log 5492 9684 "GET /contracts/9/ HTTP/1.1" 200 4609
+INFO 2026-04-26 13:36:16,379 log 5492 9684 "GET / HTTP/1.1" 200 5793
+INFO 2026-04-26 13:40:43,928 log 5492 9684 "GET / HTTP/1.1" 200 5793
+INFO 2026-04-26 13:40:45,556 log 5492 9684 "GET / HTTP/1.1" 200 5793
+INFO 2026-04-26 13:40:47,077 log 5492 9684 "GET /contracts/ HTTP/1.1" 200 13958
+INFO 2026-04-26 13:42:48,768 autoreload 14492 3984 Watching for file changes with StatReloader
+INFO 2026-04-26 13:42:52,134 log 14492 10996 "GET / HTTP/1.1" 200 5793
+INFO 2026-04-26 13:42:53,637 log 14492 10996 "GET /contracts/ HTTP/1.1" 200 13958
+INFO 2026-04-26 20:37:01,518 autoreload 7808 7844 Watching for file changes with StatReloader
+INFO 2026-04-26 20:43:23,246 log 7808 3092 "GET /contracts/ HTTP/1.1" 302 0
+INFO 2026-04-26 20:43:23,353 log 7808 3092 "GET /accounts/login/?next=/contracts/ HTTP/1.1" 200 4518
+WARNING 2026-04-26 20:43:23,594 log 7808 3092 Not Found: /favicon.ico
+WARNING 2026-04-26 20:43:23,594 log 7808 3092 "GET /favicon.ico HTTP/1.1" 404 4579
+WARNING 2026-04-26 20:43:23,611 log 7808 3092 Not Found: /favicon.ico
+WARNING 2026-04-26 20:43:23,613 log 7808 3092 "GET /favicon.ico HTTP/1.1" 404 4579
+WARNING 2026-04-26 20:43:23,617 log 7808 9628 Not Found: /favicon.ico
+WARNING 2026-04-26 20:43:23,618 log 7808 9628 "GET /favicon.ico HTTP/1.1" 404 4579
+INFO 2026-04-26 20:57:11,099 log 7808 4464 "GET / HTTP/1.1" 302 0
+INFO 2026-04-26 20:57:11,115 log 7808 4464 "GET /accounts/login/?next=/ HTTP/1.1" 200 4518
+INFO 2026-04-26 20:57:18,792 log 7808 4464 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2026-04-26 20:57:18,906 log 7808 4464 "GET / HTTP/1.1" 200 6097
+INFO 2026-04-26 20:57:18,962 log 7808 4464 "GET /static/js/index.js HTTP/1.1" 304 0
+INFO 2026-04-26 20:57:22,956 log 7808 4464 "GET /contracts/ HTTP/1.1" 200 13958
+INFO 2026-04-26 21:52:59,600 autoreload 8052 2240 Watching for file changes with StatReloader
+INFO 2026-04-26 21:53:03,750 log 8052 6504 "GET / HTTP/1.1" 200 5793
+INFO 2026-04-26 21:53:06,809 log 8052 6504 "GET /contracts/ HTTP/1.1" 200 15536
+INFO 2026-04-26 21:53:30,558 log 8052 6504 "GET /contracts/18/payments/ HTTP/1.1" 200 3791
+INFO 2026-04-26 21:53:33,772 log 8052 6504 "GET /contracts/18/payments/add/ HTTP/1.1" 200 4754
+INFO 2026-04-26 21:54:36,467 log 8052 6504 "POST /contracts/18/payments/add/ HTTP/1.1" 302 0
+INFO 2026-04-26 21:54:36,491 log 8052 6504 "GET /contracts/18/payments/ HTTP/1.1" 200 4546
+INFO 2026-04-26 21:54:46,231 log 8052 6504 "GET /contracts/18/ HTTP/1.1" 200 5015
+INFO 2026-04-26 21:54:53,940 log 8052 6504 "GET /contracts/fake-payment/18/?amount=450000,00 HTTP/1.1" 200 6401
+INFO 2026-04-26 21:55:08,710 log 8052 6504 "GET / HTTP/1.1" 200 5793
+INFO 2026-04-26 21:55:10,483 log 8052 6504 "GET /contracts/ HTTP/1.1" 200 15542
+INFO 2026-04-26 21:55:33,760 log 8052 6504 "GET /contracts/ HTTP/1.1" 200 15542
+INFO 2026-04-26 21:55:36,396 log 8052 6504 "GET / HTTP/1.1" 200 5793
+INFO 2026-04-26 21:55:38,993 log 8052 6504 "GET /analytics/ HTTP/1.1" 200 6226
+INFO 2026-04-26 21:55:42,354 log 8052 9404 "GET /analytics/api/chart-data/?type=tasks_status HTTP/1.1" 200 123
+INFO 2026-04-26 21:55:42,367 log 8052 6504 "GET /analytics/api/chart-data/?type=revenue HTTP/1.1" 200 231
+INFO 2026-04-26 21:56:09,919 log 8052 6504 "GET / HTTP/1.1" 200 5793
+INFO 2026-04-26 21:56:12,351 log 8052 6504 "GET /tasks/?status=overdue HTTP/1.1" 200 11077
+INFO 2026-04-26 21:56:20,489 log 8052 6504 "GET /tasks/create/ HTTP/1.1" 200 13470
+INFO 2026-04-26 21:56:48,168 log 8052 6504 "GET /tasks/?status=overdue HTTP/1.1" 200 11077
+WARNING 2026-04-27 20:59:01,661 log 5744 8364 Not Found: /api/contracts/2/
+WARNING 2026-04-27 20:59:15,780 log 5744 8364 Unauthorized: /api/contracts/
+WARNING 2026-04-27 20:59:19,340 log 5744 8364 Forbidden: /api/contracts/
+INFO 2026-04-27 20:59:21,118 views 5744 8364 Webhook received. Body: b'{"event": "payment.canceled", "object": {"id": "fake_123", "status": "canceled"}}'
+INFO 2026-04-27 20:59:21,118 views 5744 8364 Processing payment fake_123, status=canceled
+INFO 2026-04-27 20:59:22,926 views 5744 8364 Webhook received. Body: b'{"event": "payment.succeeded", "object": {"id": "fake_123", "status": "succeeded"}}'
+INFO 2026-04-27 20:59:22,926 views 5744 8364 Processing payment fake_123, status=succeeded
+INFO 2026-04-27 20:59:24,693 views 5744 8364 Webhook received. Body: b'{"event": "unknown.event", "object": {"id": "fake_123"}}'
+WARNING 2026-04-27 20:59:24,694 log 5744 8364 Bad Request: /contracts/webhook/yookassa/
+INFO 2026-04-27 20:59:26,459 views 5744 8364 Webhook received. Body: b'not json'
+WARNING 2026-04-27 20:59:26,460 log 5744 8364 Bad Request: /contracts/webhook/yookassa/
+INFO 2026-04-27 20:59:28,230 views 5744 8364 Webhook received. Body: b'{"event": "payment.succeeded", "object": {"id": "fake_123", "status": "succeeded"}}'
+INFO 2026-04-27 20:59:28,230 views 5744 8364 Processing payment fake_123, status=succeeded
+INFO 2026-04-27 20:59:29,996 views 5744 8364 Webhook received. Body: b'{"event": "payment.succeeded", "object": {"id": "unknown_id", "status": "succeeded"}}'
+INFO 2026-04-27 20:59:29,996 views 5744 8364 Processing payment unknown_id, status=succeeded
+ERROR 2026-04-27 20:59:29,998 views 5744 8364 Payment with yookassa_id unknown_id not found
+WARNING 2026-04-27 20:59:29,998 log 5744 8364 Not Found: /contracts/webhook/yookassa/
+WARNING 2026-04-27 20:59:31,759 log 5744 8364 Method Not Allowed: /contracts/webhook/yookassa/
+WARNING 2026-04-27 20:59:34,430 log 5744 8364 Bad Request: /api/contracts/1/initiate-payment/
+WARNING 2026-04-27 20:59:37,303 log 5744 8364 Bad Request: /api/contracts/1/initiate-payment/
+WARNING 2026-04-27 20:59:40,046 log 5744 8364 Bad Request: /api/contracts/1/initiate-payment/
+INFO 2026-04-27 20:59:43,114 viewsets 5744 8364 Created fake payment fake_1699839662 for contract 1
+INFO 2026-04-27 20:59:45,951 viewsets 5744 8364 Created fake payment fake_39f475d646 for contract 1
+WARNING 2026-04-27 20:59:49,564 log 5744 8364 Not Found: /api/contracts/2/initiate-payment/
+WARNING 2026-04-27 20:59:52,310 log 5744 8364 Unauthorized: /api/contracts/1/initiate-payment/
+WARNING 2026-04-27 20:59:54,969 log 5744 8364 Not Found: /api/contracts/1/initiate-payment/
+WARNING 2026-04-27 21:00:03,216 log 5744 8364 Not Found: /api/payments/1/
+WARNING 2026-04-27 21:00:32,402 log 5160 2228 Not Found: /api/clients/2/
+WARNING 2026-04-27 21:00:43,032 log 5160 2228 Unauthorized: /api/clients/
+WARNING 2026-04-27 21:26:02,204 log 5128 4940 Not Found: /api/contracts/2/
+WARNING 2026-04-27 21:26:16,867 log 5128 4940 Unauthorized: /api/contracts/
+WARNING 2026-04-27 21:26:20,414 log 5128 4940 Forbidden: /api/contracts/
+INFO 2026-04-27 21:26:22,212 views 5128 4940 Webhook received. Body: b'{"event": "payment.canceled", "object": {"id": "fake_123", "status": "canceled"}}'
+INFO 2026-04-27 21:26:22,212 views 5128 4940 Processing payment fake_123, status=canceled
+INFO 2026-04-27 21:26:24,017 views 5128 4940 Webhook received. Body: b'{"event": "payment.succeeded", "object": {"id": "fake_123", "status": "succeeded"}}'
+INFO 2026-04-27 21:26:24,017 views 5128 4940 Processing payment fake_123, status=succeeded
+INFO 2026-04-27 21:26:25,780 views 5128 4940 Webhook received. Body: b'{"event": "unknown.event", "object": {"id": "fake_123"}}'
+WARNING 2026-04-27 21:26:25,780 log 5128 4940 Bad Request: /contracts/webhook/yookassa/
+INFO 2026-04-27 21:26:27,657 views 5128 4940 Webhook received. Body: b'not json'
+WARNING 2026-04-27 21:26:27,658 log 5128 4940 Bad Request: /contracts/webhook/yookassa/
+INFO 2026-04-27 21:26:29,524 views 5128 4940 Webhook received. Body: b'{"event": "payment.succeeded", "object": {"id": "fake_123", "status": "succeeded"}}'
+INFO 2026-04-27 21:26:29,524 views 5128 4940 Processing payment fake_123, status=succeeded
+INFO 2026-04-27 21:26:31,318 views 5128 4940 Webhook received. Body: b'{"event": "payment.succeeded", "object": {"id": "unknown_id", "status": "succeeded"}}'
+INFO 2026-04-27 21:26:31,318 views 5128 4940 Processing payment unknown_id, status=succeeded
+ERROR 2026-04-27 21:26:31,319 views 5128 4940 Payment with yookassa_id unknown_id not found
+WARNING 2026-04-27 21:26:31,320 log 5128 4940 Not Found: /contracts/webhook/yookassa/
+WARNING 2026-04-27 21:26:33,166 log 5128 4940 Method Not Allowed: /contracts/webhook/yookassa/
+WARNING 2026-04-27 21:26:36,010 log 5128 4940 Bad Request: /api/contracts/1/initiate-payment/
+WARNING 2026-04-27 21:26:38,791 log 5128 4940 Bad Request: /api/contracts/1/initiate-payment/
+WARNING 2026-04-27 21:26:41,510 log 5128 4940 Bad Request: /api/contracts/1/initiate-payment/
+INFO 2026-04-27 21:26:44,225 viewsets 5128 4940 Created fake payment fake_e69fb5414e for contract 1
+INFO 2026-04-27 21:26:47,258 viewsets 5128 4940 Created fake payment fake_739446e396 for contract 1
+WARNING 2026-04-27 21:26:50,896 log 5128 4940 Not Found: /api/contracts/2/initiate-payment/
+WARNING 2026-04-27 21:26:53,606 log 5128 4940 Unauthorized: /api/contracts/1/initiate-payment/
+WARNING 2026-04-27 21:26:56,301 log 5128 4940 Not Found: /api/contracts/1/initiate-payment/
+WARNING 2026-04-27 21:27:04,487 log 5128 4940 Not Found: /api/payments/1/
+INFO 2026-04-27 21:31:48,903 autoreload 2832 1992 Watching for file changes with StatReloader
+INFO 2026-04-27 21:52:10,519 log 2832 12000 "GET / HTTP/1.1" 302 0
+INFO 2026-04-27 21:52:10,867 log 2832 12000 "GET /accounts/login/?next=/ HTTP/1.1" 200 4518
+WARNING 2026-04-27 21:52:11,130 log 2832 12000 Not Found: /favicon.ico
+WARNING 2026-04-27 21:52:11,131 log 2832 12000 "GET /favicon.ico HTTP/1.1" 404 4579
+INFO 2026-04-27 21:54:17,277 log 2832 11696 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2026-04-27 21:54:17,350 log 2832 11696 "GET / HTTP/1.1" 200 6063
+INFO 2026-04-27 21:54:17,364 log 2832 11696 "GET /static/css/index.css HTTP/1.1" 304 0
+INFO 2026-04-27 21:54:24,110 log 2832 11696 "GET /contracts/ HTTP/1.1" 200 15526
+INFO 2026-04-27 21:54:54,629 log 2832 11696 "GET /contracts/18/ HTTP/1.1" 200 4999
+INFO 2026-04-27 21:54:57,369 log 2832 11696 "GET /contracts/fake-payment/18/?amount=450000,00 HTTP/1.1" 200 6385
+INFO 2026-04-27 21:55:00,143 views 2832 11696 Webhook received. Body: b'{"event":"payment.succeeded","object":{"id":"fake_27b14e75bf","status":"succeeded"}}'
+INFO 2026-04-27 21:55:00,144 views 2832 11696 Processing payment fake_27b14e75bf, status=succeeded
+INFO 2026-04-27 21:55:01,560 log 2832 11696 "POST /contracts/webhook/yookassa/ HTTP/1.1" 200 16
+INFO 2026-04-27 21:55:03,136 log 2832 11696 "GET /contracts/18/?payment_status=succeeded HTTP/1.1" 200 4579
+INFO 2026-04-27 21:55:19,518 log 2832 11696 "GET /contracts/18/renew/ HTTP/1.1" 302 0
+INFO 2026-04-27 21:55:19,519 log 2832 11696 "GET /contracts/19/ HTTP/1.1" 200 5171
+INFO 2026-04-27 21:55:30,891 log 2832 11696 "GET /contracts/19/renew/ HTTP/1.1" 302 0
+INFO 2026-04-27 21:55:30,919 log 2832 11696 "GET /contracts/20/ HTTP/1.1" 200 5200
+INFO 2026-04-27 21:55:42,882 log 2832 11696 "GET / HTTP/1.1" 200 5762
+INFO 2026-04-27 21:55:44,864 log 2832 11696 "GET /tasks/?status=overdue HTTP/1.1" 200 11061
+INFO 2026-04-27 21:55:52,921 log 2832 11696 "GET /tasks/?search=&status=in_progress&priority=&assigned_to= HTTP/1.1" 200 15585
+INFO 2026-04-27 21:56:19,525 log 2832 11696 "GET /tasks/?search=&status=completed&priority=&assigned_to= HTTP/1.1" 200 11069
+INFO 2026-04-27 21:56:25,346 log 2832 11696 "GET /tasks/?search=&status=cancelled&priority=&assigned_to= HTTP/1.1" 200 11069
+INFO 2026-04-27 21:56:32,222 log 2832 11696 "GET /tasks/?search=&status=&priority=&assigned_to= HTTP/1.1" 200 59532

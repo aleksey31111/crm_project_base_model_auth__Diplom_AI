@@ -233,13 +233,47 @@ class Command(BaseCommand):
                     'signed_date': data['start_date'], 'manager': manager
                 }
             )
+            # if created:
+            #     # Для учебных целей добавляем имитацию платёжной ссылки для неоплаченных контрактов
+            #     if contract.payment_status != 'paid':
+            #         fake_id = f"fake_{uuid.uuid4().hex[:10]}"
+            #         contract.yookassa_payment_id = fake_id
+            #         contract.payment_url = f"/fake-payment/{contract.id}/?amount={contract.remaining_amount}"
+            #         contract.save(update_fields=['yookassa_payment_id', 'payment_url'])
+            #         Payment.objects.get_or_create(
+            #             contract=contract,
+            #             yookassa_id=fake_payment_id,
+            #             defaults={
+            #                 'amount': contract.remaining_amount,
+            #                 'payment_date': contract.start_date,
+            #                 'payment_method': 'card',
+            #                 'yookassa_status': 'pending',
+            #                 'confirmation_url': fake_confirmation_url,
+            #                 'comment': f'Автоматический платёж для контракта {contract.number}'
+            #             }
+            #         )
+            #     self.stdout.write(f"  Создан контракт: {contract.number} ({contract.client.full_name})")
             if created:
                 # Для учебных целей добавляем имитацию платёжной ссылки для неоплаченных контрактов
                 if contract.payment_status != 'paid':
                     fake_id = f"fake_{uuid.uuid4().hex[:10]}"
+                    fake_url = f"/fake-payment/{contract.id}/?amount={contract.remaining_amount}"
                     contract.yookassa_payment_id = fake_id
-                    contract.payment_url = f"/fake-payment/{contract.id}/?amount={contract.remaining_amount}"
+                    contract.payment_url = fake_url
                     contract.save(update_fields=['yookassa_payment_id', 'payment_url'])
+                    # Обязательно создаём запись Payment, чтобы вебхук мог её найти
+                    Payment.objects.get_or_create(
+                        contract=contract,
+                        yookassa_id=fake_id,
+                        defaults={
+                            'amount': contract.remaining_amount,
+                            'payment_date': timezone.now().date(),
+                            'payment_method': 'card',
+                            'yookassa_status': 'pending',
+                            'confirmation_url': fake_url,
+                            'comment': f'Автоматический платёж для контракта {contract.number}'
+                        }
+                    )
                 self.stdout.write(f"  Создан контракт: {contract.number} ({contract.client.full_name})")
             else:
                 self.stdout.write(f"  Контракт {contract.number} уже существует")

@@ -18,7 +18,7 @@
 
 ### Все тесты (Особенность обнаружения тестов, а не БАГ проекта)
 ```bash
-python manage.py test
+#python manage.py test
 ```
 
 ### Тесты конкретного приложения
@@ -48,12 +48,12 @@ python manage.py test clients.tests.test_api.ClientAPITest.test_manager_sees_onl
 
 ### С сохранением тестовой базы данных (быстрее при повторных запусках)
 ```bash
-python manage.py test --keepdb
+#python manage.py test --keepdb
 ```
 
 ### С выводом детализации (уровень подробности 2)
 ```bash
-python manage.py test --verbosity 2
+#python manage.py test --verbosity 2
 ```
 
 ---
@@ -151,15 +151,15 @@ DATABASES = {
 
 ```bash
 # Активация виртуального окружения
-.venv\Scripts\activate  # Windows
-source .venv/bin/activate  # Linux/Mac
+#.venv\Scripts\activate  # Windows
+#source .venv/bin/activate  # Linux/Mac
 
 # Установка зависимостей (если не сделано)
 pip install -r requirements.txt
 
 # Запуск всех тестов с покрытием (при установленном coverage)
-coverage run manage.py test
-coverage report -m
+#coverage run manage.py test
+#coverage report -m
 
 # Только тесты API клиентов
 python manage.py test clients.tests.test_api
@@ -170,7 +170,7 @@ python manage.py test contracts.tests.test_payment_flow
 python manage.py test contracts.tests.test_payment_flow --verbosity 2''
 
 # Запуск с параллельным выполнением (требуется Python 3.12+)
-python manage.py test --parallel
+#python manage.py test --parallel
 ```
 
 ---
@@ -256,12 +256,6 @@ Destroying test database for alias 'default'...
 
 ## 🔗 Дополнительно
 
-- Для измерения покрытия кода тестами используйте `coverage.py`:
-  ```bash
-  coverage run manage.py test
-  coverage html
-  open htmlcov/index.html
-  ```
 - Для отладки тестов добавьте `breakpoint()` внутри теста или запустите:
   ```bash
   python -m pdb manage.py test clients.tests.test_api
@@ -270,7 +264,7 @@ Destroying test database for alias 'default'...
 ---
 
 **Автор**: Aleksey Bashkirov  
-**GitHub**: [https://github.com/aleksey31111]
+**GitHub**: [https://github.com/aleksey31111/crm_project_base_model_auth__Diplom_AI/tree/master]
 
 **Дата составления**: апрель 2026  
 **Актуально для версии**: 1.0.0

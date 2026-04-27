@@ -57,7 +57,7 @@
 
 1. **Клонируйте репозиторий**  
    ```bash
-   git clone https://github.com/your-username/crm_project_base_model_auth.git
+   #git clone https://github.com/your-username/crm_project_base_model_auth.git
    cd crm_project_base_model_auth
    ```
 
@@ -93,9 +93,9 @@
 
 1. **Установите Python 3.12** и создайте виртуальное окружение:
    ```bash
-   python -m venv .venv
-   source .venv/bin/activate  # Linux/Mac
-   .venv\Scripts\activate      # Windows
+   #python -m venv .venv
+   #source .venv/bin/activate  # Linux/Mac
+   #.venv\Scripts\activate      # Windows
    ```
 
 2. **Установите зависимости**:
@@ -227,7 +227,7 @@ docker-compose exec web python manage.py check_overdue_tasks
 ### Запуск всех тестов
 
 ```bash
-python manage.py test
+#python manage.py test
 ```
 
 ### Запуск тестов конкретного приложения
@@ -359,7 +359,8 @@ crm_project_base_model_auth/
 **Решение**: Проверьте, что в `.env` не заданы `YOOKASSA_SHOP_ID` и `YOOKASSA_SECRET_KEY` (или заданы пустыми). Код автоматически переключается на имитацию.
 
 ### 6. Тесты не проходят из-за отсутствия модуля `logs`
-**Решение**: Убедитесь, что приложение `logs` добавлено в `INSTALLED_APPS` и выполнены миграции: `python manage.py makemigrations logs && python manage.py migrate`.
+**Решение**: Убедитесь, что приложение `logs` добавлено в `INSTALLED_APPS` и выполнены миграции: 
+`python manage.py makemigrations logs` `python manage.py migrate`.
 
 ---
 
@@ -370,5 +371,5 @@ crm_project_base_model_auth/
 ---
 
 **Автор**: Aleksey Bashkirov  
-**GitHub**: [https://github.com/aleksey31111]  
+**GitHub**: [https://github.com/aleksey31111/crm_project_base_model_auth__Diplom_AI/tree/master ]  
 **Дата**: апрель 2026
